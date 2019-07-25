@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ContentCellB" id="wfe-oH-AyB" customClass="ContentBCollectionViewCell" customModule="WatchOn" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="255"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="150" height="255"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NrA-x9-tWO">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="255"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CoverTest_IMG" translatesAutoresizingMaskIntoConstraints="NO" id="nUT-F4-xuZ">
+                                <rect key="frame" x="10" y="8" width="130" height="200"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3te-8g-MzB">
+                                <rect key="frame" x="10" y="216" width="130" height="30"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WaM-Ot-ckN">
+                                        <rect key="frame" x="-0.90000000000003411" y="-1.1368683772161603e-13" width="131" height="32.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avenger: EndGame" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyz-7Y-zTI">
+                                                <rect key="frame" x="0.0" y="0.0" width="131" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marvel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2EE-9f-7Or">
+                                                <rect key="frame" x="46.5" y="18" width="38" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3te-8g-MzB" firstAttribute="leading" secondItem="NrA-x9-tWO" secondAttribute="leading" constant="10" id="2MZ-6E-jRJ"/>
+                            <constraint firstAttribute="bottom" secondItem="nUT-F4-xuZ" secondAttribute="bottom" constant="47" id="83G-dI-hn6"/>
+                            <constraint firstAttribute="trailing" secondItem="3te-8g-MzB" secondAttribute="trailing" constant="10" id="AdU-6w-9Fk"/>
+                            <constraint firstItem="nUT-F4-xuZ" firstAttribute="leading" secondItem="NrA-x9-tWO" secondAttribute="leading" constant="10" id="J1o-jJ-Kso"/>
+                            <constraint firstAttribute="bottom" secondItem="3te-8g-MzB" secondAttribute="bottom" constant="9" id="Oi2-dL-0Tp"/>
+                            <constraint firstItem="nUT-F4-xuZ" firstAttribute="top" secondItem="NrA-x9-tWO" secondAttribute="top" constant="8" id="Yd2-AR-v3P"/>
+                            <constraint firstAttribute="trailing" secondItem="nUT-F4-xuZ" secondAttribute="trailing" constant="10" id="cjE-89-yRT"/>
+                            <constraint firstItem="3te-8g-MzB" firstAttribute="top" secondItem="nUT-F4-xuZ" secondAttribute="bottom" constant="8" id="z0P-ky-cz8"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="NrA-x9-tWO" secondAttribute="bottom" id="NGw-TX-jH2"/>
+                <constraint firstAttribute="trailing" secondItem="NrA-x9-tWO" secondAttribute="trailing" id="VtW-5r-Gdr"/>
+                <constraint firstItem="NrA-x9-tWO" firstAttribute="top" secondItem="wfe-oH-AyB" secondAttribute="top" id="qu7-Jl-Ixd"/>
+                <constraint firstItem="NrA-x9-tWO" firstAttribute="leading" secondItem="wfe-oH-AyB" secondAttribute="leading" id="tGB-0C-8aa"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="FrL-Sx-Bwa"/>
+            <size key="customSize" width="150" height="256"/>
+            <point key="canvasLocation" x="33.333333333333336" y="96.09375"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="CoverTest_IMG" width="447" height="679"/>
+    </resources>
+</document>

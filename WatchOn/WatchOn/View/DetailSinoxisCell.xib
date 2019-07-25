@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14835.7" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14790.5"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailSinoxisCell" rowHeight="222" id="IK5-gp-wRF" customClass="DetailSinoxisTableViewCell" customModule="WatchOn" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="428" height="222"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IK5-gp-wRF" id="hV8-9b-AVG">
+                <rect key="frame" x="0.0" y="0.0" width="428" height="222"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mhd-Qi-zfP">
+                        <rect key="frame" x="20" y="10" width="388" height="162.5"/>
+                        <string key="text">Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  Sinoxis  </string>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Mhd-Qi-zfP" firstAttribute="top" secondItem="hV8-9b-AVG" secondAttribute="top" constant="10" id="NpS-87-6xk"/>
+                    <constraint firstAttribute="trailing" secondItem="Mhd-Qi-zfP" secondAttribute="trailing" constant="20" id="PbL-rs-8Dg"/>
+                    <constraint firstItem="Mhd-Qi-zfP" firstAttribute="leading" secondItem="hV8-9b-AVG" secondAttribute="leading" constant="20" id="s3D-eR-9CL"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="sinoxisLb" destination="Mhd-Qi-zfP" id="0US-BU-LCe"/>
+            </connections>
+            <point key="canvasLocation" x="-147.82608695652175" y="-265.84821428571428"/>
+        </tableViewCell>
+    </objects>
+</document>

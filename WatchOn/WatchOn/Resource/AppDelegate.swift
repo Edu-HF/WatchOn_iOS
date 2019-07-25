@@ -15,8 +15,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        //initSplashViewController()
         return true
+    }
+    
+    fileprivate func initSplashViewController() {
+        
+        let initialSplashVC = SplashViewController.loadFromNib() as SplashViewController
+        
+        self.window?.rootViewController = initialSplashVC
+        self.window?.makeKeyAndVisible()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

@@ -10,6 +10,8 @@ import UIKit
 
 class ContentSectionTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var sectionTitleLB: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
@@ -17,8 +19,14 @@ class ContentSectionTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    }
+    
+    override func prepareForReuse() {
+        self.sectionTitleLB.text = ""
+    }
+    
+    func setupCell(titleIn: String) {
+        self.sectionTitleLB.text = titleIn
     }
 
 }

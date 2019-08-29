@@ -13,12 +13,22 @@ import Alamofire
 class ContentService: BaseService {
     
     //MARK Movies Methods
-    func getPopularityMovies() -> Promise<ResponseContent> {
+    func getContentForMovies(resourceIn: APIResource) -> Promise<ResponseContent> {
         let params: Parameters = [
             "api_key" : getAPIKey()
         ]
         
-        let request = APIRequest.sharedInstance.makeRequest(resourseIn: .getPopularityMovies, typeIn: ResponseContent.self, parametersIn: params, encodingIn: URLEncoding(destination: .queryString), headersIn: buildHeaders())
+        let request = APIRequest.sharedInstance.makeRequest(resourseIn: resourceIn, typeIn: ResponseContent.self, parametersIn: params, encodingIn: URLEncoding(destination: .queryString), headersIn: buildHeaders())
         return excRequest(requestIn: request)
     }
+    
+    func getGenres() -> Promise<ResponseGenre> {
+        let params: Parameters = [
+            "api_key" : getAPIKey()
+        ]
+        
+        let request = APIRequest.sharedInstance.makeRequest(resourseIn: .getGenres, typeIn: ResponseGenre.self, parametersIn: params, encodingIn: URLEncoding(destination: .queryString), headersIn: buildHeaders())
+        return excRequest(requestIn: request)
+    }
+    
 }

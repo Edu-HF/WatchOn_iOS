@@ -15,7 +15,7 @@ protocol EndPointType {
 }
 
 enum APIResource {
-    case getPopularityMovies, getTopRatedMovies, getUpcomingMovies, getPopularitySeries, getTopRatedSeries, getUpcomingSeries
+    case getDiscoverMovies, getTrendingMovies, getPopularityMovies, getTopRatedMovies, getUpcomingMovies, getPopularitySeries, getTopRatedSeries, getUpcomingSeries, getGenres
 }
 
 struct APIError: Codable {
@@ -37,18 +37,21 @@ extension APIResource: EndPointType {
     
     var urlPath: String {
         switch self {
+            case .getDiscoverMovies: return "/discover/movie"
+            case .getTrendingMovies: return "/trending/all/day"
             case .getPopularityMovies: return "/movie/popular"
             case .getTopRatedMovies: return "/movie/top_rated"
             case .getUpcomingMovies: return "/movie/upcoming"
             case .getPopularitySeries: return "/tv/popular"
             case .getTopRatedSeries: return "/tv/top_rated"
             case .getUpcomingSeries: return "/tv/latest"
+            case .getGenres: return "/genre/movie/list"
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .getPopularityMovies, .getTopRatedMovies, .getUpcomingMovies, .getPopularitySeries, .getTopRatedSeries, .getUpcomingSeries: return .get
+        case .getDiscoverMovies, .getTrendingMovies, .getPopularityMovies, .getTopRatedMovies, .getUpcomingMovies, .getPopularitySeries, .getTopRatedSeries, .getUpcomingSeries, .getGenres: return .get
         }
     }
 }

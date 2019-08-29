@@ -39,7 +39,7 @@ class MoviesListViewController: BaseViewController {
             self.moviesTV.reloadData()
         }
         
-        contentPresenter.getPopularityMovies()
+        contentPresenter.getGenresMovies()
     }
 }
 
@@ -69,12 +69,15 @@ extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
         case .Section:
             
             let sectionCell = tableView.dequeueReusableCell(withIdentifier: "ContentSectionCell") as! ContentSectionTableViewCell
+            sectionCell.setupCell(titleIn: contentPresenter.mainContentData.value[indexPath.row].contentTitle ?? "")
             return sectionCell
+            
         case .ContentA, .ContentB:
             
             let contentCell = tableView.dequeueReusableCell(withIdentifier: "ContentTableCell") as! ContentTableViewCell
             contentCell.setupCell(contentTypeIn: contentPresenter.mainContentData.value[indexPath.row].contentType, onContenttappedIn: self)
             return contentCell
+            
         default:
             return UITableViewCell()
         }

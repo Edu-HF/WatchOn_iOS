@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34779F0F23160FD30095BEAD /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34779F0E23160FD30095BEAD /* Genre.swift */; };
 		3512AE2DB5D34F755D0D29A0 /* Pods_WatchOnTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDEEFFE589F57709F41FFF02 /* Pods_WatchOnTests.framework */; };
 		3C1471FD22D12599000AE37D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1471FC22D12599000AE37D /* AppDelegate.swift */; };
 		3C14720222D12599000AE37D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C14720022D12599000AE37D /* Main.storyboard */; };
@@ -78,6 +79,7 @@
 /* Begin PBXFileReference section */
 		19FC964AE8E8C45210AD9F70 /* Pods-WatchOn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchOn.release.xcconfig"; path = "Target Support Files/Pods-WatchOn/Pods-WatchOn.release.xcconfig"; sourceTree = "<group>"; };
 		2D387619911A366FC3E6E0FB /* Pods-WatchOnTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchOnTests.release.xcconfig"; path = "Target Support Files/Pods-WatchOnTests/Pods-WatchOnTests.release.xcconfig"; sourceTree = "<group>"; };
+		34779F0E23160FD30095BEAD /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		3C1471F922D12599000AE37D /* WatchOn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchOn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C1471FC22D12599000AE37D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C14720122D12599000AE37D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 				3C3DEC1A22D3A38000A358CD /* MainContent.swift */,
 				3C8BF6D022E5175F006FE7BF /* Content.swift */,
 				3CCADD3222D53B9000AA0D32 /* User.swift */,
+				34779F0E23160FD30095BEAD /* Genre.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -624,6 +627,7 @@
 				3CF7303922D27297009236D7 /* SplashViewController.swift in Sources */,
 				3C3F362622D6D70400E05672 /* DetailRatingTableViewCell.swift in Sources */,
 				3C8BF6DB22E51F9A006FE7BF /* ContentService.swift in Sources */,
+				34779F0F23160FD30095BEAD /* Genre.swift in Sources */,
 				3CBA7B4822DFF36400E41AA5 /* UserProfileCardView.swift in Sources */,
 				3C8BF6D422E51CFC006FE7BF /* APIRequest.swift in Sources */,
 				3CCADD3322D53B9000AA0D32 /* User.swift in Sources */,

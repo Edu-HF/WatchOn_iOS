@@ -11,7 +11,7 @@ import Foundation
 struct MainContent {
     
     var contentType: ContentKind
-    var contentTitle: String
-    var mainContents: [Content] = []
+    var contentTitle: String?
+    var mainContents: [Content]? = []
     
 }

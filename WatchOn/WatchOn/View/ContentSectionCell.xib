@@ -36,6 +36,9 @@
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="sectionTitleLB" destination="or2-VP-rfO" id="V7X-B3-cCs"/>
+            </connections>
             <point key="canvasLocation" x="8.6956521739130448" y="1.6741071428571428"/>
         </tableViewCell>
     </objects>

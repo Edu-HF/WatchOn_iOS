@@ -13,7 +13,7 @@ class ContentTableViewCell: UITableViewCell {
     @IBOutlet weak var contentCV: UICollectionView!
     private var contentType: ContentKind!
     private var onContentTapped: ContentTappedProtocol!
-    var numItemsTest: [Int] = []
+    private var mainContentData: [Content] = []
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,20 +26,19 @@ class ContentTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setupCell(contentTypeIn: ContentKind, onContenttappedIn: ContentTappedProtocol) {
+    func setupCell(mainContentIn: MainContent, onContenttappedIn: ContentTappedProtocol) {
         
         self.onContentTapped = onContenttappedIn
-        self.contentType = contentTypeIn
-        numItemsTest = [1,2,3,4,5,6]
+        self.contentType = mainContentIn.contentType
+        self.mainContentData = mainContentIn.mainContents ?? []
         
         contentCV.register(UINib.init(nibName: "ContentCellA", bundle: nil), forCellWithReuseIdentifier: "ContentCellA")
         contentCV.register(UINib.init(nibName: "ContentCellB", bundle: nil), forCellWithReuseIdentifier: "ContentCellB")
-        
+        contentCV.register(UINib.init(nibName: "ContentCellC", bundle: nil), forCellWithReuseIdentifier: "ContentCellC")
         contentCV.delegate = self
         contentCV.dataSource = self
         
         contentCV.reloadData()
-        
     }
 
 }
@@ -47,7 +46,13 @@ class ContentTableViewCell: UITableViewCell {
 extension ContentTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return numItemsTest.count
+        
+        switch contentType {
+        case .ContentC?:
+            return 1
+        default:
+            return mainContentData.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -55,12 +60,21 @@ extension ContentTableViewCell: UICollectionViewDataSource, UICollectionViewDele
         switch contentType {
         case .ContentA?:
             let contentACell = collectionView.dequeueReusableCell(withReuseIdentifier: "ContentCellA", for: indexPath) as! ContentACollectionViewCell
+            contentACell.setupCell(contentIn: mainContentData[indexPath.row])
             
             return contentACell
         case .ContentB?:
             let contentBCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ContentCellB", for: indexPath) as! ContentBCollectionViewCell
+            contentBCell.setupCell(contentIn: mainContentData[indexPath.row])
             
             return contentBCell
+            
+        case .ContentC?:
+            let contentCCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ContentCellC", for: indexPath) as! ContentCCollectionViewCell
+            contentCCell.setupCell(contentDataIn: mainContentData)
+    
+            return contentCCell
+            
         default:
             return UICollectionViewCell()
         }
@@ -81,6 +95,9 @@ extension ContentTableViewCell: UICollectionViewDelegateFlowLayout {
         case .ContentB?:
             cellWidth = 150
             cellHeight = 255
+        case .ContentC?:
+            cellWidth = UIScreen.main.bounds.width
+            cellHeight = 400
         default:
             cellWidth = 256
             cellHeight = 140

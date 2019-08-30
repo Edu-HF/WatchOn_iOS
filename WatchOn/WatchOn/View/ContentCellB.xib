@@ -83,6 +83,11 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="FrL-Sx-Bwa"/>
             <size key="customSize" width="150" height="256"/>
+            <connections>
+                <outlet property="contentCellDescripLB" destination="2EE-9f-7Or" id="CSg-X6-gDC"/>
+                <outlet property="contentCellIMG" destination="nUT-F4-xuZ" id="uOY-tl-6bN"/>
+                <outlet property="contentCellTitleLB" destination="fyz-7Y-zTI" id="MjQ-1x-4Qk"/>
+            </connections>
             <point key="canvasLocation" x="33.333333333333336" y="96.09375"/>
         </collectionViewCell>
     </objects>

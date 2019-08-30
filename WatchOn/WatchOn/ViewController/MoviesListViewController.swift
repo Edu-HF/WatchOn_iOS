@@ -58,8 +58,8 @@ extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
             return 150.0
         case .ContentB:
             return 260.0
-        default:
-            return 40.0
+        case .ContentC:
+            return 400.0
         }
     }
     
@@ -72,14 +72,12 @@ extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
             sectionCell.setupCell(titleIn: contentPresenter.mainContentData.value[indexPath.row].contentTitle ?? "")
             return sectionCell
             
-        case .ContentA, .ContentB:
+        case .ContentA, .ContentB, .ContentC:
             
             let contentCell = tableView.dequeueReusableCell(withIdentifier: "ContentTableCell") as! ContentTableViewCell
-            contentCell.setupCell(contentTypeIn: contentPresenter.mainContentData.value[indexPath.row].contentType, onContenttappedIn: self)
+            contentCell.setupCell(mainContentIn: contentPresenter.mainContentData.value[indexPath.row], onContenttappedIn: self)
             return contentCell
             
-        default:
-            return UITableViewCell()
         }
     }
 }

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		34779F0F23160FD30095BEAD /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34779F0E23160FD30095BEAD /* Genre.swift */; };
+		349A18D62318A54A00143F86 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349A18D52318A54A00143F86 /* String+Extensions.swift */; };
+		349A18D82318BEDD00143F86 /* ContentCellC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 349A18D72318BEDD00143F86 /* ContentCellC.xib */; };
+		349A18DA2318C28900143F86 /* ContentCCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349A18D92318C28900143F86 /* ContentCCollectionViewCell.swift */; };
 		3512AE2DB5D34F755D0D29A0 /* Pods_WatchOnTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDEEFFE589F57709F41FFF02 /* Pods_WatchOnTests.framework */; };
 		3C1471FD22D12599000AE37D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1471FC22D12599000AE37D /* AppDelegate.swift */; };
 		3C14720222D12599000AE37D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C14720022D12599000AE37D /* Main.storyboard */; };
@@ -80,6 +83,9 @@
 		19FC964AE8E8C45210AD9F70 /* Pods-WatchOn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchOn.release.xcconfig"; path = "Target Support Files/Pods-WatchOn/Pods-WatchOn.release.xcconfig"; sourceTree = "<group>"; };
 		2D387619911A366FC3E6E0FB /* Pods-WatchOnTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchOnTests.release.xcconfig"; path = "Target Support Files/Pods-WatchOnTests/Pods-WatchOnTests.release.xcconfig"; sourceTree = "<group>"; };
 		34779F0E23160FD30095BEAD /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		349A18D52318A54A00143F86 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		349A18D72318BEDD00143F86 /* ContentCellC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentCellC.xib; sourceTree = "<group>"; };
+		349A18D92318C28900143F86 /* ContentCCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCCollectionViewCell.swift; sourceTree = "<group>"; };
 		3C1471F922D12599000AE37D /* WatchOn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchOn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C1471FC22D12599000AE37D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C14720122D12599000AE37D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -287,6 +293,7 @@
 			children = (
 				3CF7303A22D29F44009236D7 /* ContentCellA.xib */,
 				3CF7303C22D2C0AF009236D7 /* ContentCellB.xib */,
+				349A18D72318BEDD00143F86 /* ContentCellC.xib */,
 				3CF7303E22D2C6CE009236D7 /* ContentSectionCell.xib */,
 				3CF7304222D39D0F009236D7 /* ContentTableCell.xib */,
 				3CCADD3622D5448D00AA0D32 /* SplashViewController.xib */,
@@ -314,6 +321,7 @@
 			children = (
 				3C3DEC1E22D3A6C100A358CD /* UIColor+Extensions.swift */,
 				3CCADD3422D541F400AA0D32 /* UIViewController+Extensions.swift */,
+				349A18D52318A54A00143F86 /* String+Extensions.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -341,6 +349,7 @@
 			children = (
 				3C3DEC1222D39DB700A358CD /* ContentACollectionViewCell.swift */,
 				3C3DEC1422D39DC600A358CD /* ContentBCollectionViewCell.swift */,
+				349A18D92318C28900143F86 /* ContentCCollectionViewCell.swift */,
 				3C3DEC1622D39E0000A358CD /* ContentSectionTableViewCell.swift */,
 				3C3DEC1822D39E2100A358CD /* ContentTableViewCell.swift */,
 				3C3F361B22D6C97700E05672 /* DetailCoverCellTableViewCell.swift */,
@@ -507,6 +516,7 @@
 				3CCADD3922D544F000AA0D32 /* LoginViewController.xib in Resources */,
 				3C7B200E22DEB595001A4732 /* UserProfileCardView.xib in Resources */,
 				3C3F362422D6D65E00E05672 /* DetailRatingCell.xib in Resources */,
+				349A18D82318BEDD00143F86 /* ContentCellC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -627,6 +637,8 @@
 				3CF7303922D27297009236D7 /* SplashViewController.swift in Sources */,
 				3C3F362622D6D70400E05672 /* DetailRatingTableViewCell.swift in Sources */,
 				3C8BF6DB22E51F9A006FE7BF /* ContentService.swift in Sources */,
+				349A18DA2318C28900143F86 /* ContentCCollectionViewCell.swift in Sources */,
+				349A18D62318A54A00143F86 /* String+Extensions.swift in Sources */,
 				34779F0F23160FD30095BEAD /* Genre.swift in Sources */,
 				3CBA7B4822DFF36400E41AA5 /* UserProfileCardView.swift in Sources */,
 				3C8BF6D422E51CFC006FE7BF /* APIRequest.swift in Sources */,

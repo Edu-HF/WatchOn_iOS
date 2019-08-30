@@ -60,9 +60,13 @@ class ContentPresenter: NSObject {
                     self.mainContentData.value.append(MainContent(contentType: .Section, contentTitle: contentForCategoryIn.rawValue, mainContents: nil))
                     mContent = MainContent(contentType: .ContentA, contentTitle: nil, mainContents: [])
                 case .upcomingMovies:
-                    self.mainContentData.value.append(MainContent(contentType: .Section, contentTitle: contentForCategoryIn.rawValue, mainContents: nil))
-                    mContent = MainContent(contentType: .ContentB, contentTitle: nil, mainContents: [])
-                
+                    
+                    mContent = MainContent(contentType: .ContentC, contentTitle: nil, mainContents: [])
+                    for content in cResults {
+                        mContent.mainContents?.append(content)
+                    }
+                    self.mainContentData.value.insert(mContent, at: 0)
+                    return
                 }
                 
                 for content in cResults {

@@ -15,7 +15,7 @@ protocol EndPointType {
 }
 
 enum APIResource {
-    case getDiscoverMovies, getTrendingMovies, getPopularityMovies, getTopRatedMovies, getUpcomingMovies, getPopularitySeries, getTopRatedSeries, getUpcomingSeries, getGenres
+    case getDiscoverMovies, getTrendingMovies, getPopularityMovies, getTopRatedMovies, getUpcomingMovies, getPopularitySeries, getTopRatedSeries, getUpcomingSeries, getGenres, getCast
 }
 
 struct APIError: Codable {
@@ -29,6 +29,7 @@ struct APIErrorDesc: Codable {
 }
 
 extension APIResource: EndPointType {
+
     var baseURL: URL {
         let mainDict = Bundle.main.infoDictionary
         let bURL = mainDict?["SERVER_URL"] as! String
@@ -46,12 +47,13 @@ extension APIResource: EndPointType {
             case .getTopRatedSeries: return "/tv/top_rated"
             case .getUpcomingSeries: return "/tv/latest"
             case .getGenres: return "/genre/movie/list"
+            case .getCast: return "/movie/"
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .getDiscoverMovies, .getTrendingMovies, .getPopularityMovies, .getTopRatedMovies, .getUpcomingMovies, .getPopularitySeries, .getTopRatedSeries, .getUpcomingSeries, .getGenres: return .get
+        case .getDiscoverMovies, .getTrendingMovies, .getPopularityMovies, .getTopRatedMovies, .getUpcomingMovies, .getPopularitySeries, .getTopRatedSeries, .getUpcomingSeries, .getGenres, .getCast: return .get
         }
     }
 }

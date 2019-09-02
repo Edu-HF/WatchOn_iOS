@@ -10,7 +10,7 @@ import Foundation
 
 struct Content: Codable {
     
-    var contentID: Double
+    var contentID: Int
     var contentTitle: String
     var contentPupularity: Double?
     var contentPosterPath: String?
@@ -21,6 +21,8 @@ struct Content: Codable {
     var contentReleaseDate: String?
     var contentVoteNum: Double?
     var contentVoteAverage: Double?
+    var contentGenrersID: [Int]?
+    var contentCast: DynamicType<[CastMember]> = DynamicType([])
     
     init() {
         
@@ -35,6 +37,8 @@ struct Content: Codable {
         contentReleaseDate = ""
         contentVoteNum = 0
         contentVoteAverage = 0
+        contentGenrersID = []
+        contentCast.value = []
     }
     
     enum CodingKeys: String, CodingKey {
@@ -50,6 +54,7 @@ struct Content: Codable {
         case contentReleaseDate = "release_date"
         case contentVoteNum = "vote_count"
         case contentVoteAverage = "vote_average"
+        case contentGenrersID = "genre_ids"
     }
 
 }

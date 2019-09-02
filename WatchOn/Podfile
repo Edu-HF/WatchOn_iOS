@@ -11,6 +11,7 @@ target 'WatchOn' do
   pod 'ReachabilitySwift'
   pod 'SwiftyJSON'
   pod 'Nuke'
+  pod 'Toucan'
   
   target 'WatchOnTests' do
     inherit! :search_paths

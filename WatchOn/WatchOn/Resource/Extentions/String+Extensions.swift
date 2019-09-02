@@ -16,4 +16,27 @@ extension String {
         return bURL + self
     }
     
+    func buildGenderNamesString(contentGenrersIn: [Int]) -> String {
+        
+        let genders = ContentPresenter.sharedIntance.mainGenresData.value
+        var index: Int = 0
+        var genres: String = ""
+        for cGenreID in genders {
+            for genreID in contentGenrersIn {
+                if index == 4 {
+                    break
+                }
+                if genreID == cGenreID.genreID {
+                    index += 1
+                    genres = genres + cGenreID.genreName
+                    genres += " • "
+                }
+            }
+        }
+        
+        if genres.count > 3 {
+            genres.remove(at: genres.index(genres.endIndex, offsetBy: -2))
+        }
+        return genres
+    }
 }

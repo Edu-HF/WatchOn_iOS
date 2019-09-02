@@ -31,4 +31,14 @@ class ContentService: BaseService {
         return excRequest(requestIn: request)
     }
     
+    func getCast(contentIn: Content) -> Promise<ResponseCast> {
+        let params: Parameters = [
+            "api_key" : getAPIKey()
+        ]
+        
+        let castMainURL = APIResource.getCast.baseURL.appendingPathComponent(APIResource.getCast.urlPath + "\(contentIn.contentID)/credits")
+        
+        let request = APIRequest.sharedInstance.makeRequest(resourseIn: APIResource.getCast, typeIn: ResponseCast.self, parametersIn: params, encodingIn: URLEncoding(destination: .queryString), headersIn: buildHeaders(), mutableURL: castMainURL)
+        return excRequest(requestIn: request)
+    }
 }

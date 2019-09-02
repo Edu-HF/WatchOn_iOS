@@ -24,10 +24,21 @@ enum ContentCategoryMovies: String {
 class ContentPresenter: NSObject {
     
     //MARK: - Properties
+    //static let sharedIntance: ContentPresenter = ContentPresenter()
+    private let contentWS: ContentService = ContentService()
     var mainContentData: DynamicType<[MainContent]> = DynamicType([])
     var mainGenresData: DynamicType<[Genre]> = DynamicType([])
-    private let contentWS: ContentService = ContentService()
+    var mainContentSelected: Content!
     
+    class var sharedIntance: ContentPresenter {
+        struct Static {
+            static let instance: ContentPresenter = ContentPresenter()
+        }
+        
+        return Static.instance
+    }
+    
+    override init() {}
     
     //MARK: - Public Methods
     func getAllContentForMovies() {
@@ -58,7 +69,7 @@ class ContentPresenter: NSObject {
                     mContent = MainContent(contentType: .ContentA, contentTitle: nil, mainContents: [])
                 case .topRatedMovies:
                     self.mainContentData.value.append(MainContent(contentType: .Section, contentTitle: contentForCategoryIn.rawValue, mainContents: nil))
-                    mContent = MainContent(contentType: .ContentA, contentTitle: nil, mainContents: [])
+                    mContent = MainContent(contentType: .ContentB, contentTitle: nil, mainContents: [])
                 case .upcomingMovies:
                     
                     mContent = MainContent(contentType: .ContentC, contentTitle: nil, mainContents: [])
@@ -92,6 +103,18 @@ class ContentPresenter: NSObject {
             
             }.catch{ error in
                 print("error")
+        }
+    }
+    
+    func getCast(contentIn: Content) {
+        
+        contentWS.getCast(contentIn: contentIn).done { castIn in
+            
+            if let tempCastData = castIn.cast {
+                self.mainContentSelected.contentCast.value  = tempCastData
+            }
+            }.catch{ error in
+                print(error)
         }
     }
 }

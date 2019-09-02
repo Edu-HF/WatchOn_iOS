@@ -12,22 +12,29 @@ import Nuke
 class ContentCCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var contentCellIMG: UIImageView!
+    @IBOutlet weak var contentBGView: UIView!
     @IBOutlet weak var contentCellTitleLB: UILabel!
     @IBOutlet weak var contentCellCategoriesLB: UILabel!
     
     private var mainContentData: [Content] = []
     private var cTimer: Timer!
     private var currentIndex: Int = 0
-    private let loadIMGOptions = ImageLoadingOptions(
-        placeholder: UIImage(named: ""),
-        transition: .fadeIn(duration: 0.33)
-    )
+    private var contentTapped: ContentTappedProtocol!
+    
+    override var isSelected: Bool {
+        didSet {
+            if self.isSelected {
+                contentTapped.onContentTapped(contentIn: mainContentData[currentIndex])
+            }
+        }
+    }
     
     // MARK: Cell Methods
-    func setupCell(contentDataIn: [Content]) {
+    func setupCell(contentDataIn: [Content], onContentTappedIn: ContentTappedProtocol) {
         
+        contentBGView.applyGradientFromBottom(colorIn: .homeBackground2)
         mainContentData = contentDataIn
-        
+        contentTapped = onContentTappedIn
         cTimer != nil ? cTimer.invalidate() : self.updateContent()
         cTimer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true, block: { _ in
             self.changeContent()
@@ -52,14 +59,16 @@ class ContentCCollectionViewCell: UICollectionViewCell {
         DispatchQueue.main.async {
             if let posterPath = self.mainContentData[self.currentIndex].contentPosterPath {
                 if let posterURL = URL(string: posterPath.buildURLStringIMG()) {
-                    Nuke.loadImage(with: posterURL, options: self.loadIMGOptions, into: self.contentCellIMG)
-                    self.contentCellIMG.contentMode = .scaleAspectFill
+                    Nuke.loadImage(with: posterURL, options: ImageLoadingOptions().loadIMGBaseOptions(), into: self.contentCellIMG, progress: nil, completion: { _ in
+                        self.contentCellIMG.resizeIMGToFrame()
+                    })
                 }
             }
         }
         
         contentCellTitleLB.text = mainContentData[currentIndex].contentTitle
-        contentCellCategoriesLB.text = "TRAMA - ACTION - AVENTURA"
+        contentCellCategoriesLB.text = String().buildGenderNamesString(contentGenrersIn: mainContentData[currentIndex].contentGenrersID ?? [])
     }
     
 }
+

@@ -15,6 +15,9 @@ extension UIColor {
     @nonobjc class var homeBackground: UIColor {
         return UIColor(red: 29.0 / 255.0, green: 27.0 / 255.0, blue: 30.0 / 255.0, alpha: 1.0)
     }
+    @nonobjc class var homeBackground2: UIColor {
+        return UIColor(red: 38.0 / 255.0, green: 38.0 / 255.0, blue: 64.0 / 255.0, alpha: 1.0)
+    }
     @nonobjc class var dark: UIColor {
         return UIColor(red: 7.0 / 255.0, green: 5.0 / 255.0, blue: 23.0 / 255.0, alpha: 1.0)
     }
@@ -29,5 +32,11 @@ extension UIColor {
     }
     @nonobjc class var darkGrayTwo: UIColor {
         return UIColor(red: 52.0 / 255.0, green: 49.0 / 255.0, blue: 50.0 / 255.0, alpha: 1.0)
+    }
+    @nonobjc class var btnGreenColor: UIColor {
+        return UIColor(red: 23, green: 186, blue: 134, alpha: 1.0)
+    }
+    @nonobjc class var btnGrayDarkColor: UIColor {
+        return UIColor(red: 19, green: 20, blue: 44, alpha: 1.0)
     }
 }

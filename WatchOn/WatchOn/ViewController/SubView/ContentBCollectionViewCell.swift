@@ -15,11 +15,6 @@ class ContentBCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var contentCellTitleLB: UILabel!
     @IBOutlet weak var contentCellDescripLB: UILabel!
     
-    private let loadIMGOptions = ImageLoadingOptions(
-        placeholder: UIImage(named: ""),
-        transition: .fadeIn(duration: 0.33)
-    )
-    
     // MARK: Cell Methods
     override func prepareForReuse() {
         contentCellIMG.image = nil
@@ -32,8 +27,9 @@ class ContentBCollectionViewCell: UICollectionViewCell {
         DispatchQueue.main.async {
             if let posterPath = contentIn.contentPosterPath {
                 if let posterURL = URL(string: posterPath.buildURLStringIMG()) {
-                    Nuke.loadImage(with: posterURL, options: self.loadIMGOptions, into: self.contentCellIMG)
-                    self.contentCellIMG.contentMode = .scaleAspectFill
+                    Nuke.loadImage(with: posterURL, options: ImageLoadingOptions().loadIMGBaseOptions(), into: self.contentCellIMG, progress: nil, completion: { _ in
+                        self.contentCellIMG.resizeIMGToFrame()
+                    })
                 }
             }
         }

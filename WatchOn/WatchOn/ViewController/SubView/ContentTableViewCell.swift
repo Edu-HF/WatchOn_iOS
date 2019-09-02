@@ -71,7 +71,7 @@ extension ContentTableViewCell: UICollectionViewDataSource, UICollectionViewDele
             
         case .ContentC?:
             let contentCCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ContentCellC", for: indexPath) as! ContentCCollectionViewCell
-            contentCCell.setupCell(contentDataIn: mainContentData)
+            contentCCell.setupCell(contentDataIn: mainContentData, onContentTappedIn: onContentTapped)
     
             return contentCCell
             
@@ -81,7 +81,9 @@ extension ContentTableViewCell: UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.onContentTapped.onContentTapped()
+        if contentType == .ContentA || contentType == .ContentB {
+            onContentTapped.onContentTapped(contentIn: mainContentData[indexPath.row])
+        }
     }
 }
 

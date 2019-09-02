@@ -16,9 +16,10 @@ class BaseViewController: UIViewController {
     }
     
     fileprivate func setupStandarView() {
+        
         self.navigationController?.navigationBar.barStyle = UIBarStyle.black
         self.navigationController?.navigationBar.barTintColor = .darkTwo
         self.tabBarController?.tabBar.barTintColor = .darkTwo
-        self.view.backgroundColor = .darkThree
+        self.view.backgroundColor = .homeBackground2
     }
 }

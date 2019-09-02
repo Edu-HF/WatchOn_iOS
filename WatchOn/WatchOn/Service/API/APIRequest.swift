@@ -21,8 +21,8 @@ class APIRequest {
     
     static let sharedInstance = APIRequest()
     
-    func makeRequest<T: Codable>(resourseIn: APIResource, typeIn: T.Type, parametersIn: Parameters? = nil, encodingIn: URLEncoding? = nil, headersIn: HTTPHeaders? = nil) -> Promise<T> {
-        let mainURL = resourseIn.baseURL.appendingPathComponent(resourseIn.urlPath)
+    func makeRequest<T: Codable>(resourseIn: APIResource, typeIn: T.Type, parametersIn: Parameters? = nil, encodingIn: URLEncoding? = nil, headersIn: HTTPHeaders? = nil, mutableURL: URL? = nil) -> Promise<T> {
+        let mainURL: URL = (mutableURL != nil) ? mutableURL ?? resourseIn.baseURL.appendingPathComponent(resourseIn.urlPath) : resourseIn.baseURL.appendingPathComponent(resourseIn.urlPath)
         
         var mainRequest: DataRequest!
         

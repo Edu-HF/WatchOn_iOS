@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14835.7" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14790.5"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -13,41 +15,43 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hsg-B9-NWo" id="vFT-6Z-por">
-                <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                <rect key="frame" x="0.0" y="0.0" width="414" height="299.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W1r-5q-jza">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="299.5"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CoverTest_IMG" translatesAutoresizingMaskIntoConstraints="NO" id="X8c-Zu-Ojl">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMGPlaceHolder_IC" translatesAutoresizingMaskIntoConstraints="NO" id="X8c-Zu-Ojl">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="298"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C2O-mI-1T9">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="299.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marvel Studios" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFY-Pm-KdF">
-                                <rect key="frame" x="8" y="266" width="398" height="24"/>
+                                <rect key="frame" x="8" y="265.5" width="398" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avengers: EndGame" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zPk-lR-CHe">
-                                <rect key="frame" x="8" y="232" width="398" height="30"/>
+                                <rect key="frame" x="8" y="231.5" width="398" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sio-mD-yIh">
-                                <rect key="frame" x="184" y="135" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="SFY-Pm-KdF" firstAttribute="top" secondItem="zPk-lR-CHe" secondAttribute="bottom" constant="4" id="1t9-Lb-9T0"/>
-                            <constraint firstItem="sio-mD-yIh" firstAttribute="centerX" secondItem="W1r-5q-jza" secondAttribute="centerX" id="8Xw-SY-NBy"/>
-                            <constraint firstItem="sio-mD-yIh" firstAttribute="centerY" secondItem="W1r-5q-jza" secondAttribute="centerY" id="92u-sB-GPU"/>
+                            <constraint firstAttribute="trailing" secondItem="C2O-mI-1T9" secondAttribute="trailing" id="27G-ZE-fQp"/>
+                            <constraint firstAttribute="bottom" secondItem="C2O-mI-1T9" secondAttribute="bottom" id="2Hj-Zp-jv6"/>
                             <constraint firstItem="SFY-Pm-KdF" firstAttribute="leading" secondItem="W1r-5q-jza" secondAttribute="leading" constant="8" id="BGD-AX-9bn"/>
                             <constraint firstAttribute="trailing" secondItem="zPk-lR-CHe" secondAttribute="trailing" constant="8" id="F2s-V6-hQv"/>
-                            <constraint firstAttribute="bottom" secondItem="X8c-Zu-Ojl" secondAttribute="bottom" id="X0P-EY-70g"/>
+                            <constraint firstItem="C2O-mI-1T9" firstAttribute="leading" secondItem="W1r-5q-jza" secondAttribute="leading" id="R0k-YT-7zA"/>
+                            <constraint firstAttribute="bottom" secondItem="X8c-Zu-Ojl" secondAttribute="bottom" constant="1.5" id="X0P-EY-70g"/>
                             <constraint firstAttribute="trailing" secondItem="X8c-Zu-Ojl" secondAttribute="trailing" id="ZWx-d1-RhJ"/>
+                            <constraint firstItem="C2O-mI-1T9" firstAttribute="top" secondItem="W1r-5q-jza" secondAttribute="top" id="b9K-93-Lwp"/>
                             <constraint firstItem="X8c-Zu-Ojl" firstAttribute="top" secondItem="W1r-5q-jza" secondAttribute="top" id="gJZ-Sb-UWS"/>
                             <constraint firstItem="zPk-lR-CHe" firstAttribute="leading" secondItem="W1r-5q-jza" secondAttribute="leading" constant="8" id="hbA-LB-5iP"/>
                             <constraint firstAttribute="trailing" secondItem="SFY-Pm-KdF" secondAttribute="trailing" constant="8" id="pJd-Hc-ppl"/>
@@ -65,15 +69,15 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="coverBGView" destination="C2O-mI-1T9" id="j7c-xT-6UB"/>
                 <outlet property="coverDescripLb" destination="SFY-Pm-KdF" id="TW3-os-NU8"/>
                 <outlet property="coverIMG" destination="X8c-Zu-Ojl" id="ubt-u7-MUb"/>
-                <outlet property="coverPlayBtn" destination="sio-mD-yIh" id="R5l-hM-qPQ"/>
                 <outlet property="coverTitleLb" destination="zPk-lR-CHe" id="TCo-3t-W9B"/>
             </connections>
             <point key="canvasLocation" x="-130.43478260869566" y="127.90178571428571"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="CoverTest_IMG" width="447" height="679"/>
+        <image name="IMGPlaceHolder_IC" width="1024" height="1024"/>
     </resources>
 </document>

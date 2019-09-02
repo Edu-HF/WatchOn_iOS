@@ -24,4 +24,8 @@ class DetailSinoxisTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         sinoxisLb.text = ""
     }
+    
+    func setupCell(contentIn: Content) {
+        sinoxisLb.text = contentIn.contentSinoxsis
+    }
 }

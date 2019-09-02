@@ -9,13 +9,13 @@
 import UIKit
 
 protocol ContentTappedProtocol {
-    func onContentTapped()
+    func onContentTapped(contentIn: Content)
 }
 
 class MoviesListViewController: BaseViewController {
     
     @IBOutlet weak var moviesTV: UITableView!
-    var contentPresenter: ContentPresenter = ContentPresenter()
+    var contentPresenter: ContentPresenter = ContentPresenter.sharedIntance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,6 @@ class MoviesListViewController: BaseViewController {
     private func setupView() {
         
         setVCTitle(titleIn: "Movies")
-        
         moviesTV.register(UINib(nibName: "ContentSectionCell", bundle: nil), forCellReuseIdentifier: "ContentSectionCell")
         moviesTV.register(UINib(nibName: "ContentTableCell", bundle: nil), forCellReuseIdentifier: "ContentTableCell")
         
@@ -84,7 +83,8 @@ extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension MoviesListViewController: ContentTappedProtocol {
     
-    func onContentTapped() {
+    func onContentTapped(contentIn: Content) {
+        self.contentPresenter.mainContentSelected = contentIn
         let detailVC = DetailViewController(nibName: "DetailViewController", bundle: nil)
         self.navigationController?.pushViewController(detailVC, animated: true)
     }

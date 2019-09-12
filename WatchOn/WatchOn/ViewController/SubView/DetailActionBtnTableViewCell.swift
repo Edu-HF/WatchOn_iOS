@@ -10,6 +10,9 @@ import UIKit
 
 class DetailActionBtnTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var mainActionBtn: WButton!
+    @IBOutlet weak var actionFavBtn: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none

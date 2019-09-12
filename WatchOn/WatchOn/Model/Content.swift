@@ -23,6 +23,7 @@ struct Content: Codable {
     var contentVoteAverage: Double?
     var contentGenrersID: [Int]?
     var contentCast: DynamicType<[CastMember]> = DynamicType([])
+    var contentMedia: DynamicType<[MediaData]> = DynamicType([])
     
     init() {
         
@@ -39,6 +40,7 @@ struct Content: Codable {
         contentVoteAverage = 0
         contentGenrersID = []
         contentCast.value = []
+        contentMedia.value = []
     }
     
     enum CodingKeys: String, CodingKey {

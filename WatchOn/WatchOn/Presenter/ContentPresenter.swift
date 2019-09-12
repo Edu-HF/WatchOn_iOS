@@ -40,6 +40,22 @@ class ContentPresenter: NSObject {
     
     override init() {}
     
+    // MARK: - Private Methods
+    private func getMediaBaseURLString(siteIn: String) -> String? {
+        
+        print(MEDIAResourceKind.YouTube.rawValue)
+        
+        if siteIn.lowercased().contains(MEDIAResourceKind.YouTube.rawValue) {
+            return MEDIAResourceKind.YouTube.rawValue
+        }
+        
+        if siteIn.lowercased().contains(MEDIAResourceKind.Vimeo.rawValue) {
+            return MEDIAResourceKind.YouTube.rawValue
+        }
+        
+        return nil
+    }
+    
     //MARK: - Public Methods
     func getAllContentForMovies() {
         getContentForMovies(contentForCategoryIn: .discoverMovies, resourceIn: .getDiscoverMovies)
@@ -116,5 +132,32 @@ class ContentPresenter: NSObject {
             }.catch{ error in
                 print(error)
         }
+    }
+    
+    func getContentMedia(contentIn: Content) {
+        
+        contentWS.getContentMedia(contentIn: contentIn).done { mediaIn in
+            
+            if let tempMediaData = mediaIn.results {
+                self.mainContentSelected.contentMedia.value = tempMediaData
+            }
+            }.catch { error in
+                print(error)
+        }
+    }
+    
+    func getContentMediaURL() -> URL? {
+        
+        if self.mainContentSelected.contentMedia.value.count > 0 {
+            for mediaData in mainContentSelected.contentMedia.value {
+                if let mediaKey = mediaData.mKey {
+                    if let rURL = URL(string: MEDIAResourceKind.YouTube.rawValue + mediaKey) {
+                        return rURL
+                    }
+                }
+            }
+        }
+        
+        return nil
     }
 }

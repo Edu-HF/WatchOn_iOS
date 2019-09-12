@@ -21,9 +21,9 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FsD-GO-idY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="79.5"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6A-Tp-mkG">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6A-Tp-mkG" customClass="WButton" customModule="WatchOn" customModuleProvider="target">
                                 <rect key="frame" x="8" y="14" width="340" height="50"/>
-                                <color key="backgroundColor" red="0.71494632959365845" green="0.44222936034202576" blue="0.86278289556503296" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.090196078430000007" green="0.72941176470000002" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="jGL-wA-Zv6"/>
                                 </constraints>
@@ -34,6 +34,12 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="canChangeWhenTapped" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isOnlyImage" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="canReturnNormalState" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="bntStade">
+                                        <integer key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
@@ -49,6 +55,11 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="canChangeWhenTapped" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isOnlyImage" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="imageName" value="Fav"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="canReturnNormalState" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isCheckButton" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
@@ -70,6 +81,10 @@
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="actionFavBtn" destination="CTd-Vv-Vjv" id="Xce-KA-2Ly"/>
+                <outlet property="mainActionBtn" destination="p6A-Tp-mkG" id="xIe-Ug-YPw"/>
+            </connections>
             <point key="canvasLocation" x="-255.07246376811597" y="-267.1875"/>
         </tableViewCell>
     </objects>

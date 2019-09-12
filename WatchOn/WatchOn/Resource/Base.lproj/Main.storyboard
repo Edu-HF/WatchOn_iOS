@@ -69,12 +69,13 @@
         <scene sceneID="hKY-tA-DlT">
             <objects>
                 <tabBarController modalTransitionStyle="flipHorizontal" id="qWY-RG-4Fo" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Kxi-Kw-21n">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="Kxi-Kw-21n">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="selectedImageTintColor" red="0.074509803920000006" green="0.078431372550000003" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="E5y-VS-5e9" kind="relationship" relationship="viewControllers" id="fLV-gt-G8I"/>
@@ -86,14 +87,11 @@
             </objects>
             <point key="canvasLocation" x="1446" y="-518"/>
         </scene>
-        <!--Movies-->
+        <!--Navigation Controller-->
         <scene sceneID="ypH-ss-2bR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E5y-VS-5e9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Movies" image="MoviesOff_IC" selectedImage="MoviesOn_IC" id="QeA-4A-t4Y">
-                        <color key="badgeColor" red="0.074509803920000006" green="0.078431372550000003" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="3"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="" image="MoviesOff_IC" selectedImage="MoviesOn_IC" springLoaded="YES" id="QeA-4A-t4Y"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="64h-ra-cxK">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -111,13 +109,11 @@
             </objects>
             <point key="canvasLocation" x="-648" y="214"/>
         </scene>
-        <!--Series-->
+        <!--Navigation Controller-->
         <scene sceneID="6qh-Kg-jwy">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YxO-Ji-M67" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Series" image="TV0ff_IC" selectedImage="TVOn_IC" id="8ir-P6-6tj">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="3"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="" image="TV2Off_IC" selectedImage="TV2On_IC" springLoaded="YES" id="8ir-P6-6tj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YIt-Ag-jxJ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -151,15 +147,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1V6-Ev-v15" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3626" y="214"/>
+            <point key="canvasLocation" x="3624.6376811594205" y="213.61607142857142"/>
         </scene>
-        <!--Profile-->
+        <!--Navigation Controller-->
         <scene sceneID="0WE-lX-LUL">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OCO-tn-DyE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="UserOff_IC" selectedImage="UserOn_IC" id="1em-uC-MJ3">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="5"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="" image="UserOff_IC" selectedImage="UserOn_IC" springLoaded="YES" id="1em-uC-MJ3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9LY-A9-H51">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -179,11 +173,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="MoviesOff_IC" width="64" height="64"/>
-        <image name="MoviesOn_IC" width="64" height="64"/>
-        <image name="TV0ff_IC" width="64" height="64"/>
-        <image name="TVOn_IC" width="64" height="64"/>
-        <image name="UserOff_IC" width="64" height="64"/>
-        <image name="UserOn_IC" width="64" height="64"/>
+        <image name="MoviesOff_IC" width="48" height="48"/>
+        <image name="MoviesOn_IC" width="48" height="48"/>
+        <image name="TV2Off_IC" width="48" height="48"/>
+        <image name="TV2On_IC" width="48" height="48"/>
+        <image name="UserOff_IC" width="48" height="48"/>
+        <image name="UserOn_IC" width="48" height="48"/>
     </resources>
 </document>

@@ -9,7 +9,6 @@
 import Foundation
 import Alamofire
 import PromiseKit
-import SwiftKeychainWrapper
 
 enum RequestError: Error {
     case APIError(String)

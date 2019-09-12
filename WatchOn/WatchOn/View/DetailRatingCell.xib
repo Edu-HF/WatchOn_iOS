@@ -24,7 +24,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9kM-Jm-ii0">
                                 <rect key="frame" x="246" y="39.5" width="166" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J04-DT-1RB">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J04-DT-1RB" customClass="WButton" customModule="WatchOn" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -32,13 +32,18 @@
                                             <constraint firstAttribute="height" constant="50" id="CLz-dd-71q"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                        <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-50"/>
                                         <size key="titleShadowOffset" width="56" height="0.0"/>
-                                        <state key="normal" title="Calificar" backgroundImage="LikeOff_IC">
-                                            <color key="titleColor" red="0.074509803920000006" green="0.078431372550000003" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" image="LikeOff_IC">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="bntStade">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="btnIMGName" value="Like"/>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vas-JP-WC5">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vas-JP-WC5" customClass="WButton" customModule="WatchOn" customModuleProvider="target">
                                         <rect key="frame" x="58" y="0.0" width="50" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -46,13 +51,18 @@
                                             <constraint firstAttribute="height" constant="50" id="cGy-Rp-F3O"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                        <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-50"/>
                                         <size key="titleShadowOffset" width="56" height="0.0"/>
-                                        <state key="normal" title="Descargar" backgroundImage="StoreOff_IC">
+                                        <state key="normal" image="CloudOff_IC">
                                             <color key="titleColor" red="0.074509803921568626" green="0.078431372549019607" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="bntStade">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="btnIMGName" value="Cloud"/>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h10-lp-4Ys">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h10-lp-4Ys" customClass="WButton" customModule="WatchOn" customModuleProvider="target">
                                         <rect key="frame" x="116" y="0.0" width="50" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -60,11 +70,16 @@
                                             <constraint firstAttribute="width" constant="50" id="ix5-We-Rup"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                        <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-50"/>
                                         <size key="titleShadowOffset" width="56" height="0.0"/>
-                                        <state key="normal" title="Compartir" backgroundImage="SharedOff_IC">
+                                        <state key="normal" image="SharedOff_IC">
                                             <color key="titleColor" red="0.074509803920000006" green="0.078431372550000003" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="bntStade">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="btnIMGName" value="Shared"/>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -140,8 +155,8 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="CloudOff_IC" width="64" height="64"/>
         <image name="LikeOff_IC" width="64" height="64"/>
         <image name="SharedOff_IC" width="64" height="64"/>
-        <image name="StoreOff_IC" width="64" height="64"/>
     </resources>
 </document>

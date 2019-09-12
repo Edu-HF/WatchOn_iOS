@@ -7,10 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3450C80A23272B1D00A75ED4 /* PaymentCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3450C80923272B1D00A75ED4 /* PaymentCardTableViewCell.swift */; };
+		3450C80C23272B3600A75ED4 /* PaymentCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3450C80B23272B3600A75ED4 /* PaymentCardCell.xib */; };
 		34779F0F23160FD30095BEAD /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34779F0E23160FD30095BEAD /* Genre.swift */; };
+		3481CC51231F43520043B363 /* WButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3481CC50231F43520043B363 /* WButton.swift */; };
 		349A18D62318A54A00143F86 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349A18D52318A54A00143F86 /* String+Extensions.swift */; };
 		349A18D82318BEDD00143F86 /* ContentCellC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 349A18D72318BEDD00143F86 /* ContentCellC.xib */; };
 		349A18DA2318C28900143F86 /* ContentCCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349A18D92318C28900143F86 /* ContentCCollectionViewCell.swift */; };
+		34B294A52321E15B00BB20D7 /* MediaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B294A42321E15B00BB20D7 /* MediaData.swift */; };
+		34B294A72321EAB400BB20D7 /* MainMediaPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B294A62321EAB400BB20D7 /* MainMediaPlayerViewController.swift */; };
+		34B294A92321FE7F00BB20D7 /* MainMediaPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34B294A82321FE7F00BB20D7 /* MainMediaPlayerViewController.xib */; };
+		34B5B40D2329AE4200B4AB57 /* FavCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34B5B40C2329AE4200B4AB57 /* FavCell.xib */; };
+		34B5B40F2329B2B800B4AB57 /* FavTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B5B40E2329B2B800B4AB57 /* FavTableViewCell.swift */; };
+		34BD3B162323555400F1A620 /* LoadingContent.json in Resources */ = {isa = PBXBuildFile; fileRef = 34BD3B152323555400F1A620 /* LoadingContent.json */; };
+		34BFBE33231DEB3F0058B65F /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BFBE32231DEB3F0058B65F /* MainTabBarViewController.swift */; };
 		34D134A9231AF50A0053AA05 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D134A8231AF50A0053AA05 /* UIImageView+Extensions.swift */; };
 		34D134AB231B14CA0053AA05 /* CastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34D134AA231B14CA0053AA05 /* CastCell.xib */; };
 		34D134AD231B15880053AA05 /* CastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D134AC231B15880053AA05 /* CastCollectionViewCell.swift */; };
@@ -89,10 +99,20 @@
 /* Begin PBXFileReference section */
 		19FC964AE8E8C45210AD9F70 /* Pods-WatchOn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchOn.release.xcconfig"; path = "Target Support Files/Pods-WatchOn/Pods-WatchOn.release.xcconfig"; sourceTree = "<group>"; };
 		2D387619911A366FC3E6E0FB /* Pods-WatchOnTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchOnTests.release.xcconfig"; path = "Target Support Files/Pods-WatchOnTests/Pods-WatchOnTests.release.xcconfig"; sourceTree = "<group>"; };
+		3450C80923272B1D00A75ED4 /* PaymentCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCardTableViewCell.swift; sourceTree = "<group>"; };
+		3450C80B23272B3600A75ED4 /* PaymentCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentCardCell.xib; sourceTree = "<group>"; };
 		34779F0E23160FD30095BEAD /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		3481CC50231F43520043B363 /* WButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WButton.swift; sourceTree = "<group>"; };
 		349A18D52318A54A00143F86 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		349A18D72318BEDD00143F86 /* ContentCellC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentCellC.xib; sourceTree = "<group>"; };
 		349A18D92318C28900143F86 /* ContentCCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCCollectionViewCell.swift; sourceTree = "<group>"; };
+		34B294A42321E15B00BB20D7 /* MediaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaData.swift; sourceTree = "<group>"; };
+		34B294A62321EAB400BB20D7 /* MainMediaPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMediaPlayerViewController.swift; sourceTree = "<group>"; };
+		34B294A82321FE7F00BB20D7 /* MainMediaPlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMediaPlayerViewController.xib; sourceTree = "<group>"; };
+		34B5B40C2329AE4200B4AB57 /* FavCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavCell.xib; sourceTree = "<group>"; };
+		34B5B40E2329B2B800B4AB57 /* FavTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavTableViewCell.swift; sourceTree = "<group>"; };
+		34BD3B152323555400F1A620 /* LoadingContent.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LoadingContent.json; sourceTree = "<group>"; };
+		34BFBE32231DEB3F0058B65F /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		34D134A8231AF50A0053AA05 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		34D134AA231B14CA0053AA05 /* CastCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastCell.xib; sourceTree = "<group>"; };
 		34D134AC231B15880053AA05 /* CastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -191,6 +211,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34BD3B142323554400F1A620 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				34BD3B152323555400F1A620 /* LoadingContent.json */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
 		3C1471F022D12599000AE37D = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +276,7 @@
 		3C14722A22D125F5000AE37D /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				34BD3B142323554400F1A620 /* Animations */,
 				3C3DEC1D22D3A69900A358CD /* Extentions */,
 				3C3DEC1C22D3A68B00A358CD /* Utils */,
 				3C1471FC22D12599000AE37D /* AppDelegate.swift */,
@@ -267,6 +296,7 @@
 				3CCADD3222D53B9000AA0D32 /* User.swift */,
 				34779F0E23160FD30095BEAD /* Genre.swift */,
 				34D134B6231C50540053AA05 /* CastMember.swift */,
+				34B294A42321E15B00BB20D7 /* MediaData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -291,6 +321,7 @@
 		3C14722E22D12621000AE37D /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				34BFBE32231DEB3F0058B65F /* MainTabBarViewController.swift */,
 				3C3DEC2022D3A72600A358CD /* BaseViewController.swift */,
 				3CF7303822D27297009236D7 /* SplashViewController.swift */,
 				3CF7303622D27281009236D7 /* LoginViewController.swift */,
@@ -298,6 +329,7 @@
 				3CF7303222D2722E009236D7 /* SeriesListViewController.swift */,
 				3CF7303422D2724A009236D7 /* UserProfileViewController.swift */,
 				3C3F361522D6C18200E05672 /* DetailViewController.swift */,
+				34B294A62321EAB400BB20D7 /* MainMediaPlayerViewController.swift */,
 				3CF7304422D39D50009236D7 /* SubView */,
 			);
 			path = ViewController;
@@ -321,6 +353,9 @@
 				3C7B200D22DEB595001A4732 /* UserProfileCardView.xib */,
 				34D134AA231B14CA0053AA05 /* CastCell.xib */,
 				34D134B0231B537C0053AA05 /* DetailActionBtnCell.xib */,
+				34B294A82321FE7F00BB20D7 /* MainMediaPlayerViewController.xib */,
+				3450C80B23272B3600A75ED4 /* PaymentCardCell.xib */,
+				34B5B40C2329AE4200B4AB57 /* FavCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -329,6 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				3C8BF6DC22E52931006FE7BF /* DynamicType.swift */,
+				3481CC50231F43520043B363 /* WButton.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -378,6 +414,8 @@
 				3CBA7B4722DFF36400E41AA5 /* UserProfileCardView.swift */,
 				34D134AC231B15880053AA05 /* CastCollectionViewCell.swift */,
 				34D134B4231B56470053AA05 /* DetailActionBtnTableViewCell.swift */,
+				3450C80923272B1D00A75ED4 /* PaymentCardTableViewCell.swift */,
+				34B5B40E2329B2B800B4AB57 /* FavTableViewCell.swift */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -526,14 +564,18 @@
 				3CF7303F22D2C6CE009236D7 /* ContentSectionCell.xib in Resources */,
 				3CF7303B22D29F44009236D7 /* ContentCellA.xib in Resources */,
 				34D134AB231B14CA0053AA05 /* CastCell.xib in Resources */,
+				34B294A92321FE7F00BB20D7 /* MainMediaPlayerViewController.xib in Resources */,
 				3CCADD3722D5448D00AA0D32 /* SplashViewController.xib in Resources */,
 				3CF7304322D39D0F009236D7 /* ContentTableCell.xib in Resources */,
 				3C14720422D1259B000AE37D /* Assets.xcassets in Resources */,
+				34BD3B162323555400F1A620 /* LoadingContent.json in Resources */,
 				3C14720222D12599000AE37D /* Main.storyboard in Resources */,
 				3C3F361822D6C1DC00E05672 /* DetailViewController.xib in Resources */,
+				3450C80C23272B3600A75ED4 /* PaymentCardCell.xib in Resources */,
 				3C3F361A22D6C78700E05672 /* DetailCoverCell.xib in Resources */,
 				3C3F362822D6D75700E05672 /* DetailCastCell.xib in Resources */,
 				3CF7303D22D2C0AF009236D7 /* ContentCellB.xib in Resources */,
+				34B5B40D2329AE4200B4AB57 /* FavCell.xib in Resources */,
 				3C3F362022D6CA9C00E05672 /* DetailSinoxisCell.xib in Resources */,
 				3CCADD3922D544F000AA0D32 /* LoginViewController.xib in Resources */,
 				3C7B200E22DEB595001A4732 /* UserProfileCardView.xib in Resources */,
@@ -664,6 +706,7 @@
 				3C3F362622D6D70400E05672 /* DetailRatingTableViewCell.swift in Sources */,
 				3C8BF6DB22E51F9A006FE7BF /* ContentService.swift in Sources */,
 				349A18DA2318C28900143F86 /* ContentCCollectionViewCell.swift in Sources */,
+				3450C80A23272B1D00A75ED4 /* PaymentCardTableViewCell.swift in Sources */,
 				349A18D62318A54A00143F86 /* String+Extensions.swift in Sources */,
 				34779F0F23160FD30095BEAD /* Genre.swift in Sources */,
 				3CBA7B4822DFF36400E41AA5 /* UserProfileCardView.swift in Sources */,
@@ -673,13 +716,18 @@
 				3C3F361622D6C18200E05672 /* DetailViewController.swift in Sources */,
 				3CCADD3522D541F400AA0D32 /* UIViewController+Extensions.swift in Sources */,
 				3C8BF6DD22E52931006FE7BF /* DynamicType.swift in Sources */,
+				34B294A72321EAB400BB20D7 /* MainMediaPlayerViewController.swift in Sources */,
 				3C8BF6DF22E52962006FE7BF /* ContentPresenter.swift in Sources */,
 				3C3DEC1722D39E0000A358CD /* ContentSectionTableViewCell.swift in Sources */,
 				3CF7303722D27281009236D7 /* LoginViewController.swift in Sources */,
 				3C3F362A22D6D8B800E05672 /* DetailCastTableViewCell.swift in Sources */,
+				34B5B40F2329B2B800B4AB57 /* FavTableViewCell.swift in Sources */,
 				3C3DEC1F22D3A6C100A358CD /* UIColor+Extensions.swift in Sources */,
 				3C3DEC1522D39DC600A358CD /* ContentBCollectionViewCell.swift in Sources */,
+				34BFBE33231DEB3F0058B65F /* MainTabBarViewController.swift in Sources */,
 				3C3F362222D6D01100E05672 /* DetailSinoxisTableViewCell.swift in Sources */,
+				34B294A52321E15B00BB20D7 /* MediaData.swift in Sources */,
+				3481CC51231F43520043B363 /* WButton.swift in Sources */,
 				3CF7303322D2722E009236D7 /* SeriesListViewController.swift in Sources */,
 				3C3DEC1B22D3A38000A358CD /* MainContent.swift in Sources */,
 				3C8BF6D622E51D1C006FE7BF /* APIResource.swift in Sources */,

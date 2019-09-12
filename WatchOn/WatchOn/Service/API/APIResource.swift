@@ -14,8 +14,13 @@ protocol EndPointType {
     var urlPath: String { get }
 }
 
+enum MEDIAResourceKind: String {
+    case YouTube = "https://www.youtube.com/watch?v="
+    case Vimeo = "https://www.vimeo.com/watch?v="
+}
+
 enum APIResource {
-    case getDiscoverMovies, getTrendingMovies, getPopularityMovies, getTopRatedMovies, getUpcomingMovies, getPopularitySeries, getTopRatedSeries, getUpcomingSeries, getGenres, getCast
+    case getDiscoverMovies, getTrendingMovies, getPopularityMovies, getTopRatedMovies, getUpcomingMovies, getPopularitySeries, getTopRatedSeries, getUpcomingSeries, getGenres, getCast, getMedia
 }
 
 struct APIError: Codable {
@@ -36,6 +41,12 @@ extension APIResource: EndPointType {
         return URL(string: bURL)!
     }
     
+    var baseYouTubeURL: URL {
+        let mainDict = Bundle.main.infoDictionary
+        let baseYURL = mainDict?["YOUTUBE_URL"] as! String
+        return URL(string: baseYURL)!
+    }
+    
     var urlPath: String {
         switch self {
             case .getDiscoverMovies: return "/discover/movie"
@@ -48,12 +59,13 @@ extension APIResource: EndPointType {
             case .getUpcomingSeries: return "/tv/latest"
             case .getGenres: return "/genre/movie/list"
             case .getCast: return "/movie/"
+            case .getMedia: return "/movie/"
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .getDiscoverMovies, .getTrendingMovies, .getPopularityMovies, .getTopRatedMovies, .getUpcomingMovies, .getPopularitySeries, .getTopRatedSeries, .getUpcomingSeries, .getGenres, .getCast: return .get
+        case .getDiscoverMovies, .getTrendingMovies, .getPopularityMovies, .getTopRatedMovies, .getUpcomingMovies, .getPopularitySeries, .getTopRatedSeries, .getUpcomingSeries, .getGenres, .getCast, .getMedia: return .get
         }
     }
 }

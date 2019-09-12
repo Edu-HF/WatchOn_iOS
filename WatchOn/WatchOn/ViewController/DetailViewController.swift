@@ -16,7 +16,7 @@ class DetailViewController: BaseViewController {
 
     @IBOutlet weak var detailTV: UITableView!
     private lazy var sinoxisH: CGFloat = 0
-    var mainContentPresenter: ContentPresenter = ContentPresenter.sharedIntance
+    private var mainContentPresenter: ContentPresenter = ContentPresenter.sharedIntance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +44,17 @@ class DetailViewController: BaseViewController {
             self.detailTV.reloadData()
         }
         
+        mainContentPresenter.mainContentSelected.contentMedia.bind { mediaDataIn in
+            self.detailTV.reloadData()  
+        }
+        
         mainContentPresenter.getCast(contentIn: mainContentPresenter.mainContentSelected)
+        mainContentPresenter.getContentMedia(contentIn: mainContentPresenter.mainContentSelected)
+    }
+    
+    @objc private func contentPlayMedia() {
+        let playerVC = MainMediaPlayerViewController()
+        self.present(playerVC, animated: true, completion: nil)
     }
 }
 
@@ -68,6 +78,9 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             
             let detailActionBtnCell = tableView.dequeueReusableCell(withIdentifier: detailSection.DetailActionBtnCell.rawValue) as!
             DetailActionBtnTableViewCell
+            
+            detailActionBtnCell.mainActionBtn.addTarget(self, action: #selector(contentPlayMedia), for: .touchUpInside)
+            
             return detailActionBtnCell
             
         case .DetailSinoxisCell:

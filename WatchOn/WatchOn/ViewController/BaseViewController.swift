@@ -23,3 +23,13 @@ class BaseViewController: UIViewController {
         self.view.backgroundColor = .homeBackground2
     }
 }
+
+extension BaseViewController {
+    
+    func dismissAndPresent(viewController: UIViewController) {
+        let this = self.presentingViewController
+        self.dismiss(animated: true, completion: {
+            this?.present(viewController, animated: true, completion: nil)
+        })
+    }
+}

@@ -34,9 +34,12 @@ extension UIColor {
         return UIColor(red: 52.0 / 255.0, green: 49.0 / 255.0, blue: 50.0 / 255.0, alpha: 1.0)
     }
     @nonobjc class var btnGreenColor: UIColor {
-        return UIColor(red: 23, green: 186, blue: 134, alpha: 1.0)
+        return UIColor(red: 23.0 / 255.0, green: 186.0 / 255.0, blue: 134.0 / 255.0, alpha: 1.0)
     }
     @nonobjc class var btnGrayDarkColor: UIColor {
-        return UIColor(red: 19, green: 20, blue: 44, alpha: 1.0)
+        return UIColor(red: 19.0 / 255.0, green: 20.0 / 255.0, blue: 44.0 / 255.0, alpha: 1.0)
+    }
+    @nonobjc class var btnPressColor: UIColor {
+        return UIColor(red: 182.0 / 255.0, green: 113.0 / 255.0, blue: 220.0 / 255.0, alpha: 1.0)
     }
 }

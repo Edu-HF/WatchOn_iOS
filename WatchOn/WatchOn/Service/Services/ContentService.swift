@@ -41,4 +41,15 @@ class ContentService: BaseService {
         let request = APIRequest.sharedInstance.makeRequest(resourseIn: APIResource.getCast, typeIn: ResponseCast.self, parametersIn: params, encodingIn: URLEncoding(destination: .queryString), headersIn: buildHeaders(), mutableURL: castMainURL)
         return excRequest(requestIn: request)
     }
+    
+    func getContentMedia(contentIn: Content) -> Promise<ResponseMediaData> {
+        let params: Parameters = [
+            "api_key" : getAPIKey()
+        ]
+        
+        let mediaMainURL = APIResource.getMedia.baseURL.appendingPathComponent(APIResource.getMedia.urlPath + "\(contentIn.contentID)/videos")
+        
+        let request = APIRequest.sharedInstance.makeRequest(resourseIn: APIResource.getCast, typeIn: ResponseMediaData.self, parametersIn: params, encodingIn: URLEncoding(destination: .queryString), headersIn: buildHeaders(), mutableURL: mediaMainURL)
+        return excRequest(requestIn: request)
+    }
 }

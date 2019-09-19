@@ -12,10 +12,12 @@ class SeriesListViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupView()
     }
     
+    private func setupView() {
+        setVCTitle(titleIn: "SeriesUKey".localized())
+    }
 
     /*
     // MARK: - Navigation

@@ -10,6 +10,10 @@ import Foundation
 
 extension String {
     
+    func localized() -> String {
+        return NSLocalizedString(self, comment: "")
+    }
+    
     func buildURLStringIMG() -> String {
         let mainDict = Bundle.main.infoDictionary
         let bURL = mainDict?["API_IMG_BASE_URL"] as! String

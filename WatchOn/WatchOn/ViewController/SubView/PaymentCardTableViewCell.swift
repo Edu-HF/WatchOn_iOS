@@ -21,6 +21,14 @@ class PaymentCardTableViewCell: UITableViewCell {
     func setupCell() {
         mainCardView.delegate = self
         mainCardView.toast = true
+        
+        if let userData: User = UserPresenter.sharedIntance.getUserData() {
+            if let wCardUser: WCard = userData.userPaymentMethod {
+                if let currentCard: Card = wCardUser.getCardFromWCard() {
+                    self.mainCardView.fillTextFieldFromCard(card: currentCard)
+                }
+            }
+        }
     }
 }
 

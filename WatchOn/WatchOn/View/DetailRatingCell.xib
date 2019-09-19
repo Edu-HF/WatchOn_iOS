@@ -94,7 +94,7 @@
                                     <constraint firstAttribute="trailing" secondItem="h10-lp-4Ys" secondAttribute="trailing" id="zxP-IE-3Rj"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release Date: 19/06/2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zov-Fy-Z8n">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ReleaseDateKey" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zov-Fy-Z8n">
                                 <rect key="frame" x="8" y="8" width="404" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="3m7-vW-Zzf"/>
@@ -103,8 +103,8 @@
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vote: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCh-yh-mK5">
-                                <rect key="frame" x="8" y="53" width="44" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RatedKey" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCh-yh-mK5">
+                                <rect key="frame" x="8" y="53" width="73" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="Jco-he-O55"/>
                                 </constraints>
@@ -113,7 +113,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4X-sm-3bX">
-                                <rect key="frame" x="60" y="39" width="52" height="50"/>
+                                <rect key="frame" x="89" y="39" width="52" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="zLP-43-fbV"/>
                                 </constraints>

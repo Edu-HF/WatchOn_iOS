@@ -25,7 +25,7 @@ class MoviesListViewController: BaseViewController {
     
     private func setupView() {
         
-        setVCTitle(titleIn: "Movies")
+        setVCTitle(titleIn: "MoviesUKey".localized())
         moviesTV.register(UINib(nibName: "ContentSectionCell", bundle: nil), forCellReuseIdentifier: "ContentSectionCell")
         moviesTV.register(UINib(nibName: "ContentTableCell", bundle: nil), forCellReuseIdentifier: "ContentTableCell")
         
@@ -36,6 +36,10 @@ class MoviesListViewController: BaseViewController {
         
         contentPresenter.mainContentData.bind { mainContentDataIn in
             self.moviesTV.reloadData()
+        }
+        
+        contentPresenter.mainErrorResponse?.bind { errorIn in
+            print("Error MALDITO")
         }
         
         contentPresenter.getGenresMovies()
@@ -85,8 +89,9 @@ extension MoviesListViewController: ContentTappedProtocol {
     
     func onContentTapped(contentIn: Content) {
         self.contentPresenter.mainContentSelected = contentIn
-        let detailVC = DetailViewController(nibName: "DetailViewController", bundle: nil)
-        self.navigationController?.pushViewController(detailVC, animated: true)
+        let detailVC = DetailViewController.loadFromNib()
+        //let detailVC = DetailViewController(nibName: "DetailViewController", bundle: nil)
+        self.dismissAndPresent(viewController: detailVC)
     }
 }
 

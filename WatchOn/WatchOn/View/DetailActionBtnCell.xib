@@ -28,7 +28,7 @@
                                     <constraint firstAttribute="height" constant="50" id="jGL-wA-Zv6"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                <state key="normal" title="REPRODUCIR">
+                                <state key="normal" title="SeeTraillerKey">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>

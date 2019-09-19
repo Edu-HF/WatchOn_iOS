@@ -18,14 +18,14 @@ enum ContentKind: String, CaseIterable {
 }
 
 enum ContentCategoryMovies: String {
-    case discoverMovies, trendingMovies, popularityMovies, topRatedMovies, upcomingMovies
+    case DiscoverMovies, TrendingMovies, PopularityMovies, TopRatedMovies, UpcomingMovies
 }
 
 class ContentPresenter: NSObject {
     
     //MARK: - Properties
-    //static let sharedIntance: ContentPresenter = ContentPresenter()
     private let contentWS: ContentService = ContentService()
+    var mainErrorResponse: DynamicType<Error>?
     var mainContentData: DynamicType<[MainContent]> = DynamicType([])
     var mainGenresData: DynamicType<[Genre]> = DynamicType([])
     var mainContentSelected: Content!
@@ -58,11 +58,11 @@ class ContentPresenter: NSObject {
     
     //MARK: - Public Methods
     func getAllContentForMovies() {
-        getContentForMovies(contentForCategoryIn: .discoverMovies, resourceIn: .getDiscoverMovies)
-        getContentForMovies(contentForCategoryIn: .trendingMovies, resourceIn: .getTrendingMovies)
-        getContentForMovies(contentForCategoryIn: .popularityMovies, resourceIn: .getPopularityMovies)
-        getContentForMovies(contentForCategoryIn: .topRatedMovies, resourceIn: .getTopRatedMovies)
-        getContentForMovies(contentForCategoryIn: .upcomingMovies, resourceIn: .getUpcomingMovies)
+        getContentForMovies(contentForCategoryIn: .DiscoverMovies, resourceIn: .getDiscoverMovies)
+        getContentForMovies(contentForCategoryIn: .TrendingMovies, resourceIn: .getTrendingMovies)
+        getContentForMovies(contentForCategoryIn: .PopularityMovies, resourceIn: .getPopularityMovies)
+        getContentForMovies(contentForCategoryIn: .TopRatedMovies, resourceIn: .getTopRatedMovies)
+        getContentForMovies(contentForCategoryIn: .UpcomingMovies, resourceIn: .getUpcomingMovies)
     }
     
     func getContentForMovies(contentForCategoryIn: ContentCategoryMovies, resourceIn: APIResource) {
@@ -74,19 +74,19 @@ class ContentPresenter: NSObject {
                 var mContent: MainContent!
                 switch contentForCategoryIn {
                     
-                case .discoverMovies:
+                case .DiscoverMovies:
                     self.mainContentData.value.append(MainContent(contentType: .Section, contentTitle: contentForCategoryIn.rawValue, mainContents: nil))
                     mContent = MainContent(contentType: .ContentA, contentTitle: nil, mainContents: [])
-                case .trendingMovies:
+                case .TrendingMovies:
                     self.mainContentData.value.append(MainContent(contentType: .Section, contentTitle: contentForCategoryIn.rawValue, mainContents: nil))
                     mContent = MainContent(contentType: .ContentB, contentTitle: nil, mainContents: [])
-                case .popularityMovies:
+                case .PopularityMovies:
                     self.mainContentData.value.append(MainContent(contentType: .Section, contentTitle: contentForCategoryIn.rawValue, mainContents: nil))
                     mContent = MainContent(contentType: .ContentA, contentTitle: nil, mainContents: [])
-                case .topRatedMovies:
+                case .TopRatedMovies:
                     self.mainContentData.value.append(MainContent(contentType: .Section, contentTitle: contentForCategoryIn.rawValue, mainContents: nil))
                     mContent = MainContent(contentType: .ContentB, contentTitle: nil, mainContents: [])
-                case .upcomingMovies:
+                case .UpcomingMovies:
                     
                     mContent = MainContent(contentType: .ContentC, contentTitle: nil, mainContents: [])
                     for content in cResults {
@@ -103,8 +103,8 @@ class ContentPresenter: NSObject {
                 self.mainContentData.value.append(mContent)
             }
             
-            }.catch { error in
-                print(error)
+            }.catch { errorIn in
+                self.mainErrorResponse?.value = errorIn
         }
     }
     
@@ -117,8 +117,8 @@ class ContentPresenter: NSObject {
                 self.getAllContentForMovies()
             }
             
-            }.catch{ error in
-                print("error")
+            }.catch{ errorIn in
+                self.mainErrorResponse?.value = errorIn
         }
     }
     
@@ -129,8 +129,8 @@ class ContentPresenter: NSObject {
             if let tempCastData = castIn.cast {
                 self.mainContentSelected.contentCast.value  = tempCastData
             }
-            }.catch{ error in
-                print(error)
+            }.catch{ errorIn in
+                self.mainErrorResponse?.value = errorIn
         }
     }
     
@@ -141,8 +141,8 @@ class ContentPresenter: NSObject {
             if let tempMediaData = mediaIn.results {
                 self.mainContentSelected.contentMedia.value = tempMediaData
             }
-            }.catch { error in
-                print(error)
+            }.catch { errorIn in
+                self.mainErrorResponse?.value = errorIn
         }
     }
     

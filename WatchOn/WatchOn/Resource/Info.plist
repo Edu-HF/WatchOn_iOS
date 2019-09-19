@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSFaceIDUsageDescription</key>
+	<string>WatchOn used FaceID/TouchID to identify and login in the app</string>
 	<key>YOUTUBE_URL</key>
 	<string>https://www.youtube.com/</string>
 	<key>NSAppTransportSecurity</key>

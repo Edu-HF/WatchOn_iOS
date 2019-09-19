@@ -26,7 +26,8 @@ class ContentSectionTableViewCell: UITableViewCell {
     }
     
     func setupCell(titleIn: String) {
-        self.sectionTitleLB.text = titleIn
+        let mTitle = titleIn + "Key"
+        self.sectionTitleLB.text = mTitle.localized()
     }
 
 }

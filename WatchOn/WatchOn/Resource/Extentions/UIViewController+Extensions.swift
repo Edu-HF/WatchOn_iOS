@@ -26,4 +26,18 @@ extension UIViewController {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "TamilSangamMN-Bold", size: 20)!, NSAttributedString.Key.foregroundColor: UIColor.lightGray]
         navigationItem.title = titleIn
     }
+    
+    func dismissAndPresent(viewController: UIViewController) {
+        let this = self.presentingViewController
+        self.dismiss(animated: true, completion: {
+            this?.present(viewController, animated: true, completion: nil)
+        })
+    }
+    
+    func dismissToPresent(viewController: UIViewController) {
+        let this = self.presentingViewController
+        self.dismiss(animated: false, completion: {
+            this?.present(viewController, animated: false, completion: nil)
+        })
+    }
 }

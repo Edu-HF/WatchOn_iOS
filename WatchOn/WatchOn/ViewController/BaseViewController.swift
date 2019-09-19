@@ -7,12 +7,19 @@
 //
 
 import UIKit
+import Reachability
 
 class BaseViewController: UIViewController {
+    
+    private var mainReachability: Reachability?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupStandarView()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: .reachabilityChanged, object: nil)
     }
     
     fileprivate func setupStandarView() {
@@ -21,15 +28,25 @@ class BaseViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = .darkTwo
         self.tabBarController?.tabBar.barTintColor = .darkTwo
         self.view.backgroundColor = .homeBackground2
+        
+        self.mainReachability = Reachability()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged(notification:)), name: .reachabilityChanged, object: nil)
+        
+        do {
+            try self.mainReachability!.startNotifier()
+        }catch {
+            print("")
+        }
+    }
+    
+    @objc private func reachabilityChanged(notification: NSNotification) {
+        switch (mainReachability!.connection) {
+        case .none:
+            print("NO HAY INTERNET")
+        default:
+            print("SI HAY")
+        }
     }
 }
 
-extension BaseViewController {
-    
-    func dismissAndPresent(viewController: UIViewController) {
-        let this = self.presentingViewController
-        self.dismiss(animated: true, completion: {
-            this?.present(viewController, animated: true, completion: nil)
-        })
-    }
-}

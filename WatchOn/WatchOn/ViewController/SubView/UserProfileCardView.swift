@@ -30,7 +30,7 @@ class UserProfileCardView: UIView {
       setupView()
     }
     
-    func setupView() {
+    private func setupView() {
         self.mainStateTV.register(UINib(nibName: "PaymentCardCell", bundle: nil), forCellReuseIdentifier: "PaymentCardCell")
         self.mainStateTV.register(UINib(nibName: "FavCell", bundle: nil), forCellReuseIdentifier: "FavCell")
         DispatchQueue.main.asyncAfter(deadline: .now()+0.5, execute: {
@@ -42,7 +42,7 @@ class UserProfileCardView: UIView {
         
         mFavBtn = WButton()
         mFavBtn.frame = CGRect(x: 0, y: 90, width: self.frame.width/2, height: 50)
-        mFavBtn.setTitle("Favorites", for: .normal)
+        mFavBtn.setTitle("FavKey".localized(), for: .normal)
         mFavBtn.backgroundColor = .btnGreenColor
         mFavBtn.bntStade = 5
         mFavBtn.isHighlighted = true
@@ -52,7 +52,7 @@ class UserProfileCardView: UIView {
         
         mPaymentBtn = WButton()
         mPaymentBtn.frame = CGRect(x: self.frame.width/2, y: 90, width: self.frame.width/2, height: 50)
-        mPaymentBtn.setTitle("Payment", for: .normal)
+        mPaymentBtn.setTitle("PaymentMethodKey".localized(), for: .normal)
         mPaymentBtn.backgroundColor = .btnGreenColor
         mPaymentBtn.bntStade = 5
         
@@ -63,13 +63,17 @@ class UserProfileCardView: UIView {
     @objc private func showMyFavAct() {
         self.viewStade = .MyList
         mPaymentBtn.backgroundColor = .btnGreenColor
-        self.mainStateTV.reloadData()
+        DispatchQueue.main.async {
+            self.mainStateTV.reloadData()
+        }
     }
     
     @objc private func showPaymentMethodAct() {
         self.viewStade = .PaymentMethod
         mFavBtn.backgroundColor = .btnGreenColor
-        self.mainStateTV.reloadData()
+        DispatchQueue.main.async {
+            self.mainStateTV.reloadData()
+        }
     }
 }
 
@@ -81,7 +85,7 @@ extension UserProfileCardView: UITableViewDelegate, UITableViewDataSource {
         case .PaymentMethod:
             return 1
         case .MyList:
-            return 20
+            return UserPresenter.sharedIntance.getUserData()?.userFavList?.count ?? 0
         }
     }
     

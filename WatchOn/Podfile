@@ -5,7 +5,7 @@ target 'WatchOn' do
   # Pods for WatchOn
   pod 'Alamofire', '~> 5.0.0-beta.5'
   pod 'PromiseKit', '6.8.4'
-  #pod 'SwiftKeychainWrapper', '3.2.0'
+  pod 'SwiftKeychainWrapper', '3.2.0'
   pod 'SkeletonView', '1.4.2'
   pod 'lottie-ios', '3.0.4'
   pod 'ReachabilitySwift'

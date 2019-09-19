@@ -8,12 +8,17 @@
 
 import UIKit
 import AuthenticationServices
+import LocalAuthentication
 
 class LoginViewController: BaseViewController {
+    
+    private var contextLA = LAContext()
+    private var userName: String = ""
+    private var userEmail: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
+        //setupView()
     }
     
     private func setupView() {
@@ -37,6 +42,49 @@ class LoginViewController: BaseViewController {
         
         appleAuthController.performRequests()
     }*/
+    @IBAction func makeLoginTouchOrFaceID(_ sender: Any) {
+        
+        contextLA = LAContext()
+        
+        if contextLA.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) {
+            contextLA.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "ReasonFaceIDMSGKey".localized()) { (isSuccess, error) in
+                
+                if isSuccess {
+                    
+                    let loginDataAlert = UIAlertController(title: "LoginTitleAlertKey".localized(), message: "LoginMSGAlertKey".localized(), preferredStyle: .alert)
+                    
+                    loginDataAlert.addTextField(configurationHandler: { (nameTF) in
+                        nameTF.placeholder = "UserNameKey".localized()
+                        self.userName = nameTF.text ?? ""
+                    })
+                    
+                    loginDataAlert.addTextField(configurationHandler: { (nameTF) in
+                        nameTF.placeholder = "UserEmailKey".localized()
+                        self.userEmail = nameTF.text ?? ""
+                    })
+                    
+                    loginDataAlert.addAction(UIAlertAction(title: "CancelKey".localized(), style: .cancel, handler: { _ in
+                        loginDataAlert.dismiss(animated: true, completion: nil)
+                    }))
+                    
+                    loginDataAlert.addAction(UIAlertAction(title: "DoneKey".localized(), style: .default, handler: { _ in
+                        print("Save USER")
+                        loginDataAlert.dismiss(animated: true, completion: nil)
+                    }))
+                    
+                    self.present(loginDataAlert, animated: true, completion: nil)
+                    
+                }
+            }
+        }else{
+            
+        }
+    }
+    
+    @IBAction func makeLoginAppleID(_ sender: Any) {
+        
+       
+    }
 }
 
 /*extension LoginViewController: ASAuthorizationControllerDelegate {

@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import PromiseKit
+import Reachability
 
 enum RequestError: Error {
     case APIError(String)

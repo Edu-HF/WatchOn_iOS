@@ -23,4 +23,11 @@ extension UIView {
         
         self.layer.insertSublayer(mGradient, at: 0)
     }
+    
+    func faceAnimation(durationIn: TimeInterval = 1.0, delayIn: TimeInterval = 0.0, alphaIn: CGFloat, completionIn: @escaping ((Bool) -> ()) = {(onFinish: Bool) -> () in}) {
+        UIView.animate(withDuration: durationIn, delay: delayIn, options:     UIView.AnimationOptions.curveEaseIn, animations: {
+            self.alpha = alphaIn
+        }, completion: completionIn)
+        
+    }
 }

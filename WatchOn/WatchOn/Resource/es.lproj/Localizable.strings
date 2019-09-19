@@ -1,0 +1,38 @@
+/* 
+  Localizable.strings
+  WatchOn
+
+  Created by Eduardo  Herrera Fagundez on 12/09/19.
+  Copyright © 2019 ezCode. All rights reserved.
+*/
+
+"MoviesUKey" = "PELICULAS";
+"MoviesKey" = "Peliculas";
+"SeriesUKey" = "SERIES";
+"SeriesKey" = "Series";
+"UserProfileUKey" = "PERFIL USUARIO";
+"UserProfileKey" = "Perfil Usiario";
+"FavKey" = "Favoritos";
+"PaymentMethodKey" = "Metodo Pago";
+"DiscoverMoviesKey" = "Descubrimientos";
+"TrendingMoviesKey" = "Tendencias";
+"PopularityMoviesKey" = "Populares";
+"TopRatedMoviesKey" = "Mas Votadas";
+"UpcomingMoviesKey" = "Proximos Extrenos";
+"NotAviableKey" = "No Disponible";
+"ReleaseDateKey" = "Fecha de lanzamiento ";
+"RatedKey" = "Votacion ";
+"CastKey" = "Elenco";
+"SeeTraillerKey" = "Ver Tailer";
+"UserNameUKey" = "NOMBRE DE USUARIO";
+"UserEmailUKey" = "EMAIL DE USUARIO";
+"UserNameKey" = "Nombre de Usuario";
+"UserEmailKey" = "Email de Usuario";
+
+"ReasonFaceIDMSGKey" = "Para acceder a la aplicacion necesitamos verificar su FaceID/TouchID";
+"MakeLoginKey" = "Inicie sesion para acceder a su informacion.";
+
+"LoginTitleAlertKey" = "Login Acceso";
+"LoginMSGAlertKey" = "para continuar porfavor proporciona la siguiente informacion";
+"CancelKey" = "Cancelar";
+"DoneKey" = "Listo";

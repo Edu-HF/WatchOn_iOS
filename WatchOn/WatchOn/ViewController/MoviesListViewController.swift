@@ -39,7 +39,7 @@ class MoviesListViewController: BaseViewController {
         }
         
         contentPresenter.mainErrorResponse?.bind { errorIn in
-            print("Error MALDITO")
+            print("Error ")
         }
         
         contentPresenter.getGenresMovies()
@@ -89,9 +89,7 @@ extension MoviesListViewController: ContentTappedProtocol {
     
     func onContentTapped(contentIn: Content) {
         self.contentPresenter.mainContentSelected = contentIn
-        let detailVC = DetailViewController.loadFromNib()
-        //let detailVC = DetailViewController(nibName: "DetailViewController", bundle: nil)
-        self.dismissAndPresent(viewController: detailVC)
+        self.navigationController?.pushViewController(DetailViewController(nibName: "DetailViewController", bundle: nil), animated: true)
     }
 }
 

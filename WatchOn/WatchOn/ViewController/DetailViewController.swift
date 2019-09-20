@@ -53,8 +53,16 @@ class DetailViewController: BaseViewController {
     }
     
     @objc private func contentPlayMedia() {
-        let playerVC = MainMediaPlayerViewController()
-        self.present(playerVC, animated: true, completion: nil)
+        self.present(MainMediaPlayerViewController(), animated: true, completion: nil)
+    }
+    
+    @objc private func contentAddOrRemoveFav() {
+        if let userData = UserPresenter.sharedIntance.getUserData() {
+            userData.userFavList?.append(mainContentPresenter.mainContentSelected.contentID)
+            UserPresenter.sharedIntance.saveUser(userIn: userData)
+        }else {
+            self.present(LoginViewController(), animated: true, completion: nil)
+        }
     }
 }
 
@@ -80,6 +88,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             DetailActionBtnTableViewCell
             
             detailActionBtnCell.mainActionBtn.addTarget(self, action: #selector(contentPlayMedia), for: .touchUpInside)
+            detailActionBtnCell.actionFavBtn.addTarget(self, action: #selector(contentAddOrRemoveFav), for: .touchUpInside)
             
             return detailActionBtnCell
             

@@ -27,7 +27,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lge-pl-DtW" customClass="WButton" customModule="WatchOn" customModuleProvider="target">
-                    <rect key="frame" x="20" y="820" width="374" height="50"/>
+                    <rect key="frame" x="20" y="782" width="374" height="50"/>
                     <color key="backgroundColor" red="0.090196078430000007" green="0.72941176470000002" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="Rcu-W2-QPZ"/>
@@ -56,7 +56,7 @@
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XJY-ZQ-yxp" customClass="WButton" customModule="WatchOn" customModuleProvider="target">
-                    <rect key="frame" x="20" y="762" width="374" height="50"/>
+                    <rect key="frame" x="20" y="724" width="374" height="50"/>
                     <color key="backgroundColor" red="0.090196078430000007" green="0.72941176470000002" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="3YQ-EP-0Vr"/>
@@ -88,7 +88,7 @@
                 <constraint firstItem="n5Z-Mk-Xa8" firstAttribute="leading" secondItem="eqY-rQ-1ov" secondAttribute="leading" constant="57" id="a6X-0S-6xj"/>
                 <constraint firstItem="Lge-pl-DtW" firstAttribute="leading" secondItem="eqY-rQ-1ov" secondAttribute="leading" constant="20" id="axw-hb-v2R"/>
                 <constraint firstItem="Isf-rM-l18" firstAttribute="top" secondItem="eqY-rQ-1ov" secondAttribute="top" constant="30" id="bha-xI-bjS"/>
-                <constraint firstItem="Lge-pl-DtW" firstAttribute="bottom" secondItem="eqY-rQ-1ov" secondAttribute="bottom" constant="8" id="jtF-lK-qPI"/>
+                <constraint firstItem="Lge-pl-DtW" firstAttribute="bottom" secondItem="eqY-rQ-1ov" secondAttribute="bottom" constant="-30" id="jtF-lK-qPI"/>
                 <constraint firstItem="Isf-rM-l18" firstAttribute="leading" secondItem="eqY-rQ-1ov" secondAttribute="leading" constant="57" id="nVz-Jd-n6j"/>
                 <constraint firstItem="eqY-rQ-1ov" firstAttribute="trailing" secondItem="n5Z-Mk-Xa8" secondAttribute="trailing" constant="57" id="uzS-5S-lAb"/>
                 <constraint firstItem="eqY-rQ-1ov" firstAttribute="trailing" secondItem="Isf-rM-l18" secondAttribute="trailing" constant="57" id="xdm-2K-mg5"/>

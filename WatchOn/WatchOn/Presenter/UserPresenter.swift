@@ -32,4 +32,8 @@ class UserPresenter: NSObject {
     func getUserData() -> User? {
         return KeychainWrapper.standard.object(forKey: Keys.USER_DATA_KEY) as? User
     }
+    
+    func saveUser(userIn: User) -> Bool {
+        return KeychainWrapper.standard.set(userIn, forKey: Keys.USER_DATA_KEY, withAccessibility: .always)
+    }
 }

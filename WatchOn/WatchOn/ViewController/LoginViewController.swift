@@ -13,8 +13,6 @@ import LocalAuthentication
 class LoginViewController: BaseViewController {
     
     private var contextLA = LAContext()
-    private var userName: String = ""
-    private var userEmail: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,12 +53,10 @@ class LoginViewController: BaseViewController {
                     
                     loginDataAlert.addTextField(configurationHandler: { (nameTF) in
                         nameTF.placeholder = "UserNameKey".localized()
-                        self.userName = nameTF.text ?? ""
                     })
                     
                     loginDataAlert.addTextField(configurationHandler: { (nameTF) in
                         nameTF.placeholder = "UserEmailKey".localized()
-                        self.userEmail = nameTF.text ?? ""
                     })
                     
                     loginDataAlert.addAction(UIAlertAction(title: "CancelKey".localized(), style: .cancel, handler: { _ in
@@ -68,12 +64,19 @@ class LoginViewController: BaseViewController {
                     }))
                     
                     loginDataAlert.addAction(UIAlertAction(title: "DoneKey".localized(), style: .default, handler: { _ in
-                        print("Save USER")
-                        loginDataAlert.dismiss(animated: true, completion: nil)
+                        
+                        let tempUser = User()
+                        if let userName = loginDataAlert.textFields?[0], let userEmail = loginDataAlert.textFields?[1] {
+                            tempUser.userEmail = userEmail.text
+                            tempUser.userName = userName.text
+                        }
+                        
+                        if UserPresenter.sharedIntance.saveUser(userIn: tempUser) {
+                            loginDataAlert.dismiss(animated: true, completion: nil)
+                            self.dismiss(animated: true, completion: nil)
+                        }
                     }))
-                    
                     self.present(loginDataAlert, animated: true, completion: nil)
-                    
                 }
             }
         }else{

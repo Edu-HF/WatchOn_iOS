@@ -13,8 +13,7 @@ import MFCard
 class User: NSObject, NSCoding {
     
     var userID: String?
-    var userFName: String?
-    var userLName: String?
+    var userName: String?
     var userEmail: String?
     var userPaymentMethod: WCard?
     var userFavList: [Int]?
@@ -29,17 +28,15 @@ class User: NSObject, NSCoding {
     override init() {
         
         userID = "0"
-        userFName = "Eduardo"
-        userLName = "Herrera"
+        userName = "Eduardo Herrera"
         userEmail = "soulfade@hotmail.com"
-        userPaymentMethod = WCard()
-        userFavList = [1920, 0192, 1928]
+        userPaymentMethod = nil
+        userFavList = []
     }
     
     enum Key: String {
         case userID = "userID"
-        case userFName = "userFName"
-        case userLName = "userLName"
+        case userName = "userName"
         case userEmail = "userEmail"
         case userPaymentMethod = "userPaymentMethod"
         case userFavList = "userFavList"
@@ -47,8 +44,7 @@ class User: NSObject, NSCoding {
     
     func encode(with aCoder: NSCoder) {
         aCoder.encode(userID, forKey: Key.userID.rawValue)
-        aCoder.encode(userFName, forKey: Key.userFName.rawValue)
-        aCoder.encode(userLName, forKey: Key.userLName.rawValue)
+        aCoder.encode(userName, forKey: Key.userName.rawValue)
         aCoder.encode(userEmail, forKey: Key.userEmail.rawValue)
         aCoder.encode(userPaymentMethod, forKey: Key.userPaymentMethod.rawValue)
         aCoder.encode(userFavList, forKey: Key.userFavList.rawValue)
@@ -57,8 +53,7 @@ class User: NSObject, NSCoding {
     required convenience init?(coder aDecoder: NSCoder) {
         self.init()
         self.userID = aDecoder.decodeObject(forKey: Key.userID.rawValue) as? String
-        self.userFName = aDecoder.decodeObject(forKey: Key.userFName.rawValue) as? String
-        self.userLName = aDecoder.decodeObject(forKey: Key.userLName.rawValue) as? String
+        self.userName = aDecoder.decodeObject(forKey: Key.userName.rawValue) as? String
         self.userEmail = aDecoder.decodeObject(forKey: Key.userEmail.rawValue) as? String
         self.userPaymentMethod = aDecoder.decodeObject(forKey: Key.userPaymentMethod.rawValue) as? WCard
         self.userFavList = aDecoder.decodeObject(forKey: Key.userFavList.rawValue) as? [Int]

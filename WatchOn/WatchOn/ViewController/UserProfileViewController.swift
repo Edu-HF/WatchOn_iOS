@@ -34,24 +34,22 @@ class UserProfileViewController: BaseViewController {
         mUserCardView.frame = CGRect.init(x: 0, y: 0, width: self.view.frame.size.width - 20, height: 440)
         mUserCardView.center = self.view.center
         self.view.addSubview(mUserCardView)
-        DispatchQueue.main.asyncAfter(deadline: .now()+1, execute: {
-            self.buildProfilePhoto()
-        })
-        
-        if let userData = mainUserPresenter.getUserData() {
-            var userName = userData.userFName ?? "UserNameUKey".localized()
-            userName += " "
-            userName += userData.userLName ?? ""
-            mUserCardView.userNameLB.text = userName
-            mUserCardView.userEmailLB.text = userData.userEmail ?? "UserEmailKey".localized()
-        }
-
     }
 
     
     private func validateUserSession() {
-        if mainUserPresenter.isUserLogged() {
+        //mainUserPresenter.logOut()
+        if !mainUserPresenter.isUserLogged() {
             self.present(LoginViewController(), animated: true, completion: nil)
+        }else {
+            if let userData = mainUserPresenter.getUserData() {
+                mUserCardView.userNameLB.text = userData.userName ?? "UserNameUKey".localized()
+                mUserCardView.userEmailLB.text = userData.userEmail ?? "UserEmailKey".localized()
+                mUserCardView.mainStateTV.reloadData()
+                DispatchQueue.main.asyncAfter(deadline: .now()+1, execute: {
+                    self.buildProfilePhoto()
+                })
+            }
         }
     }
     

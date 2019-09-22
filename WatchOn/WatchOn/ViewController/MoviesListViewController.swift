@@ -10,6 +10,7 @@ import UIKit
 
 protocol ContentTappedProtocol {
     func onContentTapped(contentIn: Content)
+    func onContentTappedForPlay(contentIn: Content)
 }
 
 class MoviesListViewController: BaseViewController {
@@ -69,6 +70,7 @@ extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         switch contentPresenter.mainContentData.value[indexPath.row].contentType {
+            
         case .Section:
             
             let sectionCell = tableView.dequeueReusableCell(withIdentifier: "ContentSectionCell") as! ContentSectionTableViewCell
@@ -80,16 +82,21 @@ extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
             let contentCell = tableView.dequeueReusableCell(withIdentifier: "ContentTableCell") as! ContentTableViewCell
             contentCell.setupCell(mainContentIn: contentPresenter.mainContentData.value[indexPath.row], onContenttappedIn: self)
             return contentCell
-            
         }
     }
 }
 
 extension MoviesListViewController: ContentTappedProtocol {
     
+    func onContentTappedForPlay(contentIn: Content) {
+        self.contentPresenter.mainContentSelected = contentIn
+        self.present(MainMediaPlayerViewController(), animated: true, completion: nil)
+    }
+    
     func onContentTapped(contentIn: Content) {
         self.contentPresenter.mainContentSelected = contentIn
         self.navigationController?.pushViewController(DetailViewController(nibName: "DetailViewController", bundle: nil), animated: true)
     }
 }
+
 

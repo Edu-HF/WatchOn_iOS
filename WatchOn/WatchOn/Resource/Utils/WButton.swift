@@ -59,27 +59,11 @@ open class WButton: UIButton {
     override open func awakeFromNib() {
         
         self.baseIMG = self.image(for: .normal)
-        self.baseTitle = self.title(for: .normal)
+        self.setTitle(self.title(for: .normal)?.localized(), for: .normal)
+        self.baseTitle = self.title(for: .normal)?.localized()
         self.baseBGColor = self.backgroundColor
-        
-//        switch mainBtnType {
-//        case .IsCheck:
-//            self.sendAction(#selector(checkAct), to: self, for: nil)
-//        default:
-//            break
-//        }
+    
     }
-
-//    @objc private func checkAct() {
-//
-//        if self.isChecked {
-//            self.isChecked = false
-//            self.setImage(UIImage(named: self.btnIMGName + "On_IC"), for: .normal)
-//        }else {
-//            self.isChecked = true
-//            self.setImage(self.baseIMG, for: .normal)
-//        }
-//    }
     
     private func returnToBaseStade() {
         

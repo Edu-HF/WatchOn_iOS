@@ -16,30 +16,8 @@ class LoginViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //setupView()
     }
     
-    private func setupView() {
-        
-        /*let appleIDButton = ASAuthorizationAppleIDButton()
-        appleIDButton.translatesAutoresizingMaskIntoConstraints = false
-        appleIDButton.addTarget(self, action: #selector(didTapAppleIDButton), for: .touchUpInside)
-        
-        self.view.addSubview(appleIDButton)*/
-    }
-    
-    /*@objc
-    func didTapAppleIDButton() {
-        let appleProvider = ASAuthorizationAppleIDProvider()
-        let appleIDRequest = appleProvider.createRequest()
-        appleIDRequest.requestedScopes = [.fullName, .email]
-        
-        let appleAuthController = ASAuthorizationController(authorizationRequests: [appleIDRequest])
-        appleAuthController.delegate = self
-        appleAuthController.presentationContextProvider = self
-        
-        appleAuthController.performRequests()
-    }*/
     @IBAction func makeLoginTouchOrFaceID(_ sender: Any) {
         
         contextLA = LAContext()
@@ -80,37 +58,54 @@ class LoginViewController: BaseViewController {
                 }
             }
         }else{
-            
+            self.showSomeMSGAlert(titleIn: "AppleTouchIDORFaceIDLoginKey".localized(), msgIn: "NotAppleTouchIDORFaceIDAvailableMGSKey".localized())
         }
     }
     
     @IBAction func makeLoginAppleID(_ sender: Any) {
         
-       
+        if #available(iOS 13.0, *) {
+            let appleProvider = ASAuthorizationAppleIDProvider()
+            let appleIDRequest = appleProvider.createRequest()
+            appleIDRequest.requestedScopes = [.fullName, .email]
+            
+            let appleAuthController = ASAuthorizationController(authorizationRequests: [appleIDRequest])
+            appleAuthController.delegate = self
+            appleAuthController.presentationContextProvider = self
+            
+            appleAuthController.performRequests()
+        } else {
+            showSomeMSGAlert(titleIn: "AppleIDTitleKey".localized(), msgIn: "NotAppleIDAvailableMGSKey".localized())
+        }
     }
 }
 
-/*extension LoginViewController: ASAuthorizationControllerDelegate {
+extension LoginViewController: ASAuthorizationControllerDelegate {
     
+    @available(iOS 13.0, *)
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         
         switch authorization.credential {
         case let credencialOut as ASAuthorizationAppleIDCredential:
             let userInfo = User(credencialIn: credencialOut)
-            print(userInfo)
+            if UserPresenter.sharedIntance.saveUser(userIn: userInfo) {
+                self.dismiss(animated: true, completion: nil)
+            }
         default:
-            print("Some Error")
+            self.showSomeMSGAlert(titleIn: "AppleIDTitleKey".localized(), msgIn: "AppleIDErrorMSGKey".localized())
         }
     }
     
+    @available(iOS 13.0, *)
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-        print("Some Error")
+        self.showSomeMSGAlert(titleIn: "AppleIDTitleKey".localized(), msgIn: "AppleIDErrorMSGKey".localized())
     }
 }
 
 extension LoginViewController: ASAuthorizationControllerPresentationContextProviding {
     
+    @available(iOS 13.0, *)
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
         return view.window!
     }
-}*/
+}

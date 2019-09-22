@@ -34,7 +34,7 @@ class DetailRatingTableViewCell: UITableViewCell {
     
     func setupCell(contentIn: Content) {
         
-        releaseDateLB.text = contentIn.contentReleaseDate
+        releaseDateLB.text = "ReleaseDateKey".localized() + (contentIn.contentReleaseDate ?? "")
         averageNumLB.text = String(contentIn.contentVoteAverage ?? 0)
     }
 

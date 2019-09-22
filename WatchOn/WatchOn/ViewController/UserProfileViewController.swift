@@ -17,6 +17,7 @@ class UserProfileViewController: BaseViewController {
     private var mProfilePhotoIV: UIImageView!
     private var mProfilePhotoBtn: UIButton!
     private var mUserCardView: UserProfileCardView!
+    private var mImagePicker: UIImagePickerController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,12 +37,25 @@ class UserProfileViewController: BaseViewController {
         self.view.addSubview(mUserCardView)
     }
 
+    private func buildLogOutBtn() {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "XOn_IC"), style: .plain, target: self, action: #selector(logOutAct))
+    }
+    
+    @objc private func logOutAct() {
+        if mainUserPresenter.logOut() {
+            self.tabBarController?.selectedIndex = 0
+            self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+        }
+    }
     
     private func validateUserSession() {
-        //mainUserPresenter.logOut()
+        
         if !mainUserPresenter.isUserLogged() {
-            self.present(LoginViewController(), animated: true, completion: nil)
+            let loginVC = LoginViewController()
+            loginVC.modalPresentationStyle = .fullScreen
+            self.present(loginVC, animated: true, completion: nil)
         }else {
+            buildLogOutBtn()
             if let userData = mainUserPresenter.getUserData() {
                 mUserCardView.userNameLB.text = userData.userName ?? "UserNameUKey".localized()
                 mUserCardView.userEmailLB.text = userData.userEmail ?? "UserEmailKey".localized()
@@ -56,7 +70,6 @@ class UserProfileViewController: BaseViewController {
     private func buildProfilePhoto() {
         
         mProfilePhotoIV = UIImageView(frame: CGRect(x: mUserCardView.frame.origin.x+240, y: mUserCardView.frame.origin.y - 40, width: 100, height: 100))
-        mProfilePhotoIV.image = UIImage(named: "IMGPlaceHolder_IC")
         
         mProfilePhotoBtn = UIButton(frame: mProfilePhotoIV.frame)
         mProfilePhotoBtn.setTitle("", for: .normal)
@@ -65,14 +78,56 @@ class UserProfileViewController: BaseViewController {
         self.view.addSubview(mProfilePhotoBtn)
         
         DispatchQueue.main.async {
-            let pathIMG = URL(fileURLWithPath: "")
-            Nuke.loadImage(with: pathIMG, options: ImageLoadingOptions().loadIMGBaseOptions(), into: self.mProfilePhotoIV, progress: nil, completion: { _ in
-                self.mProfilePhotoIV.resizeRoundedIMG()
-            })
+            if let userData = self.mainUserPresenter.getUserData() {
+                if userData.userIMGData != nil  {
+                    if let userIMG: UIImage = UIImage(data: userData.userIMGData!) {
+                        self.mProfilePhotoIV.image = userIMG
+                    }else {
+                        self.mProfilePhotoIV.image = UIImage(named: "IMGPlaceHolder_IC")
+                    }
+                }
+            }else {
+                self.mProfilePhotoIV.image = UIImage(named: "IMGPlaceHolder_IC")
+            }
+            self.mProfilePhotoIV.resizeRoundedIMG()
          }
     }
     
     @objc private func onProfilePhotoClick() {
-        print("FUNCA")
+        let alertIMGPicker = UIAlertController.init(title: "SelectFoto", message: "De Donde", preferredStyle: .actionSheet)
+        
+        alertIMGPicker.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
+            alertIMGPicker.dismiss(animated: true, completion: nil)
+            self.showIMGPicker(.camera)
+        }))
+        
+        alertIMGPicker.addAction(UIAlertAction(title: "PhotoLibrary", style: .default, handler: { _ in
+            alertIMGPicker.dismiss(animated: true, completion: nil)
+            self.showIMGPicker(.photoLibrary)
+        }))
+        
+        self.present(alertIMGPicker, animated: true, completion: nil)
+    }
+    
+    private func showIMGPicker(_ sourceIn: UIImagePickerController.SourceType) {
+        mImagePicker = UIImagePickerController()
+        mImagePicker.delegate = self
+        mImagePicker.sourceType = sourceIn
+        self.present(mImagePicker, animated: true, completion: nil)
+    }
+}
+
+extension UserProfileViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        self.mImagePicker.dismiss(animated: true, completion: nil)
+        if let userData = self.mainUserPresenter.getUserData() {
+            if let userIMG = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+                userData.userIMGData = userIMG.pngData()
+                if self.mainUserPresenter.saveUser(userIn: userData) {
+                    self.validateUserSession()
+                }
+            }
+        }
     }
 }

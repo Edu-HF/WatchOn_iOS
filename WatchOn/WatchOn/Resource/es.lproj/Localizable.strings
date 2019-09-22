@@ -12,6 +12,7 @@
 "SeriesKey" = "Series";
 "UserProfileUKey" = "PERFIL USUARIO";
 "UserProfileKey" = "Perfil Usiario";
+"DetailUKey" = "DETALLE";
 "FavKey" = "Favoritos";
 "PaymentMethodKey" = "Metodo Pago";
 "DiscoverMoviesKey" = "Descubrimientos";
@@ -36,3 +37,18 @@
 "LoginMSGAlertKey" = "para continuar porfavor proporciona la siguiente informacion";
 "CancelKey" = "Cancelar";
 "DoneKey" = "Listo";
+"AcceptKey" = "Aceptar";
+
+"AppleIDTitleKey" = "Login con Apple ID";
+"NotAppleIDAvailableMGSKey" = "Disculpe, Apple ID Login no esta disponible para su version actual de iOS. Actualize e intente nuevamente.";
+"AppleIDErrorMSGKey" = "Ups! Ocurrio un error al tartar de hacer Login con su Apple ID. Intente mas tarde.";
+
+"AppleTouchIDORFaceIDLoginKey" = "Login con Touch/Face ID";
+"NotAppleTouchIDORFaceIDAvailableMGSKey" = "Ups! Parece que no has configurado tu dispositivo para el Touch/Face ID. Porfavor ve a configuraciones";
+"AppleTouchIDORFaceIDErrorMSGKey" = "Ups! Ocurrio un error al tartar de hacer Login con su Touch/Face ID. Intente mas tarde.";
+
+"LoadMediaErrorTitleKey" = "Error al Cargar";
+"LoadMediaErrorMSGKey" = "Uops! Ocurrio un error al tratar de cargar el video. Intente mas tarde";
+
+"NotConexionTitleKey" = "No hay Conexion";
+"NotConexionMSGKey" = "Ups! Parece que no tiene conexion a internet. Por favor acegurese de tener conexion de datos e intente de nuevo";

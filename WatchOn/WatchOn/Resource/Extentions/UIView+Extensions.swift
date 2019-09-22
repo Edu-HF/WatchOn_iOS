@@ -31,3 +31,10 @@ extension UIView {
         
     }
 }
+
+extension UICollectionViewCell {
+    
+    var parentVCFromCell: UIViewController? {
+        return ((self.superview as? UICollectionView)?.delegate as? UIViewController)
+    }
+}

@@ -12,14 +12,11 @@ import Reachability
 class BaseViewController: UIViewController {
     
     private var mainReachability: Reachability?
+    private var mNotInternetVC: NotInternetViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupStandarView()
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        NotificationCenter.default.removeObserver(self, name: .reachabilityChanged, object: nil)
     }
     
     fileprivate func setupStandarView() {
@@ -43,9 +40,14 @@ class BaseViewController: UIViewController {
     @objc private func reachabilityChanged(notification: NSNotification) {
         switch (mainReachability!.connection) {
         case .none:
-            print("NO HAY INTERNET")
+            mNotInternetVC = NotInternetViewController()
+            mNotInternetVC!.modalPresentationStyle = .fullScreen
+            self.present(self.mNotInternetVC!, animated: true, completion: nil)
         default:
-            print("SI HAY")
+            if mNotInternetVC != nil {
+                self.mNotInternetVC!.dismiss(animated: true, completion: nil)
+                self.mNotInternetVC = nil
+            }
         }
     }
 }

@@ -26,7 +26,7 @@ class DetailViewController: BaseViewController {
     
     private func setupView() {
         
-        setVCTitle(titleIn: "Detail")
+        setVCTitle(titleIn: "DetailUKey".localized())
         detailTV.register(UINib(nibName: "DetailCoverCell", bundle: nil), forCellReuseIdentifier: "DetailCoverCell")
         detailTV.register(UINib(nibName: "DetailActionBtnCell", bundle: nil), forCellReuseIdentifier: "DetailActionBtnCell")
         detailTV.register(UINib(nibName: "DetailSinoxisCell", bundle: nil), forCellReuseIdentifier: "DetailSinoxisCell")
@@ -57,11 +57,12 @@ class DetailViewController: BaseViewController {
     }
     
     @objc private func contentAddOrRemoveFav() {
-        if let userData = UserPresenter.sharedIntance.getUserData() {
-            userData.userFavList?.append(mainContentPresenter.mainContentSelected.contentID)
-            UserPresenter.sharedIntance.saveUser(userIn: userData)
+        if mainContentPresenter.addOrRemoveFav() {
+            self.detailTV.reloadData()
         }else {
-            self.present(LoginViewController(), animated: true, completion: nil)
+            let loginVC = LoginViewController()
+            loginVC.modalPresentationStyle = .fullScreen
+            self.present(loginVC, animated: true, completion: nil)
         }
     }
 }
@@ -87,6 +88,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             let detailActionBtnCell = tableView.dequeueReusableCell(withIdentifier: detailSection.DetailActionBtnCell.rawValue) as!
             DetailActionBtnTableViewCell
             
+            detailActionBtnCell.setupView()
             detailActionBtnCell.mainActionBtn.addTarget(self, action: #selector(contentPlayMedia), for: .touchUpInside)
             detailActionBtnCell.actionFavBtn.addTarget(self, action: #selector(contentAddOrRemoveFav), for: .touchUpInside)
             

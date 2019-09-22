@@ -70,5 +70,8 @@ class ContentCCollectionViewCell: UICollectionViewCell {
         contentCellCategoriesLB.text = String().buildGenderNamesString(contentGenrersIn: mainContentData[currentIndex].contentGenrersID ?? [])
     }
     
+    @IBAction func makePlayContentAct(_ sender: Any) {
+        contentTapped.onContentTappedForPlay(contentIn: mainContentData[currentIndex])
+    }
 }
 

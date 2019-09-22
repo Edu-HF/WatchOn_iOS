@@ -28,8 +28,7 @@ class MainMediaPlayerViewController: UIViewController {
         setupView()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-    }
+
     
     private func setupView() {
         
@@ -37,7 +36,13 @@ class MainMediaPlayerViewController: UIViewController {
         mainLoaderAV.frame = UIScreen.main.bounds
         mainLoaderAV.contentMode = .scaleAspectFit
         mainPlayerLoaderView.addSubview(mainLoaderAV)
-        mainLoaderAV.play()
+        mainLoaderAV.play { (isComplete) in
+            if isComplete {
+                if self.mainPlayerView.playerState().rawValue == 6 {
+                    self.showErrorLoadContent()
+                }
+            }
+        }
         
         DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
             self.setupPlayer()
@@ -49,9 +54,28 @@ class MainMediaPlayerViewController: UIViewController {
         let playerOpDic = ["controls" : 1, "playInline" : 1, "autohide" : 1, "showinfo" : 0, "autoplay" : 1, "modestbranding" : 1]
         
         mainPlayerView.delegate = self
-        mainPlayerView.load(withVideoId: mainContentPresenter.mainContentSelected.contentMedia.value[0].mKey ?? "", playerVars: playerOpDic)
+        var mContentKey = ""
+        mainContentPresenter.mainContentSelected.contentMedia.value.forEach {
+            if $0.mKey != nil && $0.mKey != "" {
+                mContentKey = $0.mKey!
+                mainPlayerView.load(withVideoId: mContentKey, playerVars: playerOpDic)
+                return
+            }
+        }
+        
+        if mContentKey == "" {
+            showErrorLoadContent()
+        }
         
         NotificationCenter.default.addObserver(self, selector: #selector(closeVC), name: UIWindow.didBecomeHiddenNotification, object: self.view)
+    }
+    
+    private func showErrorLoadContent() {
+        let mErrorAlert = UIAlertController.init(title: "LoadMediaErrorTitleKey".localized(), message: "LoadMediaErrorMSGKey".localized(), preferredStyle: .alert)
+        mErrorAlert.addAction(UIAlertAction.init(title: "AcceptKey".localized(), style: .default, handler: { _ in
+            self.closeVC()
+        }))
+        self.present(mErrorAlert, animated: true, completion: nil)
     }
     
     @objc private func closeVC() {
@@ -72,14 +96,8 @@ extension MainMediaPlayerViewController: YTPlayerViewDelegate {
         }
     }
     
-//    func playerView(_ playerView: YTPlayerView, didChangeTo state: YTPlayerState) {
-//
-//        switch state {
-//        case .playing:
-//
-//        default:
-//            break
-//        }
-//    }
+    func playerView(_ playerView: YTPlayerView, receivedError error: YTPlayerError) {
+        self.showErrorLoadContent()
+    }
 }
 

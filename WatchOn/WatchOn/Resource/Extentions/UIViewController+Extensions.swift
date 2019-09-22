@@ -40,4 +40,22 @@ extension UIViewController {
             this?.present(viewController, animated: false, completion: nil)
         })
     }
+    
+    func showSomeMSGAlert(titleIn: String, msgIn: String) {
+        let mMSGAlert = UIAlertController.init(title: titleIn, message: msgIn, preferredStyle: .alert)
+        
+        mMSGAlert.addAction(UIAlertAction.init(title: "AcceptKey".localized(), style: .default, handler: { _ in
+            mMSGAlert.dismiss(animated: true, completion: nil)
+        }))
+        
+        self.present(mMSGAlert, animated: true, completion: nil)
+    }
+    
+    func buildBackBtn() {
+        self.navigationItem.backBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "BackOn_IC")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(backAct))
+    }
+    
+    @objc func backAct() {
+        _ = navigationController?.popViewController(animated: true)
+    }
 }

@@ -11,6 +11,8 @@
 		3450C80C23272B3600A75ED4 /* PaymentCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3450C80B23272B3600A75ED4 /* PaymentCardCell.xib */; };
 		34779F0F23160FD30095BEAD /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34779F0E23160FD30095BEAD /* Genre.swift */; };
 		3481CC51231F43520043B363 /* WButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3481CC50231F43520043B363 /* WButton.swift */; };
+		348F6F5F233719BC00970C43 /* NotInternetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 348F6F5E233719BC00970C43 /* NotInternetView.xib */; };
+		348F6F61233719DE00970C43 /* NotInternetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348F6F60233719DE00970C43 /* NotInternetViewController.swift */; };
 		349A18D62318A54A00143F86 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349A18D52318A54A00143F86 /* String+Extensions.swift */; };
 		349A18D82318BEDD00143F86 /* ContentCellC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 349A18D72318BEDD00143F86 /* ContentCellC.xib */; };
 		349A18DA2318C28900143F86 /* ContentCCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349A18D92318C28900143F86 /* ContentCCollectionViewCell.swift */; };
@@ -108,6 +110,8 @@
 		3450C80B23272B3600A75ED4 /* PaymentCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentCardCell.xib; sourceTree = "<group>"; };
 		34779F0E23160FD30095BEAD /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		3481CC50231F43520043B363 /* WButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WButton.swift; sourceTree = "<group>"; };
+		348F6F5E233719BC00970C43 /* NotInternetView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotInternetView.xib; sourceTree = "<group>"; };
+		348F6F60233719DE00970C43 /* NotInternetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotInternetViewController.swift; sourceTree = "<group>"; };
 		349A18D52318A54A00143F86 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		349A18D72318BEDD00143F86 /* ContentCellC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentCellC.xib; sourceTree = "<group>"; };
 		349A18D92318C28900143F86 /* ContentCCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -344,6 +348,7 @@
 				3CF7303422D2724A009236D7 /* UserProfileViewController.swift */,
 				3C3F361522D6C18200E05672 /* DetailViewController.swift */,
 				34B294A62321EAB400BB20D7 /* MainMediaPlayerViewController.swift */,
+				348F6F60233719DE00970C43 /* NotInternetViewController.swift */,
 				3CF7304422D39D50009236D7 /* SubView */,
 			);
 			path = ViewController;
@@ -370,6 +375,7 @@
 				34B294A82321FE7F00BB20D7 /* MainMediaPlayerViewController.xib */,
 				3450C80B23272B3600A75ED4 /* PaymentCardCell.xib */,
 				34B5B40C2329AE4200B4AB57 /* FavCell.xib */,
+				348F6F5E233719BC00970C43 /* NotInternetView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -578,6 +584,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C14720722D1259B000AE37D /* LaunchScreen.storyboard in Resources */,
+				348F6F5F233719BC00970C43 /* NotInternetView.xib in Resources */,
 				3CF7303F22D2C6CE009236D7 /* ContentSectionCell.xib in Resources */,
 				34C4CE2F232B0D92005D72C3 /* Localizable.strings in Resources */,
 				3CF7303B22D29F44009236D7 /* ContentCellA.xib in Resources */,
@@ -734,6 +741,7 @@
 				34CBA04C232E98D000EDF45D /* UserPresenter.swift in Sources */,
 				3C3F361622D6C18200E05672 /* DetailViewController.swift in Sources */,
 				3CCADD3522D541F400AA0D32 /* UIViewController+Extensions.swift in Sources */,
+				348F6F61233719DE00970C43 /* NotInternetViewController.swift in Sources */,
 				3C8BF6DD22E52931006FE7BF /* DynamicType.swift in Sources */,
 				34B294A72321EAB400BB20D7 /* MainMediaPlayerViewController.swift in Sources */,
 				3C8BF6DF22E52962006FE7BF /* ContentPresenter.swift in Sources */,

@@ -12,7 +12,7 @@ import Alamofire
 
 class ContentService: BaseService {
     
-    //MARK Movies Methods
+    //MARK: Movies Methods
     func getContentForMovies(resourceIn: APIResource) -> Promise<ResponseContent> {
         let params: Parameters = [
             "api_key" : getAPIKey()

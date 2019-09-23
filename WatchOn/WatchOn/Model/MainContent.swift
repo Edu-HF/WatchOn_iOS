@@ -13,5 +13,6 @@ struct MainContent {
     var contentType: ContentKind
     var contentTitle: String?
     var mainContents: [Content]? = []
+    var mainContentSeries: [SerieContent]? = []
     
 }

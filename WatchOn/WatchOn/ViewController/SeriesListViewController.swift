@@ -8,25 +8,42 @@
 
 import UIKit
 
-class SeriesListViewController: BaseViewController {
+class SeriesListViewController: BaseViewController, UICollectionViewDelegateFlowLayout {
 
+    @IBOutlet weak var mainSeriesCV: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
     
     private func setupView() {
+        
         setVCTitle(titleIn: "SeriesUKey".localized())
+        mainSeriesCV.register(UINib(nibName: "ContentCellD", bundle: nil), forCellWithReuseIdentifier: "ContentCellD")
     }
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension SeriesListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 20
     }
-    */
-
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let seriesCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ContentCellD", for: indexPath)
+        
+        seriesCell.sizeToFit()
+        return seriesCell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 180, height: 400)
+    }
+    
 }

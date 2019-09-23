@@ -15,16 +15,42 @@
                     <view key="view" contentMode="scaleToFill" id="bMQ-g5-rxH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="th5-dr-GES">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="dIe-pc-eku">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="5nj-bC-Acn" id="xgA-bF-xYM"/>
+                                    <outlet property="delegate" destination="5nj-bC-Acn" id="qgk-LS-1im"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="th5-dr-GES" firstAttribute="top" secondItem="jlz-Yd-9Gq" secondAttribute="top" id="6gc-ug-ZNR"/>
+                            <constraint firstItem="th5-dr-GES" firstAttribute="trailing" secondItem="jlz-Yd-9Gq" secondAttribute="trailing" id="Bpm-Ww-3UW"/>
+                            <constraint firstItem="th5-dr-GES" firstAttribute="leading" secondItem="jlz-Yd-9Gq" secondAttribute="leading" id="OG6-Nq-5sD"/>
+                            <constraint firstItem="jlz-Yd-9Gq" firstAttribute="bottom" secondItem="th5-dr-GES" secondAttribute="bottom" id="iGK-VP-brW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="jlz-Yd-9Gq"/>
                     </view>
                     <navigationItem key="navigationItem" id="1bo-GJ-ajo">
                         <barButtonItem key="backBarButtonItem" title="  " id="07U-az-T0M"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="mainSeriesCV" destination="th5-dr-GES" id="mYE-Xw-UHu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="64U-0V-9Sv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1877" y="214"/>
+            <point key="canvasLocation" x="1876.8115942028987" y="213.61607142857142"/>
         </scene>
         <!--Movies List View Controller-->
         <scene sceneID="ecL-xc-XPx">
@@ -171,8 +197,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="MoviesOff_IC" width="48" height="48"/>
-        <image name="MoviesOn_IC" width="48" height="48"/>
+        <image name="MoviesOff_IC" width="32" height="32"/>
+        <image name="MoviesOn_IC" width="32" height="32"/>
         <image name="TV2Off_IC" width="48" height="48"/>
         <image name="TV2On_IC" width="48" height="48"/>
         <image name="UserOff_IC" width="48" height="48"/>

@@ -1299,7 +1299,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "D70D5EF8-F790-4D04-984A-3FCBD1239481"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WatchOn/ViewController/BaseViewController.swift"

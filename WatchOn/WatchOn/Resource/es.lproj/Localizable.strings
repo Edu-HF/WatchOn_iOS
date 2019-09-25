@@ -52,3 +52,5 @@
 
 "NotConexionTitleKey" = "No hay Conexion";
 "NotConexionMSGKey" = "Ups! Parece que no tiene conexion a internet. Por favor acegurese de tener conexion de datos e intente de nuevo";
+
+"OupsErrorKey" = "Oups! Error";

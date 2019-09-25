@@ -9,7 +9,7 @@
 import Foundation
 
 enum ContentKind: String, CaseIterable {
-    case Section, ContentA, ContentB, ContentC
+    case Section, ContentA, ContentB, ContentC, ContentD
     
     static func randomKind() -> ContentKind {
         let randomNumber = Int(arc4random_uniform(UInt32(2)))

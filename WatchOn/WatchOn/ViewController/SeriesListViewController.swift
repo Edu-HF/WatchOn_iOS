@@ -11,6 +11,7 @@ import UIKit
 class SeriesListViewController: BaseViewController, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var mainSeriesCV: UICollectionView!
+    private var serieContentPresenter: SerieContentPresenter = SerieContentPresenter.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,28 +22,46 @@ class SeriesListViewController: BaseViewController, UICollectionViewDelegateFlow
         
         setVCTitle(titleIn: "SeriesUKey".localized())
         mainSeriesCV.register(UINib(nibName: "ContentCellD", bundle: nil), forCellWithReuseIdentifier: "ContentCellD")
+        
+        setupListeners()
+    }
+    
+    private func setupListeners() {
+        
+        serieContentPresenter.mainContentSeriesData.bind { _ in
+            self.mainSeriesCV.reloadData()
+        }
+        
+        serieContentPresenter.mainErrorResponse?.bind { errorIn in
+            self.showSomeMSGAlert(titleIn: "OupsErrorKey".localized(), msgIn: errorIn.localizedDescription)
+        }
+        
+        serieContentPresenter.getAllContentForSeries()
     }
 }
 
 extension SeriesListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 20
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        
+        if serieContentPresenter.mainContentSeriesData.value.count != 0 {
+            return serieContentPresenter.mainContentSeriesData.value[0].mainContentSeries?.count ?? 0
+        }else {
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let seriesCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ContentCellD", for: indexPath)
+        let seriesCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ContentCellD", for: indexPath) as! ContentDCollectionViewCell
         
-        seriesCell.sizeToFit()
+        seriesCell.setupCell(serieContentIn: serieContentPresenter.mainContentSeriesData.value[0].mainContentSeries?[indexPath.row] ?? nil)
+        
         return seriesCell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
         return CGSize(width: 180, height: 400)
     }
     

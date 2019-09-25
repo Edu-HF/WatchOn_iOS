@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="svf-fg-Tkk" customClass="ContentFCollectionViewCell" customModule="WatchOn" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="500"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="t3D-8Y-a1Q">
+                <rect key="frame" x="0.0" y="0.0" width="400" height="500"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iHF-74-rCI">
+                        <rect key="frame" x="5" y="5" width="390" height="490"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bGu-Le-qME">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="3OK-Qg-5ri"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Q8S-Pm-KJS">
+                                <rect key="frame" x="0.0" y="240" width="390" height="250"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="-1" id="FwP-Wv-nVb"/>
+                                    <outlet property="delegate" destination="-1" id="2cA-AS-TdW"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qme-vL-rCA" customClass="WButton" customModule="WatchOn" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="200" width="195" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="bSe-UX-9Bg"/>
+                                    <constraint firstAttribute="width" constant="195" id="cKV-nq-8Wu"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="bntStade">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LO7-dQ-xxA" customClass="WButton" customModule="WatchOn" customModuleProvider="target">
+                                <rect key="frame" x="195" y="200" width="195" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="195" id="8rV-OS-nLo"/>
+                                    <constraint firstAttribute="height" constant="40" id="UWd-xj-NsH"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="bntStade">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZg-8S-guf">
+                                <rect key="frame" x="8" y="172" width="374" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M5p-6r-FdC">
+                                <rect key="frame" x="8" y="147" width="374" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="zZg-8S-guf" firstAttribute="top" secondItem="M5p-6r-FdC" secondAttribute="bottom" constant="5" id="28b-iE-Ipc"/>
+                            <constraint firstAttribute="bottom" secondItem="Q8S-Pm-KJS" secondAttribute="bottom" id="2oM-Ed-CQ1"/>
+                            <constraint firstItem="bGu-Le-qME" firstAttribute="top" secondItem="iHF-74-rCI" secondAttribute="top" id="5g3-iC-u2y"/>
+                            <constraint firstItem="Qme-vL-rCA" firstAttribute="top" secondItem="zZg-8S-guf" secondAttribute="bottom" constant="8" id="6jY-Ru-RP6"/>
+                            <constraint firstAttribute="trailing" secondItem="zZg-8S-guf" secondAttribute="trailing" constant="8" id="CCj-hm-j0N"/>
+                            <constraint firstItem="bGu-Le-qME" firstAttribute="leading" secondItem="iHF-74-rCI" secondAttribute="leading" id="Cml-0a-dyA"/>
+                            <constraint firstItem="Q8S-Pm-KJS" firstAttribute="leading" secondItem="iHF-74-rCI" secondAttribute="leading" id="Ia3-0H-vVu"/>
+                            <constraint firstItem="zZg-8S-guf" firstAttribute="leading" secondItem="iHF-74-rCI" secondAttribute="leading" constant="8" id="NLy-sg-15b"/>
+                            <constraint firstItem="LO7-dQ-xxA" firstAttribute="top" secondItem="bGu-Le-qME" secondAttribute="bottom" id="O3X-od-vM0"/>
+                            <constraint firstItem="M5p-6r-FdC" firstAttribute="leading" secondItem="iHF-74-rCI" secondAttribute="leading" constant="8" id="Qgo-Lz-B1e"/>
+                            <constraint firstAttribute="trailing" secondItem="LO7-dQ-xxA" secondAttribute="trailing" id="Yer-9R-eil"/>
+                            <constraint firstItem="Qme-vL-rCA" firstAttribute="top" secondItem="bGu-Le-qME" secondAttribute="bottom" id="a6f-nm-0x1"/>
+                            <constraint firstItem="Q8S-Pm-KJS" firstAttribute="top" secondItem="Qme-vL-rCA" secondAttribute="bottom" id="dOD-Mc-yUt"/>
+                            <constraint firstAttribute="trailing" secondItem="M5p-6r-FdC" secondAttribute="trailing" constant="8" id="gEZ-PG-Chd"/>
+                            <constraint firstAttribute="trailing" secondItem="Q8S-Pm-KJS" secondAttribute="trailing" id="jDI-aF-wsf"/>
+                            <constraint firstItem="Qme-vL-rCA" firstAttribute="leading" secondItem="iHF-74-rCI" secondAttribute="leading" id="z0z-YP-PzT"/>
+                            <constraint firstAttribute="trailing" secondItem="bGu-Le-qME" secondAttribute="trailing" id="zVx-Yq-V6e"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="iHF-74-rCI" firstAttribute="leading" secondItem="t3D-8Y-a1Q" secondAttribute="leading" constant="5" id="Dca-w4-oYe"/>
+                    <constraint firstAttribute="trailing" secondItem="iHF-74-rCI" secondAttribute="trailing" constant="5" id="NsJ-RJ-cy3"/>
+                    <constraint firstAttribute="bottom" secondItem="iHF-74-rCI" secondAttribute="bottom" constant="5" id="eMR-AM-Xmw"/>
+                    <constraint firstItem="iHF-74-rCI" firstAttribute="top" secondItem="t3D-8Y-a1Q" secondAttribute="top" constant="5" id="ht3-TE-dHv"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="128" height="233"/>
+            <connections>
+                <outlet property="serieContentIMG" destination="bGu-Le-qME" id="SAl-tc-FG5"/>
+                <outlet property="serieContentNameLB" destination="M5p-6r-FdC" id="Bfb-Zv-NG2"/>
+                <outlet property="serieContentOriginalNameLB" destination="zZg-8S-guf" id="Cnb-ri-Igh"/>
+                <outlet property="serieContentTV" destination="Q8S-Pm-KJS" id="mmF-w7-eId"/>
+            </connections>
+            <point key="canvasLocation" x="-227.536231884058" y="103.79464285714285"/>
+        </collectionViewCell>
+    </objects>
+</document>

@@ -253,8 +253,8 @@
             timestampString = "590720508.069314"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1122,8 +1122,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
             endingLineNumber = "39"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "cardDoneButtonClicked(_:error:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1139,8 +1139,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "50"
             endingLineNumber = "50"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "cardTypeDidIdentify(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1308,6 +1308,278 @@
             startingLineNumber = "51"
             endingLineNumber = "51"
             landmarkName = "reachabilityChanged(notification:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C3F1AED8-84A4-41B4-8C9F-10CEE32DEE3B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WatchOn/Presenter/SerieContentPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "getContentForSeries(contentForCategoryIn:resourceIn:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5B5110F2-71C5-4603-8F5C-FF722102E90D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WatchOn/Presenter/SerieContentPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "getContentForSeries(contentForCategoryIn:resourceIn:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7B44BEDA-872E-4C51-AD3E-42B90CA37ABD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WatchOn/Service/Services/SeriesContentService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "getContentForSeries(resourceIn:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0FBDA5BA-2476-4243-89E7-064301A51CE5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WatchOn/Service/Services/SeriesContentService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "getContentForSeries(resourceIn:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1BF8C238-9F53-4A7B-93DE-A304790A5E3F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WatchOn/Service/API/APIRequest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "makeRequest(resourseIn:typeIn:parametersIn:encodingIn:headersIn:mutableURL:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E526ADA8-D882-478A-8520-1E9083D87E94"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WatchOn/Model/SerieContent.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "ResponseSerie"
+            landmarkType = "14">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "06060D25-5DA1-424F-9FD5-2DA6DB610C86"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WatchOn/Model/SerieContent.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "CodingKeys"
+            landmarkType = "13">
+            <Locations>
+               <Location
+                  uuid = "06060D25-5DA1-424F-9FD5-2DA6DB610C86 - 8c0aefe517e5d805"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WatchOn.SerieContent.CodingKeys.init(rawValue: Swift.String) -&gt; Swift.Optional&lt;WatchOn.SerieContent.CodingKeys&gt;"
+                  moduleName = "WatchOn"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/edu/Desktop/Edu/Repositories/WatchOn_iOS/WatchOn_iOS/WatchOn/WatchOn/Model/SerieContent.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "67">
+               </Location>
+               <Location
+                  uuid = "06060D25-5DA1-424F-9FD5-2DA6DB610C86 - 91bbae99f8be8931"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WatchOn.SerieContent.CodingKeys.rawValue.getter : Swift.String"
+                  moduleName = "WatchOn"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/edu/Desktop/Edu/Repositories/WatchOn_iOS/WatchOn_iOS/WatchOn/WatchOn/Model/SerieContent.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "318536E9-9AF2-4018-B64D-826004CDF0C0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WatchOn/Model/SerieContent.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "CodingKeys"
+            landmarkType = "13">
+            <Locations>
+               <Location
+                  uuid = "318536E9-9AF2-4018-B64D-826004CDF0C0 - a1ec2436f328f79e"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WatchOn.ResponseSerie.CodingKeys.init(rawValue: Swift.String) -&gt; Swift.Optional&lt;WatchOn.ResponseSerie.CodingKeys&gt;"
+                  moduleName = "WatchOn"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/edu/Desktop/Edu/Repositories/WatchOn_iOS/WatchOn_iOS/WatchOn/WatchOn/Model/SerieContent.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "318536E9-9AF2-4018-B64D-826004CDF0C0 - 1556cc9f889461ba"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WatchOn.ResponseSerie.CodingKeys.rawValue.getter : Swift.String"
+                  moduleName = "WatchOn"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/edu/Desktop/Edu/Repositories/WatchOn_iOS/WatchOn_iOS/WatchOn/WatchOn/Model/SerieContent.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "84C1F5BA-8096-4BE8-8DE3-D17490B46A19"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WatchOn/Model/SerieContent.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "CodingKeys"
+            landmarkType = "13">
+            <Locations>
+               <Location
+                  uuid = "84C1F5BA-8096-4BE8-8DE3-D17490B46A19 - 8c0aefe517e5d805"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WatchOn.SerieContent.CodingKeys.init(rawValue: Swift.String) -&gt; Swift.Optional&lt;WatchOn.SerieContent.CodingKeys&gt;"
+                  moduleName = "WatchOn"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/edu/Desktop/Edu/Repositories/WatchOn_iOS/WatchOn_iOS/WatchOn/WatchOn/Model/SerieContent.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "443">
+               </Location>
+               <Location
+                  uuid = "84C1F5BA-8096-4BE8-8DE3-D17490B46A19 - 91bbae99f8be8931"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WatchOn.SerieContent.CodingKeys.rawValue.getter : Swift.String"
+                  moduleName = "WatchOn"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/edu/Desktop/Edu/Repositories/WatchOn_iOS/WatchOn_iOS/WatchOn/WatchOn/Model/SerieContent.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "359">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A01B8300-3833-42F9-8BA3-0318F49DE813"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WatchOn/Presenter/SerieContentPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "getContentForSeries(contentForCategoryIn:resourceIn:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9B59B2BA-0C55-4C2E-9C7D-E7507FF2E6E2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WatchOn/Presenter/SerieContentPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "getContentForSeries(contentForCategoryIn:resourceIn:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

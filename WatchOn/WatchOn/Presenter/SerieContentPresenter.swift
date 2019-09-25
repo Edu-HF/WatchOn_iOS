@@ -30,7 +30,8 @@ class SerieContentPresenter: NSObject {
     
     //MARK: Public Methods
     func getAllContentForSeries() {
-        self.getContentForSeries(contentForCategoryIn: .LatestSeries, resourceIn: .getLatestSeries)
+        //self.getContentForSeries(contentForCategoryIn: .LatestSeries, resourceIn: .getLatestSeries)
+        self.getContentForSeries(contentForCategoryIn: .PopularitySeries, resourceIn: .getPopolarSeries)
     }
     
     func getContentForSeries(contentForCategoryIn: ContentCategorySeries, resourceIn: APIResource) {
@@ -42,8 +43,7 @@ class SerieContentPresenter: NSObject {
                 var mContent: MainContent!
                 switch contentForCategoryIn {
                 case .LatestSeries, .AirringTodaySeries, .PopularitySeries, .TopRatedSeries, .OnTheAirSeries:
-                    self.mainContentSeriesData.value.append(MainContent(contentType: .Section, contentTitle: contentForCategoryIn.rawValue, mainContents: nil))
-                    mContent = MainContent.init(contentType: .ContentA, contentTitle: nil, mainContents: nil, mainContentSeries: [])
+                    mContent = MainContent.init(contentType: .ContentD, contentTitle: nil, mainContents: nil, mainContentSeries: [])
                 }
                 
                 for serieContent in sResults {

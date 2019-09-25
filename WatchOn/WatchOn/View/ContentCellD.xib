@@ -73,6 +73,12 @@
                     <constraint firstAttribute="bottom" secondItem="7aI-tF-mVc" secondAttribute="bottom" constant="5" id="qg4-58-O7S"/>
                 </constraints>
             </collectionViewCellContentView>
+            <connections>
+                <outlet property="serieContentGendersLB" destination="Ckd-wO-ihx" id="K7y-dl-kQl"/>
+                <outlet property="serieContentIMG" destination="iOy-Kg-w3v" id="Iax-73-19j"/>
+                <outlet property="serieContentNameLB" destination="BlP-DK-0Qb" id="c9P-C3-EsK"/>
+                <outlet property="serieContentOriginalNameLB" destination="c3f-6T-gpD" id="2ul-UG-jGX"/>
+            </connections>
             <point key="canvasLocation" x="-359.4202898550725" y="5.3571428571428568"/>
         </collectionViewCell>
     </objects>

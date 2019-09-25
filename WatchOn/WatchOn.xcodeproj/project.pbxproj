@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34068F8C233B044000ABC7FC /* ContentCellF.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34068F8B233B044000ABC7FC /* ContentCellF.xib */; };
+		34068F8E233B0BC200ABC7FC /* ContentFCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34068F8D233B0BC200ABC7FC /* ContentFCollectionViewCell.swift */; };
 		3450C80A23272B1D00A75ED4 /* PaymentCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3450C80923272B1D00A75ED4 /* PaymentCardTableViewCell.swift */; };
 		3450C80C23272B3600A75ED4 /* PaymentCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3450C80B23272B3600A75ED4 /* PaymentCardCell.xib */; };
 		346D0B522337EB8900DB90F5 /* SerieContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346D0B512337EB8900DB90F5 /* SerieContent.swift */; };
@@ -111,6 +113,8 @@
 /* Begin PBXFileReference section */
 		19FC964AE8E8C45210AD9F70 /* Pods-WatchOn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchOn.release.xcconfig"; path = "Target Support Files/Pods-WatchOn/Pods-WatchOn.release.xcconfig"; sourceTree = "<group>"; };
 		2D387619911A366FC3E6E0FB /* Pods-WatchOnTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchOnTests.release.xcconfig"; path = "Target Support Files/Pods-WatchOnTests/Pods-WatchOnTests.release.xcconfig"; sourceTree = "<group>"; };
+		34068F8B233B044000ABC7FC /* ContentCellF.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentCellF.xib; sourceTree = "<group>"; };
+		34068F8D233B0BC200ABC7FC /* ContentFCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentFCollectionViewCell.swift; sourceTree = "<group>"; };
 		3450C80923272B1D00A75ED4 /* PaymentCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCardTableViewCell.swift; sourceTree = "<group>"; };
 		3450C80B23272B3600A75ED4 /* PaymentCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentCardCell.xib; sourceTree = "<group>"; };
 		346D0B512337EB8900DB90F5 /* SerieContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieContent.swift; sourceTree = "<group>"; };
@@ -373,6 +377,7 @@
 				3CF7303C22D2C0AF009236D7 /* ContentCellB.xib */,
 				349A18D72318BEDD00143F86 /* ContentCellC.xib */,
 				346D0B572338352400DB90F5 /* ContentCellD.xib */,
+				34068F8B233B044000ABC7FC /* ContentCellF.xib */,
 				3CF7303E22D2C6CE009236D7 /* ContentSectionCell.xib */,
 				3CF7304222D39D0F009236D7 /* ContentTableCell.xib */,
 				3CCADD3622D5448D00AA0D32 /* SplashViewController.xib */,
@@ -441,6 +446,7 @@
 				3C3DEC1222D39DB700A358CD /* ContentACollectionViewCell.swift */,
 				3C3DEC1422D39DC600A358CD /* ContentBCollectionViewCell.swift */,
 				349A18D92318C28900143F86 /* ContentCCollectionViewCell.swift */,
+				346D0B59233838C300DB90F5 /* ContentDCollectionViewCell.swift */,
 				3C3DEC1622D39E0000A358CD /* ContentSectionTableViewCell.swift */,
 				3C3DEC1822D39E2100A358CD /* ContentTableViewCell.swift */,
 				3C3F361B22D6C97700E05672 /* DetailCoverCellTableViewCell.swift */,
@@ -452,7 +458,7 @@
 				34D134B4231B56470053AA05 /* DetailActionBtnTableViewCell.swift */,
 				3450C80923272B1D00A75ED4 /* PaymentCardTableViewCell.swift */,
 				34B5B40E2329B2B800B4AB57 /* FavTableViewCell.swift */,
-				346D0B59233838C300DB90F5 /* ContentDCollectionViewCell.swift */,
+				34068F8D233B0BC200ABC7FC /* ContentFCollectionViewCell.swift */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -598,6 +604,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34068F8C233B044000ABC7FC /* ContentCellF.xib in Resources */,
 				3C14720722D1259B000AE37D /* LaunchScreen.storyboard in Resources */,
 				348F6F5F233719BC00970C43 /* NotInternetView.xib in Resources */,
 				3CF7303F22D2C6CE009236D7 /* ContentSectionCell.xib in Resources */,
@@ -755,6 +762,7 @@
 				34D134A9231AF50A0053AA05 /* UIImageView+Extensions.swift in Sources */,
 				3C8BF6D422E51CFC006FE7BF /* APIRequest.swift in Sources */,
 				3CCADD3322D53B9000AA0D32 /* User.swift in Sources */,
+				34068F8E233B0BC200ABC7FC /* ContentFCollectionViewCell.swift in Sources */,
 				34CBA04C232E98D000EDF45D /* UserPresenter.swift in Sources */,
 				3C3F361622D6C18200E05672 /* DetailViewController.swift in Sources */,
 				3CCADD3522D541F400AA0D32 /* UIViewController+Extensions.swift in Sources */,

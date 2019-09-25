@@ -52,3 +52,5 @@
 
 "NotConexionTitleKey" = "Not Connection";
 "NotConexionMSGKey" = "Oops! It seems that it has no internet connection. Please make sure you have data connection and try again";
+
+"OupsErrorKey" = "Oups! Error";

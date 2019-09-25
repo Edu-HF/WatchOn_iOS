@@ -20,7 +20,7 @@ enum MEDIAResourceKind: String {
 }
 
 enum APIResource {
-    case getDiscoverMovies, getTrendingMovies, getPopularityMovies, getTopRatedMovies, getUpcomingMovies, getPopularitySeries, getTopRatedSeries, getUpcomingSeries, getGenres, getCast, getMedia, getLatestSeries
+    case getDiscoverMovies, getTrendingMovies, getPopularityMovies, getTopRatedMovies, getUpcomingMovies, getPopularitySeries, getTopRatedSeries, getUpcomingSeries, getGenres, getCast, getMedia, getLatestSeries, getPopolarSeries
 }
 
 struct APIError: Codable {
@@ -61,13 +61,14 @@ extension APIResource: EndPointType {
             case .getCast: return "/movie/"
             case .getMedia: return "/movie/"
             
-        case .getLatestSeries: return "/tv/latest"
+            case .getLatestSeries: return "/tv/latest"
+            case .getPopolarSeries: return "/tv/popular"
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .getDiscoverMovies, .getTrendingMovies, .getPopularityMovies, .getTopRatedMovies, .getUpcomingMovies, .getPopularitySeries, .getTopRatedSeries, .getUpcomingSeries, .getGenres, .getCast, .getMedia, .getLatestSeries: return .get
+        case .getDiscoverMovies, .getTrendingMovies, .getPopularityMovies, .getTopRatedMovies, .getUpcomingMovies, .getPopularitySeries, .getTopRatedSeries, .getUpcomingSeries, .getGenres, .getCast, .getMedia, .getLatestSeries, .getPopolarSeries: return .get
         }
     }
 }

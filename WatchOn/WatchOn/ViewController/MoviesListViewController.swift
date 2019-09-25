@@ -16,7 +16,7 @@ protocol ContentTappedProtocol {
 class MoviesListViewController: BaseViewController {
     
     @IBOutlet weak var moviesTV: UITableView!
-    var contentPresenter: ContentPresenter = ContentPresenter.sharedIntance
+    private var contentPresenter: ContentPresenter = ContentPresenter.sharedIntance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,12 +35,12 @@ class MoviesListViewController: BaseViewController {
 
     private func setupListeners() {
         
-        contentPresenter.mainContentData.bind { mainContentDataIn in
+        contentPresenter.mainContentData.bind { _ in
             self.moviesTV.reloadData()
         }
         
         contentPresenter.mainErrorResponse?.bind { errorIn in
-            print("Error ")
+            self.showSomeMSGAlert(titleIn: "OupsErrorKey".localized(), msgIn: errorIn.localizedDescription)
         }
         
         contentPresenter.getGenresMovies()
@@ -64,6 +64,8 @@ extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
             return 260.0
         case .ContentC:
             return 400.0
+        case .ContentD:
+            return 0
         }
     }
     
@@ -82,6 +84,9 @@ extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
             let contentCell = tableView.dequeueReusableCell(withIdentifier: "ContentTableCell") as! ContentTableViewCell
             contentCell.setupCell(mainContentIn: contentPresenter.mainContentData.value[indexPath.row], onContenttappedIn: self)
             return contentCell
+            
+        case .ContentD:
+            return UITableViewCell()
         }
     }
 }

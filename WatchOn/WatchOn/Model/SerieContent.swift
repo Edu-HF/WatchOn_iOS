@@ -20,6 +20,7 @@ struct SerieContent: Codable {
     var serieSintaxis: String?
     var serieVoteAverage: Double?
     var serieVoteNum: Double?
+    var serieIsSelected: Bool?
     
     init() {
         
@@ -33,6 +34,7 @@ struct SerieContent: Codable {
         serieSintaxis = ""
         serieVoteAverage = 0
         serieVoteNum = 0
+        serieIsSelected = false
     }
     
     enum CodingKeys: String, CodingKey {

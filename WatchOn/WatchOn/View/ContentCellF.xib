@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="svf-fg-Tkk" customClass="ContentFCollectionViewCell" customModule="WatchOn" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ContentCellF" id="svf-fg-Tkk" customClass="ContentFCollectionViewCell" customModule="WatchOn" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="400" height="500"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="t3D-8Y-a1Q">
@@ -28,7 +28,7 @@
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Q8S-Pm-KJS">
                                 <rect key="frame" x="0.0" y="240" width="390" height="250"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="-1" id="FwP-Wv-nVb"/>
                                     <outlet property="delegate" destination="-1" id="2cA-AS-TdW"/>
@@ -48,6 +48,9 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="serieSintaxisBtn:" destination="svf-fg-Tkk" eventType="touchUpInside" id="PsD-QQ-cIA"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LO7-dQ-xxA" customClass="WButton" customModule="WatchOn" customModuleProvider="target">
                                 <rect key="frame" x="195" y="200" width="195" height="40"/>
@@ -63,6 +66,9 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="serieEpisodesBtn:" destination="svf-fg-Tkk" eventType="touchUpInside" id="qCV-jb-cJD"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZg-8S-guf">
                                 <rect key="frame" x="8" y="172" width="374" height="20"/>
@@ -77,7 +83,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.086274509799999996" green="0.08235294118" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="zZg-8S-guf" firstAttribute="top" secondItem="M5p-6r-FdC" secondAttribute="bottom" constant="5" id="28b-iE-Ipc"/>
                             <constraint firstAttribute="bottom" secondItem="Q8S-Pm-KJS" secondAttribute="bottom" id="2oM-Ed-CQ1"/>
@@ -97,6 +103,11 @@
                             <constraint firstItem="Qme-vL-rCA" firstAttribute="leading" secondItem="iHF-74-rCI" secondAttribute="leading" id="z0z-YP-PzT"/>
                             <constraint firstAttribute="trailing" secondItem="bGu-Le-qME" secondAttribute="trailing" id="zVx-Yq-V6e"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
                 <constraints>
@@ -106,6 +117,7 @@
                     <constraint firstItem="iHF-74-rCI" firstAttribute="top" secondItem="t3D-8Y-a1Q" secondAttribute="top" constant="5" id="ht3-TE-dHv"/>
                 </constraints>
             </collectionViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <size key="customSize" width="128" height="233"/>
             <connections>
                 <outlet property="serieContentIMG" destination="bGu-Le-qME" id="SAl-tc-FG5"/>
@@ -113,7 +125,7 @@
                 <outlet property="serieContentOriginalNameLB" destination="zZg-8S-guf" id="Cnb-ri-Igh"/>
                 <outlet property="serieContentTV" destination="Q8S-Pm-KJS" id="mmF-w7-eId"/>
             </connections>
-            <point key="canvasLocation" x="-227.536231884058" y="103.79464285714285"/>
+            <point key="canvasLocation" x="-843" y="-13"/>
         </collectionViewCell>
     </objects>
 </document>

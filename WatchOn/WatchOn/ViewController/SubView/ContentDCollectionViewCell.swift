@@ -23,11 +23,10 @@ class ContentDCollectionViewCell: UICollectionViewCell {
         serieContentGendersLB.text = ""
     }
     
-    func setupCell(serieContentIn: SerieContent?) {
+    func setupCell(serieContentIn: SerieContent) {
         
-        if serieContentIn != nil {
             DispatchQueue.main.async {
-                if let posterPath = serieContentIn?.seriePosterPath {
+                if let posterPath = serieContentIn.seriePosterPath {
                     if let posterURL = URL(string: posterPath.buildURLStringIMG()) {
                         Nuke.loadImage(with: posterURL, options: ImageLoadingOptions().loadIMGBaseOptions(), into: self.serieContentIMG, progress: nil, completion: { _ in
                             self.serieContentIMG.resizeIMGToFrame()
@@ -36,9 +35,8 @@ class ContentDCollectionViewCell: UICollectionViewCell {
                 }
             }
             
-            serieContentNameLB.text = serieContentIn?.serieName
-            serieContentOriginalNameLB.text = serieContentIn?.serieOriginalName
+            serieContentNameLB.text = serieContentIn.serieName
+            serieContentOriginalNameLB.text = serieContentIn.serieOriginalName
             serieContentGendersLB.text = "Generos: Drama, Action, Romance"
-        }
     }
 }

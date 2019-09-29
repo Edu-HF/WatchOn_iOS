@@ -21,4 +21,29 @@ class SeriesContentService: BaseService {
         let request = APIRequest.sharedInstance.makeRequest(resourseIn: resourceIn, typeIn: ResponseSerie.self, parametersIn: params, encodingIn: URLEncoding(destination: .queryString), headersIn: buildHeaders())
         return excRequest(requestIn: request)
     }
+    
+    func getSerieDetail(serieContentIn: SerieContent) -> Promise<SerieContent> {
+        let params: Parameters = [
+            "api_key" : getAPIKey()
+        ]
+        
+        let serieID = serieContentIn.serieID ?? 0
+        let detailMainURL = APIResource.getCast.baseURL.appendingPathComponent(APIResource.getSerieDetail.urlPath + "\(serieID)")
+        
+        let request = APIRequest.sharedInstance.makeRequest(resourseIn: APIResource.getSerieDetail, typeIn: SerieContent.self, parametersIn: params, encodingIn: URLEncoding(destination: .queryString), headersIn: buildHeaders(), mutableURL: detailMainURL)
+        return excRequest(requestIn: request)
+    }
+    
+    func getSerieEpisodesBySeason(serieSeasonIn: Season) -> Promise<ResponseEpisode> {
+        let params: Parameters = [
+            "api_key" : getAPIKey()
+        ]
+        
+        let seasonID = serieSeasonIn.sID ?? 0
+        let seasonNum = serieSeasonIn.sNumber ?? 0
+        let detailMainURL = APIResource.getCast.baseURL.appendingPathComponent(APIResource.getSerieEpisodes.urlPath + "\(seasonID)/season/\(seasonNum)")
+        
+        let request = APIRequest.sharedInstance.makeRequest(resourseIn: APIResource.getSerieEpisodes, typeIn: ResponseEpisode.self, parametersIn: params, encodingIn: URLEncoding(destination: .queryString), headersIn: buildHeaders(), mutableURL: detailMainURL)
+        return excRequest(requestIn: request)
+    }
 }

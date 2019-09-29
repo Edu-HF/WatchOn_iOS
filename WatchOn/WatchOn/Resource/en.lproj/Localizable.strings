@@ -14,6 +14,8 @@
 "UserProfileKey" = "User Profile";
 "DetailUKey" = "DETAIL";
 "FavKey" = "Favorites";
+"ChaptersUKey" = "CHAPTERS";
+"SinoxisUKey" = "SINOXIS";
 "PaymentMethodKey" = "Payment Method";
 "DiscoverMoviesKey" = "Discover Movies";
 "TrendingMoviesKey" = "Trending Movies";

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SerieContent: Codable {
+class SerieContent: Codable {
     
     var serieID: Int?
     var serieName: String?
@@ -21,6 +21,7 @@ struct SerieContent: Codable {
     var serieVoteAverage: Double?
     var serieVoteNum: Double?
     var serieIsSelected: Bool?
+    var serieSeasons: [Season]?
     
     init() {
         
@@ -35,6 +36,8 @@ struct SerieContent: Codable {
         serieVoteAverage = 0
         serieVoteNum = 0
         serieIsSelected = false
+        serieSeasons = []
+        
     }
     
     enum CodingKeys: String, CodingKey {
@@ -48,6 +51,7 @@ struct SerieContent: Codable {
         case serieSintaxis = "overview"
         case serieVoteAverage = "vote_average"
         case serieVoteNum = "vote_count"
+        case serieSeasons = "seasons"
     }
 }
 

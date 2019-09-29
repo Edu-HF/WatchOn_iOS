@@ -22,7 +22,6 @@ class SeriesListViewController: BaseViewController, UICollectionViewDelegateFlow
         
         setVCTitle(titleIn: "SeriesUKey".localized())
         mainSeriesCV.register(UINib(nibName: "ContentCellD", bundle: nil), forCellWithReuseIdentifier: "ContentCellD")
-        mainSeriesCV.register(UINib(nibName: "ContentCellF", bundle: nil), forCellWithReuseIdentifier: "ContentCellF")
         
         setupListeners()
     }
@@ -46,7 +45,7 @@ extension SeriesListViewController: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if serieContentPresenter.mainContentSeriesData.value.count != 0 {
-            return serieContentPresenter.mainContentSeriesData.value[0].mainContentSeries?.count ?? 0
+            return serieContentPresenter.mainContentSeriesData.value.count
         }else {
             return 0
         }
@@ -54,41 +53,20 @@ extension SeriesListViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if let serieContent = serieContentPresenter.mainContentSeriesData.value[0].mainContentSeries?[indexPath.row] {
-            if serieContent.serieIsSelected != nil && serieContent.serieIsSelected == true {
-                let serieSelectedCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ContentCellF", for: indexPath) as! ContentFCollectionViewCell
-                serieSelectedCell.setupCell()
-                
-                return serieSelectedCell
-            }else {
-                let seriesCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ContentCellD", for: indexPath) as! ContentDCollectionViewCell
-                seriesCell.setupCell(serieContentIn: serieContent)
-                
-                return seriesCell
-            }
-            
-        }else {
-            return UICollectionViewCell()
-        }
+        let seriesCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ContentCellD", for: indexPath) as! ContentDCollectionViewCell
+        seriesCell.setupCell(serieContentIn: serieContentPresenter.mainContentSeriesData.value[indexPath.row])
         
+        return seriesCell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        serieContentPresenter.mainContentSeriesData.value[0].mainContentSeries?[indexPath.row].serieIsSelected = true
-        self.mainSeriesCV.reloadData()
+        self.serieContentPresenter.mainSerieContentSelected.value = serieContentPresenter.mainContentSeriesData.value[indexPath.row]
+        self.navigationController?.pushViewController(SerieDetailViewController(nibName: "SerieDetailView", bundle: nil), animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        if let serieContent = serieContentPresenter.mainContentSeriesData.value[0].mainContentSeries?[indexPath.row] {
-            if serieContent.serieIsSelected != nil && serieContent.serieIsSelected == true {
-                return CGSize(width: 400, height: 500)
-            }else {
-                return CGSize(width: 180, height: 400)
-            }
-        }else {
-            return CGSize(width: 180, height: 400)
-        }
+        return serieContentPresenter.getSerieContentCellH()
     }
-    
+
 }

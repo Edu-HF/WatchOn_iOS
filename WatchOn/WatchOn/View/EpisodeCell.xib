@@ -62,8 +62,7 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
-                <outlet property="episodeNameLB" destination="RaJ-Ef-EbW" id="IpQ-aH-85T"/>
-                <outlet property="episodePlayBtn" destination="zie-KC-j45" id="eRA-6t-H2o"/>
+                <outlet property="sEpisodeNameLB" destination="RaJ-Ef-EbW" id="Xrk-Lp-afc"/>
             </connections>
             <point key="canvasLocation" x="-391.304347826087" y="58.928571428571423"/>
         </tableViewCell>

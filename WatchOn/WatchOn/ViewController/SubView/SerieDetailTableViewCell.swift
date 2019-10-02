@@ -10,15 +10,22 @@ import UIKit
 
 class SerieDetailTableViewCell: UITableViewCell {
 
+    
+    @IBOutlet weak var mSintaxisLB: UITextView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    override func prepareForReuse() {
+        mSintaxisLB.text = ""
     }
 
+    func setupCell() {
+        let serieDetail = SerieContentPresenter.sharedInstance.mainSerieContentSelected.value
+        
+        mSintaxisLB.text = serieDetail.serieSintaxis
+    }
+    
 }

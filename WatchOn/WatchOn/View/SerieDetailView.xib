@@ -99,7 +99,6 @@
                 <constraint firstItem="aaR-gS-s3f" firstAttribute="leading" secondItem="vvp-Wv-bGh" secondAttribute="leading" id="p56-yo-0KE"/>
                 <constraint firstItem="L20-z4-vXF" firstAttribute="trailing" secondItem="vvp-Wv-bGh" secondAttribute="trailing" id="wCJ-eD-ATk"/>
             </constraints>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vvp-Wv-bGh"/>
             <point key="canvasLocation" x="-4.3478260869565224" y="118.52678571428571"/>
         </view>

@@ -1,5 +1,5 @@
 //
-//  EpisodeTableViewCell.swift
+//  SeasonOffTableViewCell.swift
 //  WatchOn
 //
 //  Created by Eduardo  Herrera Fagundez on 02/10/19.
@@ -8,21 +8,21 @@
 
 import UIKit
 
-class EpisodeTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var sEpisodeNameLB: UILabel!
+class SeasonOffTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var mSeasonNameLB: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-    
-    override func prepareForReuse() {
-        self.sEpisodeNameLB.text = ""
-    }
 
-    func setupCell(episodeIn: Episode) {
-        self.sEpisodeNameLB.text = episodeIn.eName
+    override func prepareForReuse() {
+        self.mSeasonNameLB.text = ""
+    }
+    
+    func setupCell(seasonIn: Season) {
+        self.mSeasonNameLB.text = seasonIn.sName
     }
 
 }

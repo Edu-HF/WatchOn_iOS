@@ -37,8 +37,8 @@ class SerieDetailViewController: BaseViewController {
     
     private func setupView() {
         
-        serieContentTV.register(UINib(nibName: "EpisodeCell", bundle: nil), forCellReuseIdentifier: "EpisodeCell")
-        serieContentTV.register(UINib(nibName: "SeasonCell", bundle: nil), forCellReuseIdentifier: "SeasonCell")
+        serieContentTV.register(UINib(nibName: "SeasonOffCell", bundle: nil), forCellReuseIdentifier: "SeasonOffCell")
+        serieContentTV.register(UINib(nibName: "SeasonOnCell", bundle: nil), forCellReuseIdentifier: "SeasonOnCell")
         serieContentTV.register(UINib(nibName: "SerieDetailCell", bundle: nil), forCellReuseIdentifier: "SerieDetailCell")
         
         serieContentNameLB.text = SerieContentPresenter.sharedInstance.mainSerieContentSelected.value.serieName
@@ -60,7 +60,7 @@ class SerieDetailViewController: BaseViewController {
     private func setupListeners() {
         
         SerieContentPresenter.sharedInstance.mainSerieContentSelected.bind { _ in
-            self.serieContentTV.reloadData()
+            self.updateTV()
         }
         
         SerieContentPresenter.sharedInstance.mainErrorResponse?.bind { errorIn in
@@ -71,17 +71,19 @@ class SerieDetailViewController: BaseViewController {
     }
     
     @objc private func updateTV() {
-        self.serieContentTV.reloadData()
+        DispatchQueue.main.async {
+            self.serieContentTV.reloadData()
+        }
     }
     
     @IBAction func serieSintaxisBtn(_ sender: Any) {
         mCellType = .SintaxisCell
-        serieContentTV.reloadData()
+        self.updateTV()
     }
     
     @IBAction func serieEpisodesBtn(_ sender: Any) {
         mCellType = .EpisodesCell
-        serieContentTV.reloadData()
+        self.updateTV()
     }
 }
 
@@ -101,19 +103,20 @@ extension SerieDetailViewController: UITableViewDelegate, UITableViewDataSource 
         switch mCellType {
         case .SintaxisCell:
             let detailCell = tableView.dequeueReusableCell(withIdentifier: "SerieDetailCell") as! SerieDetailTableViewCell
+            detailCell.setupCell()
             
             return detailCell
         case .EpisodesCell:
             if let mSeason = SerieContentPresenter.sharedInstance.mainSerieContentSelected.value.serieSeasons?[indexPath.row] {
                 
                 if mSeason.sIsSelected ?? false {
-                    let seasonCell = tableView.dequeueReusableCell(withIdentifier: "SeasonCell") as! SeasonTableViewCell
-                    seasonCell.setupCell(seasonIn: mSeason, indexIn: indexPath.row)
-                    return seasonCell
+                    let seasonOnCell = tableView.dequeueReusableCell(withIdentifier: "SeasonOnCell") as! SeasonOnTableViewCell
+                    seasonOnCell.setupCell(seasonIn: mSeason, indexIn: indexPath.row)
+                    return seasonOnCell
                 }else {
-                    let episodesCell = tableView.dequeueReusableCell(withIdentifier: "EpisodeCell") as! EpisodeTableViewCell
-                    episodesCell.setupCell(seasonIn: mSeason, episodeIn: nil)
-                    return episodesCell
+                    let seasonOffCell = tableView.dequeueReusableCell(withIdentifier: "SeasonOffCell") as! SeasonOffTableViewCell
+                    seasonOffCell.setupCell(seasonIn: mSeason)
+                    return seasonOffCell
                 }
             }
             return UITableViewCell()
@@ -122,14 +125,14 @@ extension SerieDetailViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         SerieContentPresenter.sharedInstance.mainSerieContentSelected.value.serieSeasons?[indexPath.row].sIsSelected = true
-        self.serieContentTV.reloadData()
+        self.updateTV()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         switch mCellType {
         case .SintaxisCell:
-            return 250
+            return 456
         case .EpisodesCell:
             if let mSeason = SerieContentPresenter.sharedInstance.mainSerieContentSelected.value.serieSeasons?[indexPath.row] {
                 if mSeason.sIsSelected ?? false {
@@ -137,7 +140,8 @@ extension SerieDetailViewController: UITableViewDelegate, UITableViewDataSource 
                     if eCount == 0 {
                         return 100
                     }else{
-                        return CGFloat(50*eCount + 70)
+                        let itemH = 50 * eCount
+                        return CGFloat(itemH + 70)
                     }
                 }else {
                     return 50

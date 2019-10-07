@@ -62,7 +62,6 @@ open class WButton: UIButton {
         self.setTitle(self.title(for: .normal)?.localized(), for: .normal)
         self.baseTitle = self.title(for: .normal)?.localized()
         self.baseBGColor = self.backgroundColor
-    
     }
     
     private func returnToBaseStade() {

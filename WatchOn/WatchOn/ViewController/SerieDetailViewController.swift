@@ -29,14 +29,17 @@ class SerieDetailViewController: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         NotificationCenter.default.addObserver(self, selector: #selector(updateTV), name: .UpdateEpisodesNoti, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showEpisode), name: .ShowEpisodeNoti, object: nil)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         NotificationCenter.default.removeObserver(self, name: .UpdateEpisodesNoti, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .ShowEpisodeNoti, object: nil)
     }
     
     private func setupView() {
         
+        setVCTitle(titleIn: "DetailUKey".localized())
         serieContentTV.register(UINib(nibName: "SeasonOffCell", bundle: nil), forCellReuseIdentifier: "SeasonOffCell")
         serieContentTV.register(UINib(nibName: "SeasonOnCell", bundle: nil), forCellReuseIdentifier: "SeasonOnCell")
         serieContentTV.register(UINib(nibName: "SerieDetailCell", bundle: nil), forCellReuseIdentifier: "SerieDetailCell")
@@ -73,6 +76,14 @@ class SerieDetailViewController: BaseViewController {
     @objc private func updateTV() {
         DispatchQueue.main.async {
             self.serieContentTV.reloadData()
+        }
+    }
+    
+    @objc private func showEpisode() {
+        DispatchQueue.main.async {
+            let mMediaPlayerVC = MainMediaPlayerViewController()
+            mMediaPlayerVC.mPlayerTypeContent = .SerieChapterType
+            self.present(mMediaPlayerVC, animated: true, completion: nil)
         }
     }
     

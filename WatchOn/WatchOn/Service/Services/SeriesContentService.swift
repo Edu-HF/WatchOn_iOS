@@ -46,4 +46,17 @@ class SeriesContentService: BaseService {
         let request = APIRequest.sharedInstance.makeRequest(resourseIn: APIResource.getSerieEpisodes, typeIn: ResponseEpisode.self, parametersIn: params, encodingIn: URLEncoding(destination: .queryString), headersIn: buildHeaders(), mutableURL: detailMainURL)
         return excRequest(requestIn: request)
     }
+    
+    func getContentMedia(episodeIn: Episode) -> Promise<ResponseMediaData> {
+        let params: Parameters = [
+            "api_key" : getAPIKey()
+        ]
+        
+        let eID = episodeIn.eID ?? 0
+        print("EPISODE ID: ", eID)
+        let mediaMainURL = APIResource.getMedia.baseURL.appendingPathComponent(APIResource.getSerieMedia.urlPath + "\(eID)/videos")
+        
+        let request = APIRequest.sharedInstance.makeRequest(resourseIn: APIResource.getSerieMedia, typeIn: ResponseMediaData.self, parametersIn: params, encodingIn: URLEncoding(destination: .queryString), headersIn: buildHeaders(), mutableURL: mediaMainURL)
+        return excRequest(requestIn: request)
+    }
 }

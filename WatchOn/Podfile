@@ -11,8 +11,8 @@ target 'WatchOn' do
   pod 'ReachabilitySwift'
   pod 'Nuke'
   pod 'Toucan'
-  pod 'youtube-ios-player-helper'
   pod 'MFCard'
+  pod "youtube-ios-player-helper"
 
   target 'WatchOnTests' do
     inherit! :search_paths

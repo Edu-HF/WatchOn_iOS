@@ -29,7 +29,7 @@ class ContentPresenter: NSObject {
     var mainContentData: DynamicType<[MainContent]> = DynamicType([])
     var mainGenresData: DynamicType<[Genre]> = DynamicType([])
     var mainContentSelected: Content!
-    
+
     class var sharedIntance: ContentPresenter {
         struct Static {
             static let instance: ContentPresenter = ContentPresenter()
@@ -193,5 +193,18 @@ class ContentPresenter: NSObject {
             }
         }
         return isItemFav
+    }
+    
+    func getMovieContentToShowID() -> String {
+        
+        var mContentID: String = ""
+        self.mainContentSelected.contentMedia.value.forEach {
+            if $0.mKey != nil && $0.mKey != "" {
+                mContentID = $0.mKey!
+                return
+            }
+        }
+        
+        return mContentID
     }
 }

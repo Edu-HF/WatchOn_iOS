@@ -11,4 +11,5 @@ import Foundation
 extension Notification.Name {
     
     public static let UpdateEpisodesNoti: Notification.Name = Notification.Name("UpdateEpisodesNoti")
+    public static let ShowEpisodeNoti: Notification.Name = Notification.Name("ShowEpisodeNoti")
 }

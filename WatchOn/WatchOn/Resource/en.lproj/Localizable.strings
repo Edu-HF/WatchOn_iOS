@@ -26,6 +26,7 @@
 "ReleaseDateKey" = "Release Date ";
 "RatedKey" = "Rated ";
 "CastKey" = "Cast";
+"LanKey" = "Language ";
 "SeeTraillerKey" = "See Trailler";
 "UserNameUKey" = "USER NAME";
 "UserEmailUKey" = "USER EMAIL";

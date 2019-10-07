@@ -60,4 +60,10 @@ extension SeasonOnTableViewCell: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let episodeCell = tableView.cellForRow(at: indexPath) as? EpisodeTableViewCell {
+            episodeCell.setEpisodeSelected()
+        }
+    }
 }

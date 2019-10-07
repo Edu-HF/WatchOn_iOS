@@ -43,4 +43,10 @@ extension String {
         }
         return genres
     }
+    
+    func buildMediaContentURL() -> String {
+        let mainDict = Bundle.main.infoDictionary
+        let bURL = mainDict?["YOUTUBE_URL"] as! String
+        return bURL + self
+    }
 }

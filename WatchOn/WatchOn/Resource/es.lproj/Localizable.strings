@@ -26,6 +26,7 @@
 "ReleaseDateKey" = "Fecha de lanzamiento ";
 "RatedKey" = "Votacion ";
 "CastKey" = "Elenco";
+"LanKey" = "Language ";
 "SeeTraillerKey" = "Ver Tailer";
 "UserNameUKey" = "NOMBRE DE USUARIO";
 "UserEmailUKey" = "EMAIL DE USUARIO";

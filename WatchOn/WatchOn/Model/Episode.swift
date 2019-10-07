@@ -13,6 +13,7 @@ struct Episode: Codable {
     var eID: Int?
     var eNumber: Int?
     var eName: String?
+    var eContentMedia: [MediaData] = []
     
     enum CodingKeys: String, CodingKey {
         case eID = "id"

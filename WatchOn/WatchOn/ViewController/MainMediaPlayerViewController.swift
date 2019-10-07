@@ -10,14 +10,19 @@ import UIKit
 import Lottie
 import youtube_ios_player_helper
 
+enum PlayerTypeContent: String {
+    case MovieType, SerieChapterType
+}
+
 class MainMediaPlayerViewController: UIViewController {
     
-    @IBOutlet weak var mainPlayerView: YTPlayerView!
     @IBOutlet weak var mainPlayerLoaderView: UIView!
     
-    fileprivate var mainPlayer: YTPlayerView!
     fileprivate var mainLoaderAV: AnimationView!
+    fileprivate var mainYTPlayerView: YTPlayerView!
     private var mainContentPresenter: ContentPresenter = ContentPresenter.sharedIntance
+    
+    var mPlayerTypeContent: PlayerTypeContent = .MovieType
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -28,8 +33,6 @@ class MainMediaPlayerViewController: UIViewController {
         setupView()
     }
     
-
-    
     private func setupView() {
         
         mainLoaderAV = AnimationView(name: "LoadingContent")
@@ -38,36 +41,40 @@ class MainMediaPlayerViewController: UIViewController {
         mainPlayerLoaderView.addSubview(mainLoaderAV)
         mainLoaderAV.play { (isComplete) in
             if isComplete {
-                if self.mainPlayerView.playerState().rawValue == 6 {
-                    self.showErrorLoadContent()
+                DispatchQueue.main.async {
+                    self.setupPlayer()
                 }
             }
         }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
-            self.setupPlayer()
-        })
     }
     
     private func setupPlayer() {
-        
-        let playerOpDic = ["controls" : 1, "playInline" : 1, "autohide" : 1, "showinfo" : 0, "autoplay" : 1, "modestbranding" : 1]
-        
-        mainPlayerView.delegate = self
-        var mContentKey = ""
-        mainContentPresenter.mainContentSelected.contentMedia.value.forEach {
-            if $0.mKey != nil && $0.mKey != "" {
-                mContentKey = $0.mKey!
-                mainPlayerView.load(withVideoId: mContentKey, playerVars: playerOpDic)
-                return
-            }
+    
+        switch self.mPlayerTypeContent {
+        case .MovieType:
+            self.buildAndShowPlayer(videoIDIn: ContentPresenter.sharedIntance.getMovieContentToShowID())
+        case .SerieChapterType:
+            self.buildAndShowPlayer(videoIDIn: SerieContentPresenter.sharedInstance.getSerieContentToShowID())
         }
         
-        if mContentKey == "" {
-            showErrorLoadContent()
-        }
+    }
+    
+    private func buildAndShowPlayer(videoIDIn: String) {
         
-        NotificationCenter.default.addObserver(self, selector: #selector(closeVC), name: UIWindow.didBecomeHiddenNotification, object: self.view)
+        self.mainYTPlayerView = YTPlayerView(frame: self.view.bounds)
+        self.mainYTPlayerView.delegate = self
+        self.mainYTPlayerView.load(withVideoId: videoIDIn, playerVars: ["playsinline":"@1"])
+        self.view.addSubview(self.mainYTPlayerView)
+        self.buildCloseButton()
+    }
+    
+    private func buildCloseButton() {
+        let closeBtn = UIButton(frame: CGRect(x: 10, y: 40, width: 50, height: 50))
+        closeBtn.setImage(UIImage(named: "XOff_IC"), for: .normal)
+        closeBtn.addTarget(self, action: #selector(closeVC), for: .touchUpInside)
+        if self.mainYTPlayerView != nil {
+            self.mainYTPlayerView.addSubview(closeBtn)
+        }
     }
     
     private func showErrorLoadContent() {
@@ -80,21 +87,13 @@ class MainMediaPlayerViewController: UIViewController {
     
     @objc private func closeVC() {
         self.dismiss(animated: true, completion: nil)
+        if self.mainYTPlayerView != nil {
+            self.mainYTPlayerView.removeFromSuperview()
+        }
     }
 }
 
 extension MainMediaPlayerViewController: YTPlayerViewDelegate {
-    
-    func playerViewDidBecomeReady(_ playerView: YTPlayerView) {
-        self.mainPlayerView.playVideo()
-    }
-    
-    func playerView(_ playerView: YTPlayerView, didPlayTime playTime: Float) {
-        if playTime > 0 {
-            self.mainLoaderAV.stop()
-            self.mainPlayerLoaderView.isHidden = true
-        }
-    }
     
     func playerView(_ playerView: YTPlayerView, receivedError error: YTPlayerError) {
         self.showErrorLoadContent()

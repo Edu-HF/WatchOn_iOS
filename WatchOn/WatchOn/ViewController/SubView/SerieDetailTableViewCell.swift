@@ -12,6 +12,8 @@ class SerieDetailTableViewCell: UITableViewCell {
 
     
     @IBOutlet weak var mSintaxisLB: UITextView!
+    @IBOutlet weak var mLanIMG: UIImageView!
+    @IBOutlet weak var mRatingNumLB: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,12 +22,16 @@ class SerieDetailTableViewCell: UITableViewCell {
 
     override func prepareForReuse() {
         mSintaxisLB.text = ""
+        mLanIMG.image = nil
+        mRatingNumLB.text = ""
     }
 
     func setupCell() {
         let serieDetail = SerieContentPresenter.sharedInstance.mainSerieContentSelected.value
         
         mSintaxisLB.text = serieDetail.serieSintaxis
+        mRatingNumLB.text = String(serieDetail.serieVoteAverage ?? 0.0)
     }
+    
     
 }

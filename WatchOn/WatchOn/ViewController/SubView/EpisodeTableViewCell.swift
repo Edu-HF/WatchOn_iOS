@@ -11,6 +11,7 @@ import UIKit
 class EpisodeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var sEpisodeNameLB: UILabel!
+    private var mEpisode: Episode!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,10 +20,17 @@ class EpisodeTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         self.sEpisodeNameLB.text = ""
+        self.mEpisode = nil
     }
 
     func setupCell(episodeIn: Episode) {
-        self.sEpisodeNameLB.text = episodeIn.eName
+        self.mEpisode = episodeIn
+        self.sEpisodeNameLB.text = self.mEpisode.eName
     }
 
+    func setEpisodeSelected() {
+        if self.mEpisode != nil {
+            SerieContentPresenter.sharedInstance.setEpisodeSelected(episodeIn: self.mEpisode)
+        }
+    }
 }

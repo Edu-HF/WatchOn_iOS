@@ -1,29 +1,5 @@
 ## Watch On
 WatchOn is a small and solid application capable of offering users excellent content about the latest movies and series in the industry. With WatchOn you can enjoy content updated by the community completely free. (This project is a Demo)
- 
-<!-- PROJECT LOGO -->
-![alt text](https://github.com/Edu-HF/WatchOn_iOS/tree/master/WatchOn/WatchOn/Resource/Assets.xcassets/AppIcon.appiconset/ItunesArtwork@2x.png)
-<br />
-<p align="center">
-  <a href="https://github.com/Edu-HF/WatchOn_iOS">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
-  <h3 align="center">Watch On</h3>
-
-  <p align="center">
-    SEE YOUR FAVORITE SERIES AND MOVIES
-    <br />
-    <a href="https://github.com/Edu-HF/WatchOn_iOS"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/github_username/repo">View Demo</a>
-    ·
-    <a href="https://github.com/github_username/repo/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/github_username/repo/issues">Request Feature</a>
-  </p>
-</p>
 
 ## Tech/framework used
 Ex. -

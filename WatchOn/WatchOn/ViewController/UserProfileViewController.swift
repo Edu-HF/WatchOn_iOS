@@ -70,7 +70,6 @@ class UserProfileViewController: BaseViewController {
     private func buildProfilePhoto() {
         
         mProfilePhotoIV = UIImageView(frame: CGRect(x: mUserCardView.frame.origin.x+240, y: mUserCardView.frame.origin.y - 40, width: 100, height: 100))
-        
         mProfilePhotoBtn = UIButton(frame: mProfilePhotoIV.frame)
         mProfilePhotoBtn.setTitle("", for: .normal)
         mProfilePhotoBtn.addTarget(self, action: #selector(onProfilePhotoClick), for: .touchUpInside)
@@ -83,13 +82,13 @@ class UserProfileViewController: BaseViewController {
                     if let userIMG: UIImage = UIImage(data: userData.userIMGData!) {
                         self.mProfilePhotoIV.image = userIMG
                     }else {
-                        self.mProfilePhotoIV.image = UIImage(named: "IMGPlaceHolder_IC")
+                        self.mProfilePhotoIV.image = UIImage(named: "CAMPlaceHolder_IC")
                     }
                 }
             }else {
-                self.mProfilePhotoIV.image = UIImage(named: "IMGPlaceHolder_IC")
+                self.mProfilePhotoIV.image = UIImage(named: "CAMPlaceHolder_IC")
             }
-            self.mProfilePhotoIV.resizeRoundedIMG()
+            self.mProfilePhotoIV.resizeRoundedIMGCam()
          }
     }
     
@@ -121,7 +120,7 @@ extension UserProfileViewController: UINavigationControllerDelegate, UIImagePick
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         self.mImagePicker.dismiss(animated: true, completion: nil)
-        if let userData = self.mainUserPresenter.getUserData() {
+        if var userData = self.mainUserPresenter.getUserData() {
             if let userIMG = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
                 userData.userIMGData = userIMG.pngData()
                 if self.mainUserPresenter.saveUser(userIn: userData) {

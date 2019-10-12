@@ -32,6 +32,7 @@
 		34BFBE33231DEB3F0058B65F /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BFBE32231DEB3F0058B65F /* MainTabBarViewController.swift */; };
 		34C4CE2F232B0D92005D72C3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34C4CE31232B0D92005D72C3 /* Localizable.strings */; };
 		34C4CE34232B1449005D72C3 /* UIElements+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C4CE33232B1449005D72C3 /* UIElements+Extensions.swift */; };
+		34C79AF4234EBF390034B295 /* FavContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C79AF3234EBF390034B295 /* FavContent.swift */; };
 		34CBA04C232E98D000EDF45D /* UserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CBA04B232E98D000EDF45D /* UserPresenter.swift */; };
 		34CBA04E232F009300EDF45D /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CBA04D232F009300EDF45D /* Keys.swift */; };
 		34D134A9231AF50A0053AA05 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D134A8231AF50A0053AA05 /* UIImageView+Extensions.swift */; };
@@ -151,6 +152,7 @@
 		34C4CE30232B0D92005D72C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		34C4CE32232B0DC2005D72C3 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		34C4CE33232B1449005D72C3 /* UIElements+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIElements+Extensions.swift"; sourceTree = "<group>"; };
+		34C79AF3234EBF390034B295 /* FavContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavContent.swift; sourceTree = "<group>"; };
 		34CBA04B232E98D000EDF45D /* UserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPresenter.swift; sourceTree = "<group>"; };
 		34CBA04D232F009300EDF45D /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		34D134A8231AF50A0053AA05 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 				346D0B512337EB8900DB90F5 /* SerieContent.swift */,
 				34E261F1233FEC4900943A97 /* Season.swift */,
 				34E261F32340004000943A97 /* Episode.swift */,
+				34C79AF3234EBF390034B295 /* FavContent.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -808,6 +811,7 @@
 				3CCADD3322D53B9000AA0D32 /* User.swift in Sources */,
 				34CBA04C232E98D000EDF45D /* UserPresenter.swift in Sources */,
 				3C3F361622D6C18200E05672 /* DetailViewController.swift in Sources */,
+				34C79AF4234EBF390034B295 /* FavContent.swift in Sources */,
 				3CCADD3522D541F400AA0D32 /* UIViewController+Extensions.swift in Sources */,
 				34E261F2233FEC4900943A97 /* Season.swift in Sources */,
 				346D0B5423380AD100DB90F5 /* SeriesContentService.swift in Sources */,

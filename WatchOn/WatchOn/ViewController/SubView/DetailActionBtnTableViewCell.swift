@@ -19,7 +19,7 @@ class DetailActionBtnTableViewCell: UITableViewCell {
     }
 
     func setupView() {
-        if ContentPresenter.sharedIntance.isItemsFav() {
+        if UserPresenter.sharedIntance.isMovieFav(mContentIn: ContentPresenter.sharedIntance.mainContentSelected) {
             actionFavBtn.setImage(UIImage(named: "FavOn_IC"), for: .normal)
         }else {
             actionFavBtn.setImage(UIImage(named: "FavOff_IC"), for: .normal)

@@ -127,7 +127,7 @@
                                     <constraint firstAttribute="width" constant="45" id="rg7-Cp-95V"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                <color key="textColor" red="0.090196078430000007" green="0.72941176470000002" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.090196078431372548" green="0.72941176470588232" blue="0.52549019607843139" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>

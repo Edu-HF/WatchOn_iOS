@@ -102,7 +102,7 @@ extension UserProfileCardView: UITableViewDelegate, UITableViewDataSource {
         case .MyList:
             
             let mFavCell = tableView.dequeueReusableCell(withIdentifier: "FavCell") as! FavTableViewCell
-            mFavCell.setupCell()
+            mFavCell.setupCell(mFavIn: UserPresenter.sharedIntance.getUserData()?.userFavList?[indexPath.row])
             
             return mFavCell
         }

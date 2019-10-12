@@ -161,40 +161,6 @@ class ContentPresenter: NSObject {
         return nil
     }
     
-    func addOrRemoveFav() -> Bool {
-        if let userData = UserPresenter.sharedIntance.getUserData() {
-            if userData.userFavList != nil {
-                for (index, contentID) in userData.userFavList!.enumerated() {
-                    if contentID == mainContentSelected.contentID {
-                        userData.userFavList?.remove(at: index)
-                        if UserPresenter.sharedIntance.saveUser(userIn: userData) {
-                            return true
-                        }
-                    }
-                }
-                userData.userFavList?.append(mainContentSelected.contentID)
-                if UserPresenter.sharedIntance.saveUser(userIn: userData) {
-                    return true
-                }
-            }
-        }
-        return false
-    }
-    
-    func isItemsFav() -> Bool {
-        var isItemFav = false
-        if let userData = UserPresenter.sharedIntance.getUserData() {
-            if userData.userFavList != nil {
-                userData.userFavList!.forEach {
-                    if $0 == mainContentSelected.contentID {
-                        isItemFav = true
-                    }
-                }
-            }
-        }
-        return isItemFav
-    }
-    
     func getMovieContentToShowID() -> String {
         
         var mContentID: String = ""

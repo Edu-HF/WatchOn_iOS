@@ -43,7 +43,7 @@ class LoginViewController: BaseViewController {
                     
                     loginDataAlert.addAction(UIAlertAction(title: "DoneKey".localized(), style: .default, handler: { _ in
                         
-                        let tempUser = User()
+                        var tempUser = User()
                         if let userName = loginDataAlert.textFields?[0], let userEmail = loginDataAlert.textFields?[1] {
                             tempUser.userEmail = userEmail.text
                             tempUser.userName = userName.text

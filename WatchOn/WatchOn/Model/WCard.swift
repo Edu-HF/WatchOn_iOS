@@ -9,7 +9,7 @@
 import Foundation
 import MFCard
 
-class WCard: NSObject, NSCoding {
+struct WCard: Codable {
     
     var wHolderName: String?
     var wNumber: String?
@@ -20,8 +20,18 @@ class WCard: NSObject, NSCoding {
     var wType: String?
     var wUserID: Int?
     
-    override init() {
-        
+    enum CodingKeys: String, CodingKey{
+        case wHolderName = "wHolderName"
+        case wNumber = "wNumber"
+        case wMonth = "wMonth"
+        case wYear = "wYear"
+        case wCvc = "wCvc"
+        case wPaymentType = "wPaymentType"
+        case wType = "wType"
+        case wUserID = "wUserID"
+    }
+    
+    init() {
         wHolderName = ""
         wNumber = ""
         wMonth = ""
@@ -32,52 +42,16 @@ class WCard: NSObject, NSCoding {
         wUserID = 0
     }
     
-    enum Key: String {
-        case wHolderName = "holderName"
-        case wNumber = "number"
-        case wMonth = "month"
-        case wYear = "year"
-        case wCvc = "cvc"
-        case wPaymentType = "paymentType"
-        case wType = "cardType"
-        case wUserID = "userId"
-    }
-    
-    func encode(with aCoder: NSCoder) {
-        aCoder.encode(wHolderName, forKey: Key.wHolderName.rawValue)
-        aCoder.encode(wNumber, forKey: Key.wNumber.rawValue)
-        aCoder.encode(wMonth, forKey: Key.wMonth.rawValue)
-        aCoder.encode(wYear, forKey: Key.wYear.rawValue)
-        aCoder.encode(wCvc, forKey: Key.wCvc.rawValue)
-        aCoder.encode(wPaymentType, forKey: Key.wPaymentType.rawValue)
-        aCoder.encode(wType, forKey: Key.wType.rawValue)
-        aCoder.encode(wUserID, forKey: Key.wUserID.rawValue)
-    }
-    
-    required convenience init?(coder aDecoder: NSCoder) {
-        self.init()
-        self.wHolderName = aDecoder.decodeObject(forKey: Key.wHolderName.rawValue) as? String
-        self.wNumber = aDecoder.decodeObject(forKey: Key.wNumber.rawValue) as? String
-        self.wMonth = aDecoder.decodeObject(forKey: Key.wMonth.rawValue) as? String
-        self.wYear = aDecoder.decodeObject(forKey: Key.wYear.rawValue) as? String
-        self.wCvc = aDecoder.decodeObject(forKey: Key.wCvc.rawValue) as? String
-        self.wPaymentType = aDecoder.decodeObject(forKey: Key.wPaymentType.rawValue) as? String
-        self.wType = aDecoder.decodeObject(forKey: Key.wType.rawValue) as? String
-        self.wUserID = aDecoder.decodeObject(forKey: Key.wUserID.rawValue) as? Int
-        
-    }
-    
-    func getWCardFromCard(cardIn: Card) -> WCard {
-        self.wHolderName = cardIn.name
-        self.wNumber = cardIn.number
-        self.wMonth = cardIn.month?.rawValue
-        self.wYear = cardIn.year
-        self.wCvc = cardIn.cvc
-        self.wPaymentType = cardIn.paymentType?.rawValue
-        self.wType = cardIn.cardType?.rawValue
-        self.wUserID = cardIn.userId
-        
-        return self
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        wHolderName = try? container.decode(String.self, forKey: .wHolderName)
+        wNumber = try? container.decode(String.self, forKey: .wNumber)
+        wMonth = try? container.decode(String.self, forKey: .wMonth)
+        wYear = try? container.decode(String.self, forKey: .wYear)
+        wCvc = try? container.decode(String.self, forKey: .wCvc)
+        wPaymentType = try? container.decode(String.self, forKey: .wPaymentType)
+        wType = try? container.decode(String.self, forKey: .wType)
+        wUserID = try? container.decode(Int.self, forKey: .wUserID)
     }
     
     func getCardFromWCard() -> Card? {

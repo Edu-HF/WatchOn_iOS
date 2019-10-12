@@ -22,6 +22,12 @@ extension UIImageView {
            self.image = Toucan(image: img).maskWithEllipse(borderWidth: 3, borderColor: .btnGreenColor).image
         }
     }
+    
+    func resizeRoundedIMGCam() {
+        if let img = Toucan.Resize.resizeImage(self.image ?? UIImage(named: "CAMPlaceHolder_IC")!, size: self.frame.size, fitMode: .scale) {
+           self.image = Toucan(image: img).maskWithEllipse(borderWidth: 3, borderColor: .btnGreenColor).image
+        }
+    }
 }
 
 extension ImageLoadingOptions {

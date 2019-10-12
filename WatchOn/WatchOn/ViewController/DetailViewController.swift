@@ -57,13 +57,26 @@ class DetailViewController: BaseViewController {
     }
     
     @objc private func contentAddOrRemoveFav() {
-        if mainContentPresenter.addOrRemoveFav() {
-            self.detailTV.reloadData()
+        let userPresenter = UserPresenter.sharedIntance
+        if userPresenter.isMovieFav(mContentIn: mainContentPresenter.mainContentSelected) {
+            if userPresenter.removeMovieContentToFav(mContentIn: mainContentPresenter.mainContentSelected) {
+                self.detailTV.reloadData()
+            }else {
+                self.showLoginVC()
+            }
         }else {
-            let loginVC = LoginViewController()
-            loginVC.modalPresentationStyle = .fullScreen
-            self.present(loginVC, animated: true, completion: nil)
+            if userPresenter.addMovieContentToFav(mContentIn: mainContentPresenter.mainContentSelected) {
+                self.detailTV.reloadData()
+            }else {
+                self.showLoginVC()
+            }
         }
+    }
+    
+    private func showLoginVC() {
+        let loginVC = LoginViewController()
+        loginVC.modalPresentationStyle = .fullScreen
+        self.present(loginVC, animated: true, completion: nil)
     }
 }
 

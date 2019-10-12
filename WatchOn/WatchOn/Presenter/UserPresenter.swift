@@ -22,19 +22,151 @@ class UserPresenter: NSObject {
     override init() {}
     
     func isUserLogged() -> Bool {
-        return KeychainWrapper.standard.object(forKey: Keys.USER_DATA_KEY) != nil
+
+        guard let user = getUserData() else { return false }
+        
+        if user.userEmail != nil {
+            return true
+        }
+        
+        return false
     }
     
     func logOut() -> Bool {
-        return KeychainWrapper.standard.remove(key: Keys.USER_DATA_KEY)
+        UserDefaults.standard.removeObject(forKey: Keys.USER_DATA_KEY)
+        return !isUserLogged()
     }
     
     func getUserData() -> User? {
-        return KeychainWrapper.standard.object(forKey: Keys.USER_DATA_KEY) as? User
+  
+        let uDefaults = UserDefaults.standard
+        guard let userData = uDefaults.object(forKey: Keys.USER_DATA_KEY) as? Data else {
+            return nil
+        }
+        
+        guard let rUser = try? PropertyListDecoder().decode(User.self, from: userData) else {
+            return nil
+        }
+                
+        return rUser
     }
     
     func saveUser(userIn: User) -> Bool {
-        return KeychainWrapper.standard.set(userIn, forKey: Keys.USER_DATA_KEY, withAccessibility: .always)
+        
+        do {
+           try UserDefaults.standard.set(PropertyListEncoder().encode(userIn), forKey: Keys.USER_DATA_KEY)
+        }catch {
+            return false
+        }
+        
+        return true
     }
     
+    //MARK: Movie Favorites
+    func isMovieFav(mContentIn: Content) -> Bool {
+        var isMovieFav = false
+        if let userData = self.getUserData() {
+            if userData.userFavList != nil {
+                userData.userFavList!.forEach {
+                    if $0.cFavID == mContentIn.contentID {
+                        isMovieFav = true
+                    }
+                }
+            }
+        }
+        return isMovieFav
+    }
+    
+    func addMovieContentToFav(mContentIn: Content) -> Bool {
+        if var mUser = self.getUserData() {
+            
+            var mFav = FavContent()
+            mFav.cFavID = mContentIn.contentID
+            mFav.cFavName = mContentIn.contentTitle
+            mFav.cFavSubName = mContentIn.contentOriginalTitle
+            mFav.cFavIMG = mContentIn.contentPosterPath
+            mFav.cFavType = "Movie"
+            
+            if mUser.userFavList == nil {
+                mUser.userFavList = []
+            }
+            mUser.userFavList?.append(mFav)
+            if self.saveUser(userIn: mUser) {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
+    func removeMovieContentToFav(mContentIn: Content) -> Bool {
+        if var mUser = self.getUserData() {
+            if mUser.userFavList != nil {
+                for (index, mFavContent) in mUser.userFavList!.enumerated() {
+                    if mFavContent.cFavID == mContentIn.contentID {
+                        mUser.userFavList?.remove(at: index)
+                        if self.saveUser(userIn: mUser) {
+                            return true
+                        }
+                    }
+                }
+            }
+        }
+        
+        return false
+    }
+    
+    //MARK: Series Favorites
+    func isSerieFav(sContentIn: SerieContent) -> Bool {
+        var isSerieFav = false
+        if let userData = self.getUserData() {
+            if userData.userFavList != nil {
+                userData.userFavList!.forEach {
+                    if $0.cFavID == sContentIn.serieID {
+                        isSerieFav = true
+                    }
+                }
+            }
+        }
+        return isSerieFav
+    }
+    
+    func addSerieContentToFav(sContentIn: SerieContent) -> Bool {
+        if var mUser = self.getUserData() {
+            
+            var mFav = FavContent()
+            mFav.cFavID = sContentIn.serieID
+            mFav.cFavName = sContentIn.serieName
+            mFav.cFavSubName = sContentIn.serieOriginalName
+            mFav.cFavIMG = sContentIn.seriePosterPath
+            mFav.cFavType = "Serie"
+            
+            if mUser.userFavList == nil {
+                mUser.userFavList = []
+            }
+            mUser.userFavList?.append(mFav)
+            if self.saveUser(userIn: mUser) {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
+    func removeSerieContentToFav(sContentIn: SerieContent) -> Bool {
+        if var mUser = self.getUserData() {
+            if mUser.userFavList != nil {
+                for (index, mFavContent) in mUser.userFavList!.enumerated() {
+                    if mFavContent.cFavID == sContentIn.serieID {
+                        mUser.userFavList?.remove(at: index)
+                        if self.saveUser(userIn: mUser) {
+                            return true
+                        }
+                    }
+                }
+            }
+        }
+        
+        return false
+    }
 }

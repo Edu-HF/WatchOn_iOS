@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Nuke
 
 class FavTableViewCell: UITableViewCell {
     
@@ -29,11 +30,24 @@ class FavTableViewCell: UITableViewCell {
         mFavTypeLB.text = ""
     }
 
-    func setupCell() {
+    func setupCell(mFavIn: FavContent?) {
         
         mFavIMG.image = UIImage(named: "IMGPlaceHolder_IC")
-        mFavTitleLB.text = "The Avengers"
-        mFavSubTitleLB.text = "The Age of Ultron"
-        mFavTypeLB.text = "Movie"
+        
+        if mFavIn != nil {
+            DispatchQueue.main.async {
+                if let posterPath = mFavIn?.cFavIMG {
+                    if let posterURL = URL(string: posterPath.buildURLStringIMG()) {
+                        Nuke.loadImage(with: posterURL, options: ImageLoadingOptions().loadIMGBaseOptions(), into: self.mFavIMG, progress: nil, completion: { _ in
+                            self.mFavIMG.resizeIMGToFrame()
+                        })
+                    }
+                }
+            }
+            
+            mFavTitleLB.text = mFavIn?.cFavName
+            mFavSubTitleLB.text = mFavIn?.cFavSubName
+            mFavTypeLB.text = mFavIn?.cFavType
+        }
     }
 }

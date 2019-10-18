@@ -11,6 +11,10 @@ import SwiftKeychainWrapper
 
 class UserPresenter: NSObject {
 
+    private let favoritesWS: FavContentService = FavContentService()
+    var mainErrorResponse: DynamicType<Error>?
+    var movieFavContent: DynamicType<Content>?
+    var serieFavContent: DynamicType<SerieContent>?
     class var sharedIntance: UserPresenter {
         struct Static {
             static let instance: UserPresenter = UserPresenter()
@@ -63,6 +67,10 @@ class UserPresenter: NSObject {
     }
     
     //MARK: Movie Favorites
+    func getMovieContent() {
+        
+    }
+    
     func isMovieFav(mContentIn: Content) -> Bool {
         var isMovieFav = false
         if let userData = self.getUserData() {
@@ -117,6 +125,15 @@ class UserPresenter: NSObject {
     }
     
     //MARK: Series Favorites
+    func getSerieDetail(serieIDIn: Int) {
+        self.favoritesWS.getSerieDetail(serieIDIn: serieIDIn).done { (serieContentIn) in
+            SerieContentPresenter.sharedInstance.mainSerieContentSelected.value = serieContentIn
+            NotificationCenter.default.post(name: .ShowFavSerieDetail, object: nil)
+        }.catch { (errorIn) in
+            self.mainErrorResponse?.value = errorIn
+        }
+    }
+    
     func isSerieFav(sContentIn: SerieContent) -> Bool {
         var isSerieFav = false
         if let userData = self.getUserData() {

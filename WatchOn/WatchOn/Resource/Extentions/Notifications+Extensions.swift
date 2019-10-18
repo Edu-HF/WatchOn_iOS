@@ -12,4 +12,7 @@ extension Notification.Name {
     
     public static let UpdateEpisodesNoti: Notification.Name = Notification.Name("UpdateEpisodesNoti")
     public static let ShowEpisodeNoti: Notification.Name = Notification.Name("ShowEpisodeNoti")
+    public static let ShowLoginVCNoti: Notification.Name = Notification.Name("ShowLoginVCNoti")
+    public static let ShowFavMovieDetail: Notification.Name = Notification.Name("ShowFavMovieDetail")
+    public static let ShowFavSerieDetail: Notification.Name = Notification.Name("ShowFavSerieDetail")
 }

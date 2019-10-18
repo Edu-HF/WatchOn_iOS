@@ -109,6 +109,44 @@ extension UserProfileCardView: UITableViewDelegate, UITableViewDataSource {
         
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch viewStade {
+        case .MyList:
+            if let userData = UserPresenter.sharedIntance.getUserData() {
+                if let mFavContent = userData.userFavList?[indexPath.row] {
+                    UserPresenter.sharedIntance.getSerieDetail(serieIDIn: mFavContent.cFavID ?? 0)
+                }
+            }
+        default:
+            break
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let deleteBtn = UIContextualAction(style: .normal, title: nil) { _,_,_ in
+            if var userData = UserPresenter.sharedIntance.getUserData() {
+                userData.userFavList?.remove(at: indexPath.row)
+                if UserPresenter.sharedIntance.saveUser(userIn: userData) {
+                    self.mainStateTV.reloadData()
+                }
+            }
+        }
+        
+        deleteBtn.image = UIImage(named: "DeleteOff_IC")
+        deleteBtn.backgroundColor = .btnPressColor
+        return UISwipeActionsConfiguration(actions: [deleteBtn])
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        switch viewStade {
+        case .PaymentMethod:
+            return false
+        default:
+            return true
+        }
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         switch viewStade {

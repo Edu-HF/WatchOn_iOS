@@ -14,6 +14,7 @@ class SerieDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var mSintaxisLB: UITextView!
     @IBOutlet weak var mLanIMG: UIImageView!
     @IBOutlet weak var mRatingNumLB: UILabel!
+    @IBOutlet weak var mFavBtn: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,5 +34,20 @@ class SerieDetailTableViewCell: UITableViewCell {
         mRatingNumLB.text = String(serieDetail.serieVoteAverage ?? 0.0)
     }
     
-    
+    @IBAction func addOrRemoveFavAct(_ sender: Any) {
+        let userPresenter = UserPresenter.sharedIntance
+        if userPresenter.isSerieFav(sContentIn: SerieContentPresenter.sharedInstance.mainSerieContentSelected.value) {
+            if userPresenter.removeSerieContentToFav(sContentIn: SerieContentPresenter.sharedInstance.mainSerieContentSelected.value) {
+                self.mFavBtn.setImage(UIImage(named: "FavOff_IC"), for: .normal)
+            }else {
+                NotificationCenter.default.post(name: .ShowLoginVCNoti, object: nil)
+            }
+        }else {
+            if userPresenter.addSerieContentToFav(sContentIn: SerieContentPresenter.sharedInstance.mainSerieContentSelected.value) {
+                self.mFavBtn.setImage(UIImage(named: "FavOn_IC"), for: .normal)
+            }else {
+                NotificationCenter.default.post(name: .ShowLoginVCNoti, object: nil)
+            }
+        }
+    }
 }

@@ -30,11 +30,13 @@ class SerieDetailViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         NotificationCenter.default.addObserver(self, selector: #selector(updateTV), name: .UpdateEpisodesNoti, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(showEpisode), name: .ShowEpisodeNoti, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showLoginVC), name: .ShowLoginVCNoti, object: nil)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         NotificationCenter.default.removeObserver(self, name: .UpdateEpisodesNoti, object: nil)
         NotificationCenter.default.removeObserver(self, name: .ShowEpisodeNoti, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .ShowLoginVCNoti, object: nil)
     }
     
     private func setupView() {
@@ -71,6 +73,12 @@ class SerieDetailViewController: BaseViewController {
         }
         
         SerieContentPresenter.sharedInstance.getSerieContentDetail()
+    }
+    
+    @objc private func showLoginVC() {
+        let loginVC = LoginViewController()
+        loginVC.modalPresentationStyle = .fullScreen
+        self.present(loginVC, animated: true, completion: nil)
     }
     
     @objc private func updateTV() {

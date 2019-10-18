@@ -46,7 +46,7 @@ class SerieContentPresenter: NSObject {
             }
             
         }.catch { errorIn in
-                self.mainErrorResponse?.value = errorIn
+            self.mainErrorResponse?.value = errorIn
         }
     }
     

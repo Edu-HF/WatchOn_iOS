@@ -25,6 +25,7 @@ struct FavContent: Codable {
     }
     
     init() {
+        
         cFavID = 0
         cFavName = ""
         cFavSubName = ""

@@ -66,13 +66,13 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCz-dN-yc9" customClass="WButton" customModule="WatchOn" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCz-dN-yc9">
                                         <rect key="frame" x="58" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.1843137255" green="0.25490196079999999" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <size key="titleShadowOffset" width="56" height="0.0"/>
-                                        <state key="normal" image="CloudOff_IC">
+                                        <state key="normal" image="FavOff_IC">
                                             <color key="titleColor" red="0.074509803920000006" green="0.078431372550000003" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -84,6 +84,9 @@
                                                 <integer key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="addOrRemoveFavAct:" destination="hEi-4Y-4AT" eventType="touchUpInside" id="p2E-KJ-4Mh"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hhe-Rw-q6l" customClass="WButton" customModule="WatchOn" customModuleProvider="target">
                                         <rect key="frame" x="116" y="0.0" width="50" height="50"/>
@@ -164,6 +167,7 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="mFavBtn" destination="pCz-dN-yc9" id="qNy-lU-cd9"/>
                 <outlet property="mLanIMG" destination="CZx-6k-Xh8" id="O8n-eK-djr"/>
                 <outlet property="mRatingNumLB" destination="T8m-ZC-D5f" id="uL6-KZ-mdx"/>
                 <outlet property="mSintaxisLB" destination="7re-Mm-qXc" id="WVy-M6-guU"/>
@@ -172,7 +176,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="CloudOff_IC" width="64" height="64"/>
+        <image name="FavOff_IC" width="64" height="64"/>
         <image name="LikeOff_IC" width="64" height="64"/>
         <image name="SharedOff_IC" width="64" height="64"/>
     </resources>

@@ -24,8 +24,15 @@ class UserProfileViewController: BaseViewController {
         setupView()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: .ShowFavMovieDetail, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .ShowFavSerieDetail, object: nil)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         validateUserSession()
+        NotificationCenter.default.addObserver(self, selector: #selector(showMovieDetail), name: .ShowFavMovieDetail, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showSerieDetail), name: .ShowFavSerieDetail, object: nil)
     }
     
     private func setupView() {
@@ -38,7 +45,7 @@ class UserProfileViewController: BaseViewController {
     }
 
     private func buildLogOutBtn() {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "XOn_IC"), style: .plain, target: self, action: #selector(logOutAct))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "LogOut_IC"), style: .plain, target: self, action: #selector(logOutAct))
     }
     
     @objc private func logOutAct() {
@@ -46,6 +53,14 @@ class UserProfileViewController: BaseViewController {
             self.tabBarController?.selectedIndex = 0
             self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
         }
+    }
+    
+    @objc private func showMovieDetail() {
+        self.navigationController?.pushViewController(DetailViewController(nibName: "DetailViewController", bundle: nil), animated: true)
+    }
+    
+    @objc private func showSerieDetail() {
+        self.navigationController?.pushViewController(SerieDetailViewController(nibName: "SerieDetailView", bundle: nil), animated: true)
     }
     
     private func validateUserSession() {

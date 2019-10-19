@@ -114,7 +114,11 @@ extension UserProfileCardView: UITableViewDelegate, UITableViewDataSource {
         case .MyList:
             if let userData = UserPresenter.sharedIntance.getUserData() {
                 if let mFavContent = userData.userFavList?[indexPath.row] {
-                    UserPresenter.sharedIntance.getSerieDetail(serieIDIn: mFavContent.cFavID ?? 0)
+                    if mFavContent.cFavType == "Serie" {
+                        UserPresenter.sharedIntance.getSerieDetail(serieIDIn: mFavContent.cFavID ?? 0)
+                    }else {
+                        UserPresenter.sharedIntance.getMovieContent(movieIDIn: mFavContent.cFavID ?? 0)
+                    }
                 }
             }
         default:

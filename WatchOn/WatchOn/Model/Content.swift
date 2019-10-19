@@ -68,3 +68,11 @@ struct ResponseContent : Codable {
         case results = "results"
     }
 }
+
+struct ResponseContentDetail: Codable {
+    var results: Content
+    
+    enum CodingKeys: String, CodingKey {
+        case results = "results"
+    }
+}

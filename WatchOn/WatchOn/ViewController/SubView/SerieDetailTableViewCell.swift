@@ -18,7 +18,6 @@ class SerieDetailTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func prepareForReuse() {
@@ -32,6 +31,12 @@ class SerieDetailTableViewCell: UITableViewCell {
         
         mSintaxisLB.text = serieDetail.serieSintaxis
         mRatingNumLB.text = String(serieDetail.serieVoteAverage ?? 0.0)
+        
+        if UserPresenter.sharedIntance.isSerieFav(sContentIn: serieDetail) {
+            mFavBtn.setImage(UIImage(named: "FavOn_IC"), for: .normal)
+        }else {
+            mFavBtn.setImage(UIImage(named: "FavOff_IC"), for: .normal)
+        }
     }
     
     @IBAction func addOrRemoveFavAct(_ sender: Any) {

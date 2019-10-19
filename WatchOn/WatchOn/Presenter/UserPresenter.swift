@@ -67,8 +67,13 @@ class UserPresenter: NSObject {
     }
     
     //MARK: Movie Favorites
-    func getMovieContent() {
-        
+    func getMovieContent(movieIDIn: Int) {
+        self.favoritesWS.getMovieDetail(movieIDIn: movieIDIn).done { (movieContentIn) in
+            ContentPresenter.sharedIntance.mainContentSelected = movieContentIn
+            NotificationCenter.default.post(name: .ShowFavMovieDetail, object: nil)
+        }.catch { (errorIn) in
+            self.mainErrorResponse?.value = errorIn
+        }
     }
     
     func isMovieFav(mContentIn: Content) -> Bool {

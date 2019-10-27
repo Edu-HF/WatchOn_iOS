@@ -7,18 +7,39 @@
 //
 
 import UIKit
+import Lottie
 
 class SplashViewController: BaseViewController {
 
+    @IBOutlet weak var mAnimationView: UIView!
+    @IBOutlet weak var woLB: UILabel!
+    fileprivate var mainAnimationView: AnimationView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
     
-    private func setupView() {
-        
-        
+    override func viewDidAppear(_ animated: Bool) {
+        self.mainAnimationView.play()
+        DispatchQueue.main.asyncAfter(deadline: .now()+3) {
+            self.mainAnimationView.stop()
+            let mainSB = UIStoryboard(name: "Main", bundle: nil)
+            let mainTB = mainSB.instantiateViewController(withIdentifier: "MainTabBarViewController") as! UITabBarController
+            self.present(mainTB, animated: true, completion: nil)
+        }
     }
+    
+    private func setupView() {
+        woLB.textColor = .btnGreenColor
+        mainAnimationView = AnimationView(name: "SplashA")
+        mainAnimationView.frame = UIScreen.main.bounds
+        mainAnimationView.contentMode = .scaleAspectFit
+        mainAnimationView.loopMode = .loop
+        mAnimationView.addSubview(mainAnimationView)
+    }
+    
+    
 
     /*
     // MARK: - Navigation

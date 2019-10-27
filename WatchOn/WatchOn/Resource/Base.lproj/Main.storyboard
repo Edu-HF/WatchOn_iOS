@@ -89,10 +89,10 @@
             </objects>
             <point key="canvasLocation" x="76.811594202898561" y="213.61607142857142"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar View Controller-->
         <scene sceneID="hKY-tA-DlT">
             <objects>
-                <tabBarController modalTransitionStyle="flipHorizontal" id="qWY-RG-4Fo" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarViewController" modalTransitionStyle="flipHorizontal" id="qWY-RG-4Fo" customClass="MainTabBarViewController" customModule="WatchOn" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="Kxi-Kw-21n">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

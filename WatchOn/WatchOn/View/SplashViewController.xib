@@ -1,24 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14835.7" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14790.5"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SplashViewController" customModule="WatchOn" customModuleProvider="target">
             <connections>
+                <outlet property="mAnimationView" destination="7Gs-sO-4em" id="lqG-QJ-STi"/>
                 <outlet property="view" destination="mcJ-e3-um1" id="T77-zK-abG"/>
+                <outlet property="woLB" destination="Xth-mn-ek4" id="7mi-Xd-p3I"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="mcJ-e3-um1">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Gs-sO-4em">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xth-mn-ek4">
+                            <rect key="frame" x="8" y="100" width="398" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="Zfm-98-qdS"/>
+                            </constraints>
+                            <attributedString key="attributedText">
+                                <fragment content="Watch ON">
+                                    <attributes>
+                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <font key="NSFont" size="50" name="Menlo-Bold"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Xth-mn-ek4" firstAttribute="top" secondItem="7Gs-sO-4em" secondAttribute="top" constant="100" id="AzW-qY-27f"/>
+                        <constraint firstAttribute="trailing" secondItem="Xth-mn-ek4" secondAttribute="trailing" constant="8" id="QAg-WL-pi2"/>
+                        <constraint firstItem="Xth-mn-ek4" firstAttribute="leading" secondItem="7Gs-sO-4em" secondAttribute="leading" constant="8" id="o4W-Mz-Cfh"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.1843137255" green="0.25490196079999999" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="6GX-pc-Aau" firstAttribute="bottom" secondItem="7Gs-sO-4em" secondAttribute="bottom" id="7SF-kv-KTA"/>
+                <constraint firstItem="7Gs-sO-4em" firstAttribute="leading" secondItem="6GX-pc-Aau" secondAttribute="leading" id="gaR-1r-B8x"/>
+                <constraint firstItem="6GX-pc-Aau" firstAttribute="trailing" secondItem="7Gs-sO-4em" secondAttribute="trailing" id="kD0-ws-UrZ"/>
+                <constraint firstItem="7Gs-sO-4em" firstAttribute="top" secondItem="6GX-pc-Aau" secondAttribute="top" id="t1q-2a-Wpk"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="6GX-pc-Aau"/>
-            <point key="canvasLocation" x="-103" y="104"/>
+            <point key="canvasLocation" x="-104.34782608695653" y="103.79464285714285"/>
         </view>
     </objects>
 </document>

@@ -2,6 +2,31 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSFaceIDUsageDescription</key>
+	<string>WatchOn used FaceID/TouchID to identify and login in the app</string>
+	<key>YOUTUBE_URL</key>
+	<string>https://www.youtube.com/embed/</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>youtube.com</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
+	<key>API_IMG_BASE_URL</key>
+	<string>https://image.tmdb.org/t/p/w500</string>
+	<key>API_KEY</key>
+	<string>ac82de39d65a0a42672ade0e035c1c5c</string>
+	<key>SERVER_URL</key>
+	<string>https://api.themoviedb.org/3</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainMediaPlayerViewController" customModule="WatchOn" customModuleProvider="target">
+            <connections>
+                <outlet property="mainPlayerLoaderView" destination="Tbr-Hh-sXV" id="UZ1-g1-FN0"/>
+                <outlet property="view" destination="GKZ-ay-MPO" id="vTP-Jj-n8l"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="GKZ-ay-MPO">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tbr-Hh-sXV">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" red="0.074509803920000006" green="0.078431372550000003" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Tbr-Hh-sXV" firstAttribute="leading" secondItem="yJ8-qA-Sho" secondAttribute="leading" id="1xk-Wy-m5o"/>
+                <constraint firstItem="Tbr-Hh-sXV" firstAttribute="trailing" secondItem="yJ8-qA-Sho" secondAttribute="trailing" id="cJP-1E-DZI"/>
+                <constraint firstAttribute="bottom" secondItem="Tbr-Hh-sXV" secondAttribute="bottom" id="j2J-lB-rdP"/>
+                <constraint firstItem="Tbr-Hh-sXV" firstAttribute="top" secondItem="GKZ-ay-MPO" secondAttribute="top" id="xlv-7A-BY0"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="yJ8-qA-Sho"/>
+            <point key="canvasLocation" x="-472.46376811594206" y="66.964285714285708"/>
+        </view>
+    </objects>
+</document>

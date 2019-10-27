@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ContentCellD" id="KVi-Hy-mfR" customClass="ContentDCollectionViewCell" customModule="WatchOn" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="400"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="KEd-pb-6IS">
+                <rect key="frame" x="0.0" y="0.0" width="200" height="400"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7aI-tF-mVc">
+                        <rect key="frame" x="5" y="5" width="190" height="390"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMGPlaceHolder_IC" translatesAutoresizingMaskIntoConstraints="NO" id="iOy-Kg-w3v">
+                                <rect key="frame" x="0.0" y="0.0" width="190" height="390"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3f-6T-gpD">
+                                <rect key="frame" x="8" y="361.5" width="174" height="20.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ckd-wO-ihx">
+                                <rect key="frame" x="82" y="8" width="100" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="gkk-2D-GYn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <color key="textColor" red="0.090196078430000007" green="0.72941176470000002" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BlP-DK-0Qb">
+                                <rect key="frame" x="8" y="329.5" width="174" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.086274509799999996" green="0.08235294118" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="c3f-6T-gpD" firstAttribute="top" secondItem="BlP-DK-0Qb" secondAttribute="bottom" constant="8" id="77k-LU-BhZ"/>
+                            <constraint firstAttribute="bottom" secondItem="iOy-Kg-w3v" secondAttribute="bottom" id="A2P-ka-ctu"/>
+                            <constraint firstItem="BlP-DK-0Qb" firstAttribute="leading" secondItem="7aI-tF-mVc" secondAttribute="leading" constant="8" id="KlU-4b-gTe"/>
+                            <constraint firstAttribute="trailing" secondItem="Ckd-wO-ihx" secondAttribute="trailing" constant="8" id="LBN-cD-AM8"/>
+                            <constraint firstItem="Ckd-wO-ihx" firstAttribute="top" secondItem="7aI-tF-mVc" secondAttribute="top" constant="8" id="NWM-4F-nI0"/>
+                            <constraint firstItem="iOy-Kg-w3v" firstAttribute="leading" secondItem="7aI-tF-mVc" secondAttribute="leading" id="UFl-5u-L3a"/>
+                            <constraint firstItem="iOy-Kg-w3v" firstAttribute="top" secondItem="7aI-tF-mVc" secondAttribute="top" id="aNP-cl-dH3"/>
+                            <constraint firstAttribute="trailing" secondItem="iOy-Kg-w3v" secondAttribute="trailing" id="dWE-gI-A4Y"/>
+                            <constraint firstItem="c3f-6T-gpD" firstAttribute="leading" secondItem="7aI-tF-mVc" secondAttribute="leading" constant="8" id="pEF-AB-gQN"/>
+                            <constraint firstAttribute="bottom" secondItem="c3f-6T-gpD" secondAttribute="bottom" constant="8" id="ySQ-c0-5Dw"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="7aI-tF-mVc" firstAttribute="top" secondItem="KEd-pb-6IS" secondAttribute="top" constant="5" id="0KL-ih-dnv"/>
+                    <constraint firstItem="7aI-tF-mVc" firstAttribute="leading" secondItem="KEd-pb-6IS" secondAttribute="leading" constant="5" id="2fQ-xg-o49"/>
+                    <constraint firstAttribute="trailing" secondItem="7aI-tF-mVc" secondAttribute="trailing" constant="5" id="9Cg-fS-ORy"/>
+                    <constraint firstAttribute="trailing" secondItem="c3f-6T-gpD" secondAttribute="trailing" constant="13" id="Rmk-a0-t6O"/>
+                    <constraint firstAttribute="trailing" secondItem="BlP-DK-0Qb" secondAttribute="trailing" constant="13" id="bQs-GS-Tue"/>
+                    <constraint firstAttribute="bottom" secondItem="7aI-tF-mVc" secondAttribute="bottom" constant="5" id="qg4-58-O7S"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="5"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="serieContentGendersLB" destination="Ckd-wO-ihx" id="K7y-dl-kQl"/>
+                <outlet property="serieContentIMG" destination="iOy-Kg-w3v" id="Iax-73-19j"/>
+                <outlet property="serieContentNameLB" destination="BlP-DK-0Qb" id="c9P-C3-EsK"/>
+                <outlet property="serieContentOriginalNameLB" destination="c3f-6T-gpD" id="2ul-UG-jGX"/>
+            </connections>
+            <point key="canvasLocation" x="-359.4202898550725" y="5.3571428571428568"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="IMGPlaceHolder_IC" width="1024" height="1024"/>
+    </resources>
+</document>

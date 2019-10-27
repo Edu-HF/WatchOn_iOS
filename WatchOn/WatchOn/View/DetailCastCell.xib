@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCastCell" rowHeight="200" id="UYl-db-o4o" customClass="DetailCastTableViewCell" customModule="WatchOn" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="420" height="200"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UYl-db-o4o" id="k8F-nL-Yyc">
+                <rect key="frame" x="0.0" y="0.0" width="420" height="199.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GlJ-mg-8gq">
+                        <rect key="frame" x="0.0" y="0.0" width="420" height="199.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CastKey" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGO-C5-ldB">
+                                <rect key="frame" x="8" y="8" width="404" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="hVG-ft-gPf">
+                                <rect key="frame" x="8" y="40" width="404" height="149.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Rxl-vq-JnT">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <connections>
+                                    <outlet property="dataSource" destination="UYl-db-o4o" id="ujX-kQ-JvM"/>
+                                    <outlet property="delegate" destination="UYl-db-o4o" id="zkw-8v-8AW"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zGO-C5-ldB" firstAttribute="leading" secondItem="GlJ-mg-8gq" secondAttribute="leading" constant="8" id="3KE-fb-hOr"/>
+                            <constraint firstItem="hVG-ft-gPf" firstAttribute="leading" secondItem="GlJ-mg-8gq" secondAttribute="leading" constant="8" id="HK1-QT-EOh"/>
+                            <constraint firstAttribute="trailing" secondItem="zGO-C5-ldB" secondAttribute="trailing" constant="8" id="UUR-gA-Lha"/>
+                            <constraint firstItem="zGO-C5-ldB" firstAttribute="top" secondItem="GlJ-mg-8gq" secondAttribute="top" constant="8" id="jWv-fg-wWJ"/>
+                            <constraint firstItem="hVG-ft-gPf" firstAttribute="top" secondItem="zGO-C5-ldB" secondAttribute="bottom" constant="8" id="otr-N9-Ana"/>
+                            <constraint firstAttribute="trailing" secondItem="hVG-ft-gPf" secondAttribute="trailing" constant="8" id="tkE-1v-Ot6"/>
+                            <constraint firstAttribute="bottom" secondItem="hVG-ft-gPf" secondAttribute="bottom" constant="10" id="wJX-4J-s2g"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="GlJ-mg-8gq" secondAttribute="bottom" id="FgR-tZ-sF4"/>
+                    <constraint firstAttribute="trailing" secondItem="GlJ-mg-8gq" secondAttribute="trailing" id="ZC0-5m-BKr"/>
+                    <constraint firstItem="GlJ-mg-8gq" firstAttribute="leading" secondItem="k8F-nL-Yyc" secondAttribute="leading" id="i9P-nP-AlG"/>
+                    <constraint firstItem="GlJ-mg-8gq" firstAttribute="top" secondItem="k8F-nL-Yyc" secondAttribute="top" id="tXc-fP-sVB"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="castCV" destination="hVG-ft-gPf" id="lgs-Wy-PES"/>
+            </connections>
+            <point key="canvasLocation" x="33.333333333333336" y="93.415178571428569"/>
+        </tableViewCell>
+    </objects>
+</document>

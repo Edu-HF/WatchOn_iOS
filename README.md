@@ -13,6 +13,7 @@
 </p>
 
 ## Watch On
+
 WatchOn is a small and solid application capable of offering users excellent content about the latest movies and series in the industry. With WatchOn you can enjoy content updated by the community completely free. (This project is a Demo)
 
 ## How to use?
@@ -33,6 +34,10 @@ WatchOn is a small and solid application capable of offering users excellent con
 - [MFCard](https://github.com/MobileFirstInc/MFCard)
 - [youtube-ios-player-helper](https://github.com/youtube/youtube-ios-player-helper)
 
+### API
+
+WatchOn uses a public api to show the most up-to-date and relevant content regarding movies and top series of the moment. Its API is very simple to use. You can see the documentation in [The Movie DB](https://www.themoviedb.org/documentation/api)
+
 ## Features
 
 WatchOn is a simple application that incorporates an MVP architecture and different UI elements to list the contents in a more dynamic way
@@ -43,9 +48,9 @@ With an implementation of one of the most popular libraries of today, we seek to
 
 ## Installation
 
-- Clone or Download the repository
+- Clone or download the repository
 - Open the terminal and navigate to the path of the Pod File
-- Run the "pod install" command (If you don't have the cocoapods development framework, you can install it following the simple guide to her web page)
+- Run the "pod install" command (If you don't have the cocoapods development framework, you can install it following the  [simple guide](https://guides.cocoapods.org/using/getting-started.html))
 - Open the "WatchOn.xcworkspace" file and run the project
 
 

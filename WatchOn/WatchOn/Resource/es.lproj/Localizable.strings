@@ -32,6 +32,10 @@
 "UserEmailUKey" = "EMAIL DE USUARIO";
 "UserNameKey" = "Nombre de Usuario";
 "UserEmailKey" = "Email de Usuario";
+"SelectPhotoKey" = "Seleccione una foto para su perfil";
+"FromGaleryOrCamKey" = "Puede seleccionarla desde la Galeria o tomarse una foto con la camara.";
+"CamKey" = "Camara";
+"GaleryKey" = "Galeria de Fotos";
 
 "ReasonFaceIDMSGKey" = "Para acceder a la aplicacion necesitamos verificar su FaceID/TouchID";
 "MakeLoginKey" = "Inicie sesion para acceder a su informacion.";

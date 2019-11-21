@@ -12,10 +12,21 @@ import LocalAuthentication
 
 class LoginViewController: BaseViewController {
     
+    @IBOutlet weak var mAppleBtn: WButton!
+    @IBOutlet weak var mTFIDBtn: WButton!
+    @IBOutlet weak var mLogoIV: UIImageView!
+    
     private var contextLA = LAContext()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        mLogoIV.animationAlpha(delay: 1, block: {
+            self.mAppleBtn.animationSlideInHorizontal(delay: 0.5, direction: .Left, block: {})
+            self.mTFIDBtn.animationSlideInHorizontal(delay: 0.5, direction: .Right, block: {})
+        })
     }
     
     @IBAction func makeLoginTouchOrFaceID(_ sender: Any) {

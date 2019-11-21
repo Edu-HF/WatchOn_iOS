@@ -89,6 +89,20 @@ extension MoviesListViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        switch contentPresenter.mainContentData.value[indexPath.row].contentType {
+        case .ContentA:
+            cell.contentView.animationSlideInHorizontal(delay: 0.3, direction: .Left, block: {})
+        case .ContentB:
+            cell.contentView.animationSlideInHorizontal(delay: 0.3, direction: .Right, block: {})
+        case .ContentC:
+            cell.contentView.animationSlideInVertical(delay: 0.3, direction: .Top, block: {})
+        default:
+            print("")
+        }
+    }
 }
 
 extension MoviesListViewController: ContentTappedProtocol {

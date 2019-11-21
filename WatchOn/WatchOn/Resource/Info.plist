@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Grant access to the Image Library. WatchOn use the library just to select your profile picture</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Get access to the Camera. WatchOn will use the camera only to take a profile picture</string>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 	<key>NSFaceIDUsageDescription</key>
 	<string>WatchOn used FaceID/TouchID to identify and login in the app</string>
 	<key>YOUTUBE_URL</key>

@@ -31,6 +31,7 @@ class UserProfileViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         validateUserSession()
+        buildProfilePhoto()
         NotificationCenter.default.addObserver(self, selector: #selector(showMovieDetail), name: .ShowFavMovieDetail, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(showSerieDetail), name: .ShowFavSerieDetail, object: nil)
     }
@@ -84,7 +85,8 @@ class UserProfileViewController: BaseViewController {
     
     private func buildProfilePhoto() {
         
-        mProfilePhotoIV = UIImageView(frame: CGRect(x: mUserCardView.frame.origin.x+240, y: mUserCardView.frame.origin.y - 40, width: 100, height: 100))
+        mProfilePhotoIV = UIImageView(frame: CGRect(x: self.view.frame.width-120, y: mUserCardView.frame.origin.y - 40, width: 100, height: 100))
+       
         mProfilePhotoBtn = UIButton(frame: mProfilePhotoIV.frame)
         mProfilePhotoBtn.setTitle("", for: .normal)
         mProfilePhotoBtn.addTarget(self, action: #selector(onProfilePhotoClick), for: .touchUpInside)
@@ -108,17 +110,19 @@ class UserProfileViewController: BaseViewController {
     }
     
     @objc private func onProfilePhotoClick() {
-        let alertIMGPicker = UIAlertController.init(title: "SelectFoto", message: "De Donde", preferredStyle: .actionSheet)
+        let alertIMGPicker = UIAlertController.init(title: "SelectPhotoKey".localized(), message: "FromGaleryOrCamKey".localized(), preferredStyle: .actionSheet)
         
-        alertIMGPicker.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
+        alertIMGPicker.addAction(UIAlertAction(title: "CamKey".localized(), style: .default, handler: { _ in
             alertIMGPicker.dismiss(animated: true, completion: nil)
             self.showIMGPicker(.camera)
         }))
         
-        alertIMGPicker.addAction(UIAlertAction(title: "PhotoLibrary", style: .default, handler: { _ in
+        alertIMGPicker.addAction(UIAlertAction(title: "GaleryKey".localized(), style: .default, handler: { _ in
             alertIMGPicker.dismiss(animated: true, completion: nil)
             self.showIMGPicker(.photoLibrary)
         }))
+        
+        alertIMGPicker.addAction(UIAlertAction.init(title: "CancelKey".localized(), style: .cancel, handler: nil))
         
         self.present(alertIMGPicker, animated: true, completion: nil)
     }

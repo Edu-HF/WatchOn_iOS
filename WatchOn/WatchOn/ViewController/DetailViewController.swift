@@ -143,4 +143,17 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             return 200.0
         }
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        switch detailSection.allCases[indexPath.row] {
+        case .DetailActionBtnCell:
+            cell.contentView.animationSlideInVertical(delay: 1.5, direction: .Top, block: {})
+        case .DetailRatingCell:
+            if let cellR: DetailRatingTableViewCell = cell as? DetailRatingTableViewCell {
+                cellR.makeAnimations()
+            }
+        default:
+            break
+        }
+    }
 }

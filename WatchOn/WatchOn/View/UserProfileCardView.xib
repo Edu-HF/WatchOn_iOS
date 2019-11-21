@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,7 +17,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserNameUKey" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yl1-kx-TaE">
-                            <rect key="frame" x="8" y="11" width="398" height="35"/>
+                            <rect key="frame" x="8" y="11" width="300" height="35"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="35" id="J8v-TQ-RR9"/>
                             </constraints>
@@ -44,7 +41,7 @@
                         <constraint firstItem="nlc-sd-D9i" firstAttribute="leading" secondItem="OwE-ZO-98b" secondAttribute="leading" constant="8" id="6rK-Km-hCr"/>
                         <constraint firstItem="Yl1-kx-TaE" firstAttribute="top" secondItem="OwE-ZO-98b" secondAttribute="top" constant="11" id="Dkk-OQ-s7z"/>
                         <constraint firstAttribute="trailing" secondItem="nlc-sd-D9i" secondAttribute="trailing" constant="8" id="F3d-5e-FMi"/>
-                        <constraint firstAttribute="trailing" secondItem="Yl1-kx-TaE" secondAttribute="trailing" constant="8" id="UPs-Ba-B8j"/>
+                        <constraint firstAttribute="trailing" secondItem="Yl1-kx-TaE" secondAttribute="trailing" constant="106" id="UPs-Ba-B8j"/>
                         <constraint firstAttribute="height" constant="140" id="Ven-ud-IXM"/>
                         <constraint firstItem="Yl1-kx-TaE" firstAttribute="leading" secondItem="OwE-ZO-98b" secondAttribute="leading" constant="8" id="dXn-uy-O8M"/>
                     </constraints>

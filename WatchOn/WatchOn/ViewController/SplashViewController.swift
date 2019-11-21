@@ -26,6 +26,7 @@ class SplashViewController: BaseViewController {
             self.mainAnimationView.stop()
             let mainSB = UIStoryboard(name: "Main", bundle: nil)
             let mainTB = mainSB.instantiateViewController(withIdentifier: "MainTabBarViewController") as! UITabBarController
+            mainTB.modalPresentationStyle = .fullScreen
             self.present(mainTB, animated: true, completion: nil)
         }
     }

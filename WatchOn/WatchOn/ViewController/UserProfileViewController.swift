@@ -27,6 +27,7 @@ class UserProfileViewController: BaseViewController {
     override func viewDidDisappear(_ animated: Bool) {
         NotificationCenter.default.removeObserver(self, name: .ShowFavMovieDetail, object: nil)
         NotificationCenter.default.removeObserver(self, name: .ShowFavSerieDetail, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .ShowCardSaveMSGNoti, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,6 +35,7 @@ class UserProfileViewController: BaseViewController {
         buildProfilePhoto()
         NotificationCenter.default.addObserver(self, selector: #selector(showMovieDetail), name: .ShowFavMovieDetail, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(showSerieDetail), name: .ShowFavSerieDetail, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showCardSaveMSG), name: .ShowCardSaveMSGNoti, object: nil)
     }
     
     private func setupView() {
@@ -132,6 +134,10 @@ class UserProfileViewController: BaseViewController {
         mImagePicker.delegate = self
         mImagePicker.sourceType = sourceIn
         self.present(mImagePicker, animated: true, completion: nil)
+    }
+    
+    @objc private func showCardSaveMSG() {
+        self.showSomeMSGAlert(titleIn: "PaymentMethodKey".localized(), msgIn: "PaymentMethodSaveMSGKey".localized())
     }
 }
 

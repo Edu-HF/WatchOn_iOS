@@ -15,4 +15,5 @@ extension Notification.Name {
     public static let ShowLoginVCNoti: Notification.Name = Notification.Name("ShowLoginVCNoti")
     public static let ShowFavMovieDetail: Notification.Name = Notification.Name("ShowFavMovieDetail")
     public static let ShowFavSerieDetail: Notification.Name = Notification.Name("ShowFavSerieDetail")
+    public static let ShowCardSaveMSGNoti: Notification.Name = Notification.Name("ShowCardSaveMSGNoti")
 }

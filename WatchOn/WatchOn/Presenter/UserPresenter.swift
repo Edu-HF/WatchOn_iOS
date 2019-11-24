@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftKeychainWrapper
+import MFCard
 
 class UserPresenter: NSObject {
 

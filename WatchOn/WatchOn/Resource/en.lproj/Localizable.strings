@@ -36,6 +36,7 @@
 "FromGaleryOrCamKey" = "You can select it from the Gallery or take a picture with the camera.";
 "CamKey" = "Camera";
 "GaleryKey" = "Photo Galery";
+"PaymentMethodSaveMSGKey" = "Your payment method has been saved successfully.";
 
 "ReasonFaceIDMSGKey" = "To access the application we need to verify your FaceID/TouchID";
 "MakeLoginKey" = "Login to access your information.";

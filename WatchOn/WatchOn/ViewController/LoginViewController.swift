@@ -12,10 +12,21 @@ import LocalAuthentication
 
 class LoginViewController: BaseViewController {
     
+    @IBOutlet weak var mAppleBtn: WButton!
+    @IBOutlet weak var mTFIDBtn: WButton!
+    @IBOutlet weak var mLogoIV: UIImageView!
+    
     private var contextLA = LAContext()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        mLogoIV.animationAlpha(delay: 1, block: {
+            self.mAppleBtn.animationSlideInHorizontal(delay: 0.5, direction: .Left, block: {})
+            self.mTFIDBtn.animationSlideInHorizontal(delay: 0.5, direction: .Right, block: {})
+        })
     }
     
     @IBAction func makeLoginTouchOrFaceID(_ sender: Any) {
@@ -25,36 +36,38 @@ class LoginViewController: BaseViewController {
         if contextLA.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) {
             contextLA.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "ReasonFaceIDMSGKey".localized()) { (isSuccess, error) in
                 
-                if isSuccess {
-                    
-                    let loginDataAlert = UIAlertController(title: "LoginTitleAlertKey".localized(), message: "LoginMSGAlertKey".localized(), preferredStyle: .alert)
-                    
-                    loginDataAlert.addTextField(configurationHandler: { (nameTF) in
-                        nameTF.placeholder = "UserNameKey".localized()
-                    })
-                    
-                    loginDataAlert.addTextField(configurationHandler: { (nameTF) in
-                        nameTF.placeholder = "UserEmailKey".localized()
-                    })
-                    
-                    loginDataAlert.addAction(UIAlertAction(title: "CancelKey".localized(), style: .cancel, handler: { _ in
-                        loginDataAlert.dismiss(animated: true, completion: nil)
-                    }))
-                    
-                    loginDataAlert.addAction(UIAlertAction(title: "DoneKey".localized(), style: .default, handler: { _ in
+                DispatchQueue.main.async {
+                    if isSuccess {
                         
-                        var tempUser = User()
-                        if let userName = loginDataAlert.textFields?[0], let userEmail = loginDataAlert.textFields?[1] {
-                            tempUser.userEmail = userEmail.text
-                            tempUser.userName = userName.text
-                        }
+                        let loginDataAlert = UIAlertController(title: "LoginTitleAlertKey".localized(), message: "LoginMSGAlertKey".localized(), preferredStyle: .alert)
                         
-                        if UserPresenter.sharedIntance.saveUser(userIn: tempUser) {
+                        loginDataAlert.addTextField(configurationHandler: { (nameTF) in
+                            nameTF.placeholder = "UserNameKey".localized()
+                        })
+                        
+                        loginDataAlert.addTextField(configurationHandler: { (nameTF) in
+                            nameTF.placeholder = "UserEmailKey".localized()
+                        })
+                        
+                        loginDataAlert.addAction(UIAlertAction(title: "CancelKey".localized(), style: .cancel, handler: { _ in
                             loginDataAlert.dismiss(animated: true, completion: nil)
-                            self.dismiss(animated: true, completion: nil)
-                        }
-                    }))
-                    self.present(loginDataAlert, animated: true, completion: nil)
+                        }))
+                        
+                        loginDataAlert.addAction(UIAlertAction(title: "DoneKey".localized(), style: .default, handler: { _ in
+                            
+                            var tempUser = User()
+                            if let userName = loginDataAlert.textFields?[0], let userEmail = loginDataAlert.textFields?[1] {
+                                tempUser.userEmail = userEmail.text
+                                tempUser.userName = userName.text
+                            }
+                            
+                            if UserPresenter.sharedIntance.saveUser(userIn: tempUser) {
+                                loginDataAlert.dismiss(animated: true, completion: nil)
+                                self.dismiss(animated: true, completion: nil)
+                            }
+                        }))
+                        self.present(loginDataAlert, animated: true, completion: nil)
+                    }
                 }
             }
         }else{

@@ -42,7 +42,21 @@ extension PaymentCardTableViewCell: MFCardDelegate {
         }
         
         if let rCard = card {
-            print(rCard.cardType!)
+            if var userData = UserPresenter.sharedIntance.getUserData() {
+                var wCard = WCard()
+                wCard.wHolderName = rCard.name
+                wCard.wNumber = rCard.number
+                wCard.wMonth = rCard.month.map { $0.rawValue }
+                wCard.wYear = rCard.year
+                wCard.wCvc = rCard.cvc
+                wCard.wPaymentType = rCard.paymentType.map { $0.rawValue }
+                wCard.wType = rCard.cardType.map { $0.rawValue }
+                wCard.wUserID = rCard.userId
+                userData.userPaymentMethod = wCard
+                if UserPresenter.sharedIntance.saveUser(userIn: userData) {
+                    NotificationCenter.default.post(Notification(name: .ShowCardSaveMSGNoti))
+                }
+            }
         }
     }
     

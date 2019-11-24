@@ -37,5 +37,10 @@ class DetailRatingTableViewCell: UITableViewCell {
         releaseDateLB.text = "ReleaseDateKey".localized() + (contentIn.contentReleaseDate ?? "")
         averageNumLB.text = String(contentIn.contentVoteAverage ?? 0)
     }
-
+    
+    func makeAnimations() {
+        voteBtn.animationSlideInHorizontal(delay: 1, direction: .Right, block: {})
+        downloadBtn.animationSlideInHorizontal(delay: 1, direction: .Right, block: {})
+        sharedBtn.animationSlideInHorizontal(delay: 1, direction: .Right, block: {})
+    }
 }

@@ -137,7 +137,7 @@ extension UserProfileCardView: UITableViewDelegate, UITableViewDataSource {
             }
         }
         
-        deleteBtn.image = UIImage(named: "DeleteOff_IC")
+        deleteBtn.image = UIImage(named: "TrashOff_IC")
         deleteBtn.backgroundColor = .btnPressColor
         return UISwipeActionsConfiguration(actions: [deleteBtn])
     }
